@@ -1,0 +1,17 @@
+﻿rnd°A*inv°A
+
+coreimport == "library\matrix.txt";"library\complex.txt";
+
+A == matrix::(1;2;3;);(4;5;8;);(7;8;9;);
+B == matrix::(3;5;7;);(9;11;13;);(15;17;19;);
+C == matrix :: (4;) ;( 5;) ; (6;);
+D == matrix::  (7;8;9;);
+
+ rnd == (((id roundto _5) aa) aa)
+crnd == ((((re roundto _5) cval (im roundto _5)) aa) aa)
+
+E == matrix::((complex :: 1 re 0 im);(complex :: 2 re 0 im);(complex :: 3 re 0 im););
+             ((complex :: 4 re 0 im);(complex :: 5 re 0 im);(complex :: 8 re 0 im););
+             ((complex :: 7 re 0 im);(complex :: 8 re 0 im);(complex :: 9 re 0 im););
+
+// (CC0)

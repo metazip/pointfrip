@@ -1,0 +1,16 @@
+﻿'("informatics.txt" loaded)
+
+// (5 (- curry))°'7 --> _2 // mit app... // provi
+curry == (top°term) app (top°term°arg),(arg°arg),
+
+// (f Y) ° x   // Y-Kombinator
+Y == (top°term) app term,arg,   // ohne comma? am ende allgemein
+// ((((#x<1000)->(#f app #x+1)|#x)<-f;x;) Y)°'1
+// ((((#x=0)->1|#x*#f app #x-1)<-f;x;) Y)°7
+
+//Y == (top°term) app id   // f als combining
+// (((arg<1000)->(term app arg+3)|arg) Y)°'0
+// (((arg<1000)->(term app arg*2)|arg) Y)°'1
+
+
+// (CC0)

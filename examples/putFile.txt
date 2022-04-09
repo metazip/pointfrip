@@ -1,0 +1,6 @@
+﻿putFile // Beispiel einer monadischen act-Kette mit algebraischen Effekten
+
+putFile == (("Filename:" input)>>((userpath&it) loadtext)>>(it print)>>'ok) eff 'io
+
+
+// (CC0)

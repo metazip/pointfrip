@@ -1,0 +1,9 @@
+﻿(('300 spiro pendown° ('400,'_400,) moveto penup°'turtle new) (draw eff 'io))>>()
+//    '300
+coreimport == "library\turtlegraphics.txt";
+
+spiro == [0]°(([1]<>'0)->*((2pi/'100) turn [1] quadrat [0]),([1]-'1),)°reverse°ee
+quadrat == [0]°(([2]<>'0)->*((2pi*'0.25) turn [1] move [0]),[1],([2]-'1),)°reverse° '4,ee
+
+
+// (CC0)

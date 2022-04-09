@@ -1,0 +1,17 @@
+﻿qsort ° text1
+
+qsort==isnull->id|
+	((qsort°[2])++[0],qsort°[3])
+	°((not°isnull°[1])->*[0],(tail°[1]),([0]>[0]°[1])->((([0]°[1]),[2]),[3],)|[2],(([0]°[1]),[3]),)
+	°[0],tail,(),(),
+
+text1==Advantages;of;FP;systems;.;The;main;reason;FP;systems;are;considerably;simpler;than;either;
+conventional;languages;or;lambda;-;calculus;-;based;languages;is;that;they;use;only;the;most;elementary;fixed;
+naming;system;naming;a;function;in;a;definition;with;a;simple;fixed;rule;of;substituting;a;function;for;its;name;.;
+Thus;they;avoid;the;complexities;both;of;the;naming;systems;of;conventional;languages;and;of;the;substitution;
+rules;of;the;lambda;calculus;.;FP;systems;permit;the;definition;of;different;naming;systems;...;for;various;
+purposes;.;These;need;not;be;complex;,;since;many;programs;can;do;without;them;completely;.;Most;
+importantly;,;they;treat;names;as;functions;that;can;be;combined;with;other;functions;without;special;treatment;.;
+
+
+// (CC0)

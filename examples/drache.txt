@@ -1,0 +1,16 @@
+﻿(((4,400,) drache (#red°colors) pencolor pendown°(20,_200,) moveto penup ° 'turtle new) (draw eff 'io))>>()
+
+coreimport == "library\turtlegraphics.txt";
+
+drache == ((#level=0)->(#len move #t)|
+		((#level,#len,) drache
+		(2pi/6) turn
+		(#level,#len,) drache
+		(2pi/_3) turn
+		(#level,#len,) drache
+		(2pi/6) turn
+		(#level,#len,) drache #t)°(level:=#level-1)°(len:=#len/3))
+	°(id<-t isobj level isnum len isreal)°([1],[0])°ee
+
+
+// (CC0)

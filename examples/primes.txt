@@ -1,0 +1,6 @@
+﻿primes°'1000
+
+primes == (tail°iota) filter '('true<>(or \)°(((id=int)°[1]/[0]) aa)°(tail°iota°pred) distr id)
+
+
+// (CC0)

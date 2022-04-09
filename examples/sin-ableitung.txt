@@ -1,0 +1,15 @@
+﻿((((reverse°#stack°[0])++reverse°#stack°[1])
+°((((reverse°(pendown°[0] moveto (#blue°colors) pencolor penup°'turtle new),tail) insr '([0] moveto [1]))
+°((id,((_150+100*f1)°2pi*id/600),)aa))
+ee(((reverse°(pendown°[0] moveto (#red°colors) pencolor penup°'turtle new),tail) insr '([0] moveto [1]))
+°((id,((_150+100*f2)°2pi*id/600),)aa)))°'0,iota°600) (showgraph eff 'io))>>()
+
+coreimport == "library\turtlegraphics.txt";
+              "library\math.txt";
+
+e == '0.0000001
+f1 == sin		// blau
+f2 == (sin dd e)	// rot
+
+
+// (CC0)

@@ -1,0 +1,9 @@
+﻿loop°0
+
+coreimport == "library\turtlegraphics.txt"; "library\math.txt";
+
+loop == (f var id)>>loop°#var+1
+f==(((100*sin°4*2pi*[0]/[1])aa0)°(id to id+400),400,) (plot0 eff 'io) _100
+
+
+// (CC0)

@@ -1,0 +1,7 @@
+﻿// (plot0 eff io)°(((100*(sin dd 0.000001)°2*2pi*id/600) aa)°0,iota°600),_100,
+(((100*(sin dd 0.000001)°2pi*[0]/[1])aa0)°((neg to id),id,)°300) ((plot0 eff 'io)>>()) _100
+
+coreimport == "library\turtlegraphics.txt"; "library\math.txt";
+
+
+// (CC0)

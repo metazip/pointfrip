@@ -1,0 +1,14 @@
+﻿loop° '125
+
+coreimport == "library\turtlegraphics.txt";
+
+loop == (drawme var id)>>loop°#var-'0.001
+
+drawme == (('2,id,'4,) spirale (rad° '_30) turnto pendown°(400;_370;) moveto penup°'turtle new) (draw eff 'io)
+
+spirale == (((#seite<'700)->
+	(((#seite+#zunahme),#winkel,#zunahme,) spirale (rad°neg°#winkel) turn #seite move #t)|#t)
+	<-t;seite;winkel;zunahme;)°([1],[0])°ee
+
+
+// (CC0)

@@ -1,0 +1,80 @@
+﻿'("object.txt" loaded)
+
+// isundef == id = .. '_undef // provi!
+
+// topdip == ...
+dip == prop°(top°arg),(tag°arg),((top°term) app pop°arg), // vergleichen!
+// dip0 == prop°(top°top°arg),(tag°top°arg),((top°term) app (pop aa)°arg),
+objdip == prop°(top°top°arg),(tag°top°arg),((top°term) app ((pop°[0]) ee pop°[1])°arg), // bidip?
+
+is == ((isobj°[0])->([1]=top°[0])|'false)°ee // super?
+
+// isobj: (((list :: xxx yyy zzz _s) ; bbb ;) ; ([sel1] sweeop term1 _s) ;)
+swop == ( (isobj°[0]°[0])->(((isundef->quote|id)°(top°[0]°[0]) iget top°[1]) app [0])
+        | (pop°[1]) app [0] )
+        °(([1]ee[0])°ee°arg) ee term
+
+// ((obj1 :: aa bb cc _s) _combine sel1 fn term1 _s)
+fn == (isobj°arg) -> (((isundef->quote|id) ° ((top°arg) iget top°term)) app arg)
+                   | (pop°term) app arg
+
+// ((sel cb fcb _s) _combine (f0 (sel cb fcb _s) f1 _s) _combine .. xx)
+cb == ( (isobj°[0]°[0])->(((isundef->quote|id)°(top°[0]°[0]) iget top°[1]) app [0])
+      | (pop°[1]) app [0] )
+      °((((top°term) app arg),((pop°term) app arg),arg,)°arg) ee term
+
+new == (([0] obj) ([new] op '[new] error '"fail in new",id,) [1])°ee // komma hinter id ? ,fail°'[new],id
+
+as == [as] op '[as] error '"object-type for operand[0] expected.",id, // space [0] ?
+
+// object == .. {( ) }
+// turtle01==..{object [new]==initturtle as top°self} // as mit top oder nur self ?
+
+// ------- standard classes -------
+
+; == () termoarg .. list // { [add]==box°(unbox°[0])++unbox°[1] } // ? for box // + test
+
+_integer == .. { [ispos] == ispos°unbox
+                 [add]   == box°(unbox°[0])+(unbox°[1]) } // test
+
+_real    == .. { [ispos] == ispos°unbox
+                 [pred]  == box°pred°unbox
+                 [succ]  == box°succ°unbox}
+
+object == .. { ( )
+               [as]     == [1] obj pop°[0] // as richtig ?
+               [length] == length°pop }
+
+list == .. { object
+             [head]  == head°pop
+             [tail]  == tail dip
+             [infix] == infix°pop
+             [comma] == (top°[0]) obj [1],pop°[0] // swop
+             [add] == ((+ aa)°trans) objdip // (top°[0]) obj (+ aa)°trans°(pop°[0]),(pop°[1]), // oop mit trans? // topdip+pop... // unbox!!!
+             [sub] == ([1] is 'list) -> (((- aa)°trans) objdip) | fail
+             [++]  == ([1] is 'list) -> (++ objdip) | fail // is 'list ???
+             [reverse] == reverse dip
+          // ...
+             [ispos] == ispos°pop // test...
+             [pred]  == pred dip
+             [succ]  == succ dip
+             [abs]   == abs dip}
+
+//dict == .. { }
+
+isvector == id is 'vector
+tovector == 'vector obj id // wie box?
+
+vector == .. { list // ?
+    [add] == (isvector°[1])->(((+ aa)°trans) objdip)|fail
+    [sub] == (isvector°[1])->(((- aa)°trans) objdip)|fail
+ }
+
+// is vervollkommnen
+// length für xobject ,ist abgehakt
+
+// (date eff 'io)>>(round°weekday°it) app tage
+tage == '(week :: "Sonntag"; "Montag"; "Dienstag"; "Mittwoch"; "Donnerstag"; "Freitag"; "Samstag";)
+days == '(week :: "Sunday"; "Monday"; "Tuesday"; "Wednesday"; "Thursday"; "Friday"; "Saturday";)
+
+// (CC0)

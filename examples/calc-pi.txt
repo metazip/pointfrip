@@ -1,0 +1,7 @@
+﻿// Beispiel einer Map-Reduce-Funktion a la Backüs
+// man beachte Rechts-vor-Links in der Division
+
+sqrt°6*(+ \)°((1/id*id) aa)°iota°150000
+
+
+// (CC0)

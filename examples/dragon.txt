@@ -1,0 +1,31 @@
+﻿(time eff 'io)
+>>(((('4,'13,) ldragon pendown°('400,'_190,) moveto penup ° 'turtle new) draw)°(oldtime:=it))
+>>((('4,'12,) ldragon pendown°('400,'_190,) moveto penup°initturtle) draw)
+>>((('4,'13,) ldragon pendown°('400,'_190,) moveto penup°initturtle) draw)
+>>((('4,'12,) ldragon pendown°('400,'_190,) moveto penup°initturtle) draw)
+>>((('4,'13,) ldragon pendown°('400,'_190,) moveto penup°initturtle) draw)
+>>((('4,'12,) ldragon pendown°('400,'_190,) moveto penup°initturtle) draw)
+>>((('4,'13,) ldragon pendown°('400,'_190,) moveto penup°initturtle) draw)
+>>((('4,'12,) ldragon pendown°('400,'_190,) moveto penup°initturtle) draw)
+>>((('4,'13,) ldragon pendown°('400,'_190,) moveto penup°initturtle) draw)
+>>time
+>>"drawtime = "&timetostring°it-#oldtime
+// promises schauen...
+
+//('4,'13,)
+coreimport == "library\turtlegraphics.txt";
+
+ldragon == (([2]='0)->([1] move [0])|
+		([1],([2]-'1),) rdragon
+		(2pi*'0.25) turn
+		([1],([2]-'1),) ldragon [0])
+	°([1],[0])°ee
+
+rdragon == (([2]='0)->([1] move [0])|
+		([1],([2]-'1),) rdragon
+		(2pi*'_0.25) turn
+		([1],([2]-'1),) ldragon [0])
+	°([1],[0])°ee
+
+
+// (CC0)

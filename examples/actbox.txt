@@ -1,0 +1,13 @@
+﻿(("Bitte geben Sie eine Liste von Namen ein.
+(XXX --> zur tieferen Verschachtelung)
+(Leere Eingabe als Ende der Verschachtelung)" showinfo)>>inputlist>>(it print)>>'ok) ° () eff 'io
+
+// act(box) Anwendung
+inputlist == ((inputloop°(names:=())°(count:=0)) act id)>>it
+inputloop == ((("Name "&(string°#count)&":") input)°(count:=#count+1))>>(it="")->(reverse°#names)|
+		(it<>"XXX")->(inputloop°(names:=it,#names))|
+		("Neue Verschachtelung" showinfo)>>inputlist>>
+		(("Ende der Verschachtelung" showinfo)°(names:=it,#names))>>inputloop
+
+
+// (CC0)
