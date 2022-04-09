@@ -1,0 +1,53 @@
+﻿'("turtlegraphics.txt" loaded)
+
+colors == '(() _super 255 red 0 black 16711680 blue 16777215 white 32768 green 16776960 aqua 
+           8421504 darkgray 16711935 fuchsia 8421504 gray 65280 lime 12632256 lightgray 
+           128 maroon 8388608 navy 32896 olive 8388736 purple 12632256 silver 8421376 teal 
+           65535 yellow 55295 gold 42495 orange)
+
+initturtle == '(turtle :: () stack 0 x 0 y 0 angle true pen 0 color 1 size 16777215 brush)
+// use: 'turtle new
+
+draw       == [draw] cb fail     // (((...turtle) draw) eff 'io) ° dict
+moveto     == [moveto] swop fail
+moverel    == [moverel] swop fail
+move       == [move] swop fail
+turnto     == [turnto] swop fail
+turn       == [turn] swop fail
+penup      == [penup] fn fail
+pendown    == [pendown] fn fail
+pencolor   == [pencolor] swop fail
+pensize    == [pensize] swop fail
+brushcolor == [brushcolor] swop fail
+circle     == [circle] swop fail
+rectangle  == [rectangle] fn fail
+
+turtle == .. { dict
+   [new]        == initturtle as top°self
+   [draw]       == (prop°(quote°reverse°#stack°[0]),'showgraph,(),) app [2]
+   [moveto]     == ((self put 'stack ee prop°([0]°para),([1]°para),(self get 'stack),)
+	           put 'x ee [0]°para) put 'y ee [1]°para
+   [moverel]    == ((([0]°para)+self get 'x) ee (([1]°para)+self get 'y)) moveto self
+   [move]       == ( ((([0] get 'x) + [1]*cos°[2]) ee (([0] get 'y) + [1]*sin°[2]))
+                     °self,para,(self get 'angle), ) moveto self
+   [turnto]     == self put 'angle ee (para - 2pi*int°para/2pi)
+   [turn]       == (para + self get 'angle) turnto self
+   [penup]      == (id put 'stack ee prop°'false,'pen,#stack,) put 'pen ee 'false
+   [pendown]    == (id put 'stack ee prop°'true,'pen,#stack,) put 'pen ee 'true
+   [pencolor]   == (self put 'stack ee prop°(round°para),'color,(self get 'stack),) 
+                   put 'color ee para
+   [pensize]    == (self put 'stack ee prop°(round°para),'size,(self get 'stack),) 
+                   put 'size ee para
+   [brushcolor] == (self put 'stack ee prop°(round°para),'brush,(self get 'stack),) 
+                   put 'brush ee para
+   [circle]     == self put 'stack ee prop°para,'circle,(self get 'stack),
+   [rectangle]  == id put 'stack ee prop°(),'rect,#stack,
+}
+
+// (((f aa)°iota°x) (plot0 eff io) 0-y) ° dict
+plot0 == ((prop°(quote°((reverse°(pendown°[0] moveto penup°'turtle new),tail) insr '([0] moveto [1]))
+         °transpose°((iota0°length°[0]) ee (+ aa0))),'draw,(),) app [2])°eea // eea?
+//plotn
+
+
+// (CC0)

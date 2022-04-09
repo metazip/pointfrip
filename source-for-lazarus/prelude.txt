@@ -1,0 +1,19 @@
+﻿welcome ° 
+'("prelude.txt" loaded)
+
+coreimport == "library\standard.txt";
+              "library\object.txt";
+              "library\dict.txt";
+              "library\error.txt";
+              "library\symbols.txt";
+              "library\system.txt";
+           // "library\math.txt";
+           // "library\complex.txt";
+           // "library\loops.txt";
+           // "library\matrix.txt";
+           // "library\turtlegraphics.txt";
+           // "library\informatics.txt";
+              "library\welcome.txt";
+
+
+// (CC0)

@@ -1,0 +1,91 @@
+﻿'("system.txt" loaded)
+
+// (ident define dict)°dict
+define   == '[3] act (arg put '_self ee (top°term) app arg) put '_para ee (pop°term) app arg
+//define == (('[3] act arg) put 'self ee (top°term) app arg) put 'para ee (pop°term) app arg
+// define    == (('([3] _act () _bind) put 'self ee self) put 'para ee para)°ee // absolute // () id?
+
+// (ident redefine table)°dict
+redefine == '[4] act (arg put '_self ee (top°term) app arg) put '_para ee (pop°term) app arg // absolute
+
+// (data showgraph)°dict // self und it vertauscht!
+showgraph == '[showgraph] act arg put '_it ee (top°term) app arg // para?
+//showgraph == '( [showgraph] _act () _it () _bind) put '_it ee id //relative
+// showgraph == '([5] _act () _bind) put 'it ee id // id als 2. im _act ? //absolute
+
+// (data showinfo)°dict // self und it vertauscht!
+showinfo == '[showinfo] act arg put '_it ee (top°term) app arg // para?
+//showinfo == ('[showinfo] act arg) put 'it ee (top°term) app arg // para?
+// showinfo  == '(  [showinfo] _act () it () _bind) put 'it ee id // releative
+
+// (data print)°dict // self und it vertauscht!
+print == '[print] act arg put '_it ee (top°term) app arg // para?
+//print == ('[print] act arg) put 'it ee (top°term) app arg // para?
+// print     == '(     [print] _act () it () _bind) put 'it ee id // releative
+
+// (string input string)°dict // self und it vertauscht!
+input == '[input] act (arg put '_self ee (top°term) app arg) put '_para ee (pop°term) app arg
+//         input == '[input] act arg put '_it ee (top°term) app arg // para?
+//input == ('[input] act arg) put 'it ee (top°term) app arg // para?
+// input     == '(     [input] _act () it () _bind) put 'it ee id // releative
+
+// (fname loadtext)°dict // self und it vertauscht!
+loadtext  == '[loadtext] act arg put '_it ee (top°term) app arg // para?
+//loadtext  == ('[loadtext] act arg) put 'it ee (top°term) app arg // para?
+// loadtext  == '(  [loadtext] _act () it () _bind) put 'it ee id // relative
+
+// (fname savetext string)°dict // self und para wurden getauscht
+savetext  == '[savetext] act (arg put '_self ee (top°term) app arg) put '_para ee (pop°term) app arg
+//savetext  == (('[savetext] act arg) put 'self ee (top°term) app arg) put 'para ee (pop°term) app arg
+// savetext  == (('([savetext] _act () it () _bind) put 'self ee self) put 'para ee para)°ee //
+
+// (fname run)°dict // self und it vertauscht!
+run == '[run] act arg put '_it ee (top°term) app arg // para?
+//run == ('[run] act arg) put 'it ee (top°term) app arg // para?
+// run == '([run] _act () it () _bind) put 'it ee id // releative
+
+quit == '([12] _act () _it () _bind) // absolute/relatve? // ee
+
+time == '[time] act id // function ,relative
+date == '[date] act id // function ,relative
+beep == '[beep] act id // function ,relative
+
+// act   == (prop°[0],'_act,[1],)°ee //
+//
+// mit act auf relative namen(index) und für dict(variablen) auf die monaden-technik umstellen
+// konzept anpassen...........................................................................
+// _bind einfließen lassen?
+//
+// putid?
+var == ([0] put 'var ee [1])°ee // _var?
+eff == ([0] put '_eff ee [1])°ee
+>> == ((top°term) app arg) put '_bind ee pop°term
+// it == .. #_it
+
+// act == (prop°[0],'_act,[1],)°ee //
+
+// ------- io effects -------
+
+io == .. { // [error] ==
+           // [return] == // wie id(?)
+        // define?
+        // redefine?
+           [showgraph] == ('([5]  _act () _super () _bind) put '_super ee id) //('([5] _act () id () _bind) put 'id ee #id)>>'klausi
+    //'([3] _act () _super () _bind) put '_super ee id // #id im _super ? oder wie? ,[5] oder andere nummer ? ,actbox?name?
+           [showinfo]  ==  '([6]  _act () _super () _bind) put '_super ee id // correkt?
+           [print]     ==  '([7]  _act () _super () _bind) put '_super ee id // drüber schauen! ob correkt
+           [input]     == ('([8]  _act () _super () _bind) put '_super ee id)>>it // correct? ,mit den #id und _bind so richtig?
+           [loadtext]  == ('([9]  _act () _super () _bind) put '_super ee id)>>it // ?
+           [savetext]  == ('([10] _act () _super () _bind) put '_super ee id)>>it // ?
+        // [savetext]  == ('[10] act id)>>it // möglich? ,verkettung von monaden in io möglich?
+           [run]       == ('([11] _act () _super () _bind) put '_super ee id)>>it // correct? ,_error?
+           // Fehler von _act durchgehen
+           [time]      == ('([13] _act () _super () _bind) put '_super ee id)>>it // function nor op
+           [date]      == ('([14] _act () _super () _bind) put '_super ee id)>>it // function nor op
+           [beep]      == ('([15] _act () _super () _bind) put '_super ee id)>>it // function nor op???
+         }
+
+//alle auf _bind testen...
+
+
+// (CC0)

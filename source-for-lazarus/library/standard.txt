@@ -1,0 +1,229 @@
+﻿'("standard.txt" loaded)
+
+// self, param, etc
+self  == .. [0]
+para  == .. [1]
+true  == .. 'true  // ?
+false == .. 'false // ?
+
+// : == raise ° ' "provisorium für fapplic (deprecation)"
+
+mod == ([0]-[1]*int°[0]/[1])°ee
+
+// rad == pi*id/'180
+// isnull == tag = .. '_null
+// isobj  == tag = .. '::
+// isint  == tag = .. '_integer
+// isreal == tag = .. '_real
+// iszero == id=0
+// pred == id-1
+// succ == id+1
+isodd == (round imod '[2])='[1] // round?
+
+// , !=
+// <> == not ° =
+// >  == ([1]<[0])°ee  	//xobject
+<> == not ° =
+!= == not ° =
+>= == not ° <
+>  == < ° swee       // ([1]<[0])°ee  		//xobject //swee
+<= == not ° < ° swee // not°([1]<[0])°ee	//xobject //swee
+
+//swee testen
+// swee == ([1],[0],) ° ee
+
+quote ==  prop°id,'_q,(),
+// comp vergleichen, testen
+comp  == (prop°[0],'o,[1],)°ee
+obj   == (prop°[0],'::,[1],)°ee
+act   == (prop°[0],'_act,[1],)°ee
+error == (prop°[0],'_error,[1],)°ee
+fail  == '[fail] error '"Fail",id, // für oop
+stop  == '[stop] error '"Stop",id, // mit argument
+
+box   == isobj-> id | prop°tag,'::,id, // nach object.txt?
+// unbox == isobj->pop | id // deprecated
+unbox == isobj->(unbox°pop) | id // ?
+
+// sq  == id*id // for complex div
+cap == isobj->(prop°top,tag,(),)|() //...,(cap°pop), (?)
+// ispreg == isobj->(ispreg°pop)|not°isnull // not°isprop ?
+
+nil == (list ::) _q // nothing-in-list ,richtig?
+
+// not == id->'false|'true
+// and == ([0]->[1]|'false)°ee
+// or  == ([0]->'true| [1])°ee
+
+
+// ------- FP combinators and operators -------
+
+// while-loop:   (test ->* body)°param
+->* == ((top°term) app arg)->(term app (pop°term) app arg)|arg
+
+// do-while-loop:   (body loopif test)°param
+loopif == (((pop°[0]) app [1])->([0] app [1]) | [1])°term ee (top°term) app arg
+
+// for-do-loop:   (expr do)°f,g,step,
+do == (top°term) for arg
+
+// for-do-loop:   'expr for f,g,step,
+for == reverse ° [4]
+       ° ( (ispos°[2])->(([0]<=[1])->*([0]+[2]),[1],[2],[3],(([3]app[0]),[4]),)
+         | (isneg°[2])->(([0]>=[1])->*([0]+[2]),[1],[2],[3],(([3]app[0]),[4]),)
+         | '[for] error "Endless for-loop";)
+       ° ((([0],[1],((iscons°tail°tail)->[2]|1),)°[1])++[0],(),)°ee
+       
+// step-loop:   'expr step list,akku,
+step == [2]°((isprop°[1])->*[0],(tail°[1]),([0] app (head°[1]) ee [2]),)°([0],[1])°ee
+
+// times-loop:   'expr times rep,akku,
+times == [2]°((ispos°[1])->*[0],(pred°[1]),([0] app [2]),)°([0],[1])°ee
+
+iota  == [1]°((ispos°[0])->*(pred°[0]),([0],[1]),)°id,(),             // Backus
+iota0 == [1]°((ispos°succ°[0])->*(pred°[0]),([0],[1]),)°pred,(), // J
+
+reverse == [reverse] fn [1]°((isprop°[0])->*(tail°[0]),(prop°(head°[0]),(infix°[0]),[1],),)°id,(), // isprop? ,prop für objekte
+// reverse == [1]°((isprop°[0])->*(tail°[0]),((head°[0]),[1]),)°id,cap, // test for distr/l
+
+sizeof == isatom->'0|(+ \)°('1 aa) // provi
+avg    == (+ \) / length // mean?
+
+// apply-to-all-loop:   (expr aa)°list
+aa  == arg map top°term
+//  map == ((isatom°[0])->( ) | ([1] app head°[0]),(tail°[0]) map [1])°ee // cap?
+// map-HOF:   list map 'expr
+map == ((not°isprop°[0])->(cap°[0]) | ([1] app head°[0]),(tail°[0]) map [1])°ee // test for isprop
+
+// in map unbenennen + auskommentieren
+forall == reverse°[2]°((isprop°[0])->*(tail°[0]),[1],(([1] app head°[0]),[2]),)°([0],[1],(),)°ee // cap? ,dip
+
+// apply-to-all-loop for param0:   (expr aa0)°list0,param1,param2, ... ,
+aa0 == arg map0 top ° term
+// map0-HOF:   (list0,param1,param2, ... ,) map0 'expr
+map0 == ((isatom°[0]°[0])->()|([1] app ((head°[0]),tail)°[0]),(((tail°[0]),tail)°[0]) map0 [1])°ee
+// Lösung für LtU: Advantages of Pointfree?
+// insaa bzw reaa oder name?
+
+// insertl, insertr, foldl, foldr
+// insert-left:   list insl 'expr
+insl == ( (isatom°[0])->'_undef|(isatom°tail°[0])->(head°[0])|
+          (([1] app ([0],[1],)°[0]),tail°tail°[0]) insl [1] )°ee
+
+// insert-right:   (expr \)°list
+\    == arg insr top°term // für rechts-vor-links
+// insert-right:   list insr 'expr
+insr == ( (not°isprop°[0])->'_undef |
+          (not°isprop°tail°[0])->(head°[0]) |
+	  [1] app (head°[0]) ee (tail°[0]) insr [1] )°ee
+
+// in insr umbenennen + auskommentieren
+foldr == foldrec°([1] ee reverse°[0])°ee
+foldrec == (isatom°[1])->'_undef|(isatom°tail°[1])->(head°[1])|foldrec°[0]ee([0]app([1],[0],)°[1]),tail°tail°[1]
+
+// filter-HOF:   list filter 'test
+filter == ( (isatom°[0])->() |  // cap?
+            ([1] app head°[0])->((head°[0]),(tail°[0]) filter [1]) |
+            (tail°[0]) filter [1] )°ee
+
+// distribute-left:   param distl list   or   distl ° param,list,
+distl == reverse°[2]°((isprop°[0])->*(tail°[0]),[1],(([1],(head°[0]),),[2]),)°([1],[0],(cap°[1]),)°ee // isprop? ,comma und isnull und reverse testen
+// distribute-right:   list distr param   or   distr ° list,param,
+distr == reverse°[2]°((isprop°[0])->*(tail°[0]),[1],(((head°[0]),[1],),[2]),)°([0],[1],(cap°[0]),)°ee // isprop? ,comma und isnull und reverse testen
+
+// concatenation of lists:   list0 ++ list1   or   ++ ° list0,list1,
+++ == [++] op [1]°((isprop°[0])->*(tail°[0]),(prop°(head°[0]),(infix°[0]),[1],),)
+                 °((reverse°[0]) ee [1])°ee
+
+//   list take num
+take == reverse°[2]
+	°(((isprop°[0]) and (ispos°[1]))->*(tail°[0]),(pred°[1]),
+		(prop°(head°[0]),(infix°[0]),[2],),)
+	°([0],[1],(),)°ee // cap?
+
+//   list drop num
+drop == [0]°(((not°isnull°[0]) and (ispos°[1]))->*(tail°[0]),(pred°[1]),)°ee
+
+trans == [trans] fn transpose // Backus FP
+transpose == (isatom°head)->()|(id map 'head),transpose°id map 'tail	// cap ,isatom? ,fn?
+
+pick == ((round°[0]) app [1])°ee // at?
+sel == ((round°[0]) app [1])°ee // pick
+last == (round°pred°length) app id // und bei leer?
+r == ((isneg°[1])->'_undef|(round°[1]) app unbox°[0])°arg ee (pred°length°arg)-float°top°term  // ...pick ,_undef?
+tailr == id take pred°length // init in haskell
+//rotate
+rotl == isatom->()|tail++prop°head,infix,(),
+rotr == (drop ++ take)°id ee pred°length
+// rotr == (([0] drop [1])++[0] take [1])°id ee pred°length // isatom?
+
+count == ((isnull°[0])->0|(+ \)°((= ->1|0) aa0))°ee
+// count == ((isnull°[0])->0|(+ \)°((= ->1|0) aa)°distr)°ee
+
+make == [0]°((ispos°[2])->*([1],[0]),[1],(pred°[2]),)°(),ee
+
+find == ([0]->[1]|_1)°(((not°[0]) and isprop°[2])->*([3]=head°[2]),(succ°[1]),(tail°[2]),[3],)°'false,_1,ee
+
+sum  == id insr '+  // insl? ,weil kommutativ ,und lazy
+prod == id insr '*  // insl? ,weil kommutativ ,und lazy
+
+any == (or \)  ° arg map top°term	// (isreal any)
+all == (and \) ° arg map top°term	// (isreal all)
+
+min == (< -> [0] | [1])°ee
+max == (< -> [1] | [0])°ee
+
+// s mid i,k,   // ?
+mid   == (substring°[0],([0]°[1]),([1]°[1]),)°ee
+left  == (substring°[0],'1,[1],)°ee
+right == (substring°[0],((succ°length°[0])-float°[1]),[1],)°ee
+// trim  == triml°trimr
+capitalize == (upper°id left 1)&(lower°id right length-1) // name?
+
+join == ( (isatom°[0])->'_undef|(isatom°tail°[0])->(head°[0])|
+          ((([0]°[0])&[1]&[1]°[0]),tail°tail°[0]) join [1])°ee
+
+split == reverse°[0]
+         °( (ispos°length°[1])->*( (iszero°[0])->(([2],[1]),"",[3],)|
+            ((substring°[2],1,(pred°[0]),),[1]),(substring°[2],([0]+length°[3]),((length°[2])-[0]),),[3],)
+                                 °([1] indexof [2]),id)°(),ee // Bug? in length0
+
+repeat == [0]°((ispos°[2])->*([0]&[1]),[1],(pred°[2]),) ° "",ee // round?
+
+// delete == (substring°[0],1,(pred°[1]),)&(substring°[0],([1]+[2]),((length°[0])-pred°[1]+[2]),) // str,i,len, // name?
+// str delete i,len,
+delete == ((substring°[0],1,(pred°[0]°[1]),)&(substring°[0],(+°[1]),((length°[0])-pred°+°[1]),))°ee
+
+// str insert i,s,
+insert == ((substring°[0],1,([0]°[1]),)&([1]°[1])&(substring°[0],(succ°[0]°[1]),((length°[0])-[0]°[1]),))°ee
+
+unpack == [2]°(([1]>'0)->*[0],(pred°[1]),((substring°[0],[1],'1,),[2]),)°id,length,(), // ispos?
+pack == isatom->' ""|(concat \)
+
+csvtomatrix == (((value aa)°id split ",") aa)°id split (char°13)&(char°10)
+
+// ifcases ... (?)
+ifnull == (prop°(('isnull comp top),'->,pop,)°term) app arg
+ifprop == (prop°(('isprop comp top),'->,pop,)°term) app arg
+
+?? == ((not°isnull°[1])->[1]|((pop°term) app arg)°[0])°id ee (top°term) app arg
+
+//to ,upto ,downto ...
+to == (([0]<=[1])->upto|downto)°ee
+
+upto   == reverse°[0]°(([1]<=[2])->*([1],[0]),(succ°[1]),[2],)°(),ee
+downto == reverse°[0]°(([1]>=[2])->*([1],[0]),(pred°[1]),[2],)°(),ee
+
+swap == [1],[0],pop°pop
+
+// ((f0 eea f1 _s) _combine .. xx) ,eea?name
+eea == (tag='_combine)->(((top°term) app arg),((pop°term) app arg),arg,)|id // tag?
+
+// (t hastag):x
+hastag == (tag°arg)=top°term
+
+zero == [zero] fn isreal -> 0 | isint -> '[0] | isbool -> 'false | fail
+one  == [one]  fn isreal -> 1 | isint -> '[1] | isbool -> 'true  | fail
+
+
+// (CC0)
