@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<CONFIG>
-  <Compiler Value="c:\lazarus\fpc\3.2.2\bin\i386-win32\fpc.exe" Date="1411536589"/>
-  <Params Value=" -MObjFPC -Scghi -O1 -WG -l -vewnhibq -FiC:\users\stefan\Desktop\pointfrip-main\source-for-lazarus\lib\i386-win32 -Fuc:\lazarus\lcl\units\i386-win32\win32 -Fuc:\lazarus\lcl\units\i386-win32 -Fuc:\lazarus\components\freetype\lib\i386-win32 -Fuc:\lazarus\components\lazutils\lib\i386-win32 -Fuc:\lazarus\packager\units\i386-win32 -FuC:\users\stefan\Desktop\pointfrip-main\source-for-lazarus\ -FUC:\users\stefan\Desktop\pointfrip-main\source-for-lazarus\lib\i386-win32\ -FEC:\users\stefan\Desktop\pointfrip-main\source-for-lazarus\ -oC:\users\stefan\Desktop\pointfrip-main\source-for-lazarus\pointfrip.exe -dLCL -dLCLwin32 pointfrip.lpr"/>
-</CONFIG>
