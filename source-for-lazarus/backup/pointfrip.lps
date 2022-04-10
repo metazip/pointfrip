@@ -20,8 +20,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="101"/>
-        <CursorPos X="7" Y="117"/>
+        <TopLine Value="357"/>
+        <CursorPos Y="380"/>
         <UsageCount Value="81"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -163,123 +163,123 @@
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="mathunit.pas"/>
-        <Caret Line="779" Column="37" TopLine="760"/>
+        <Caret Line="784" Column="48" TopLine="757"/>
       </Position1>
       <Position2>
         <Filename Value="mathunit.pas"/>
-        <Caret Line="972" Column="28" TopLine="953"/>
+        <Caret Line="779" Column="37" TopLine="760"/>
       </Position2>
       <Position3>
         <Filename Value="mathunit.pas"/>
-        <Caret Line="840" Column="13" TopLine="827"/>
+        <Caret Line="972" Column="28" TopLine="953"/>
       </Position3>
       <Position4>
         <Filename Value="mathunit.pas"/>
-        <Caret Line="841" Column="16" TopLine="827"/>
+        <Caret Line="840" Column="13" TopLine="827"/>
       </Position4>
       <Position5>
         <Filename Value="mathunit.pas"/>
-        <Caret Line="844" Column="32" TopLine="827"/>
+        <Caret Line="841" Column="16" TopLine="827"/>
       </Position5>
       <Position6>
         <Filename Value="mathunit.pas"/>
-        <Caret Line="845" Column="56" TopLine="827"/>
+        <Caret Line="844" Column="32" TopLine="827"/>
       </Position6>
       <Position7>
         <Filename Value="mathunit.pas"/>
-        <Caret Line="849" Column="46" TopLine="827"/>
+        <Caret Line="845" Column="56" TopLine="827"/>
       </Position7>
       <Position8>
         <Filename Value="mathunit.pas"/>
-        <Caret Line="856" Column="50" TopLine="827"/>
+        <Caret Line="849" Column="46" TopLine="827"/>
       </Position8>
       <Position9>
         <Filename Value="mathunit.pas"/>
-        <Caret Line="844" Column="33" TopLine="827"/>
+        <Caret Line="856" Column="50" TopLine="827"/>
       </Position9>
       <Position10>
         <Filename Value="mathunit.pas"/>
-        <Caret Line="849" Column="63" TopLine="821"/>
+        <Caret Line="844" Column="33" TopLine="827"/>
       </Position10>
       <Position11>
         <Filename Value="mathunit.pas"/>
-        <Caret Line="993" Column="26" TopLine="973"/>
+        <Caret Line="849" Column="63" TopLine="821"/>
       </Position11>
       <Position12>
         <Filename Value="mathunit.pas"/>
-        <Caret Line="857" Column="12" TopLine="842"/>
+        <Caret Line="993" Column="26" TopLine="973"/>
       </Position12>
       <Position13>
         <Filename Value="mathunit.pas"/>
-        <Caret Line="858" Column="16" TopLine="842"/>
+        <Caret Line="857" Column="12" TopLine="842"/>
       </Position13>
       <Position14>
         <Filename Value="mathunit.pas"/>
-        <Caret Line="861" Column="32" TopLine="842"/>
+        <Caret Line="858" Column="16" TopLine="842"/>
       </Position14>
       <Position15>
         <Filename Value="mathunit.pas"/>
-        <Caret Line="862" Column="56" TopLine="842"/>
+        <Caret Line="861" Column="32" TopLine="842"/>
       </Position15>
       <Position16>
         <Filename Value="mathunit.pas"/>
-        <Caret Line="866" Column="46" TopLine="842"/>
+        <Caret Line="862" Column="56" TopLine="842"/>
       </Position16>
       <Position17>
         <Filename Value="mathunit.pas"/>
-        <Caret Line="870" Column="34" TopLine="842"/>
+        <Caret Line="866" Column="46" TopLine="842"/>
       </Position17>
       <Position18>
         <Filename Value="mathunit.pas"/>
-        <Caret Line="868" Column="59" TopLine="844"/>
+        <Caret Line="870" Column="34" TopLine="842"/>
       </Position18>
       <Position19>
         <Filename Value="mathunit.pas"/>
-        <Caret Line="874" Column="12" TopLine="855"/>
+        <Caret Line="868" Column="59" TopLine="844"/>
       </Position19>
       <Position20>
         <Filename Value="mathunit.pas"/>
-        <Caret Line="875" Column="16" TopLine="855"/>
+        <Caret Line="874" Column="12" TopLine="855"/>
       </Position20>
       <Position21>
         <Filename Value="mathunit.pas"/>
-        <Caret Line="878" Column="32" TopLine="855"/>
+        <Caret Line="875" Column="16" TopLine="855"/>
       </Position21>
       <Position22>
         <Filename Value="mathunit.pas"/>
-        <Caret Line="879" Column="56" TopLine="855"/>
+        <Caret Line="878" Column="32" TopLine="855"/>
       </Position22>
       <Position23>
         <Filename Value="mathunit.pas"/>
-        <Caret Line="883" Column="46" TopLine="855"/>
+        <Caret Line="879" Column="56" TopLine="855"/>
       </Position23>
       <Position24>
         <Filename Value="mathunit.pas"/>
-        <Caret Line="889" Column="48" TopLine="859"/>
+        <Caret Line="883" Column="46" TopLine="855"/>
       </Position24>
       <Position25>
         <Filename Value="mathunit.pas"/>
-        <Caret Line="879" Column="56" TopLine="861"/>
+        <Caret Line="889" Column="48" TopLine="859"/>
       </Position25>
       <Position26>
-        <Filename Value="primunit.pas"/>
-        <Caret Line="8" Column="15"/>
+        <Filename Value="mathunit.pas"/>
+        <Caret Line="879" Column="56" TopLine="861"/>
       </Position26>
       <Position27>
-        <Filename Value="guiunit.pas"/>
-        <Caret Line="454" Column="81"/>
+        <Filename Value="primunit.pas"/>
+        <Caret Line="8" Column="15"/>
       </Position27>
       <Position28>
         <Filename Value="guiunit.pas"/>
-        <Caret Line="453" Column="81" TopLine="419"/>
+        <Caret Line="454" Column="81"/>
       </Position28>
       <Position29>
         <Filename Value="guiunit.pas"/>
-        <Caret Line="143" Column="9" TopLine="129"/>
+        <Caret Line="453" Column="81" TopLine="419"/>
       </Position29>
       <Position30>
         <Filename Value="guiunit.pas"/>
-        <Caret Line="380" TopLine="357"/>
+        <Caret Line="143" Column="9" TopLine="129"/>
       </Position30>
     </JumpHistory>
     <RunParams>

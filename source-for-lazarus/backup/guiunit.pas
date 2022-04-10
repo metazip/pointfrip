@@ -114,7 +114,7 @@ type
     procedure undoitemClick(Sender: TObject);
     procedure websiteitemClick(Sender: TObject);
     procedure FormIdle(Sender: TObject; var Done: Boolean);
-    //procedure wikibuttonClick(Sender: TObject);
+    procedure wikibuttonClick(Sender: TObject);
   private
 
   public
