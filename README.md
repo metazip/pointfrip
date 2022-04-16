@@ -24,11 +24,11 @@ possibility to work with tables like in [trivia](https://esolangs.org/wiki/FP_tr
     --> "BACKUS"
 
 [Reference.pdf](https://github.com/metazip/pointfrip/blob/main/examples/documents/reference.pdf) \
-[Quickinfo.pdf](https://github.com/metazip/pointfrip/blob/main/examples/documents/quickinfo.pdf)
+[Quickinfo.pdf](https://github.com/metazip/pointfrip/blob/main/examples/documents/quickinfo.pdf) (german)
 
 
 Leave a feedback on [pointfrip wiki](http://162.248.51.100/~pointfre/wiki/doku.php)
 
-or
+  or
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/pointfrip)
