@@ -25,3 +25,5 @@ possibility to work with tables like in [trivia](https://esolangs.org/wiki/FP_tr
 
 
 [pointfrip wiki](http://162.248.51.100/~pointfre/wiki/doku.php)
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/pointfrip)
