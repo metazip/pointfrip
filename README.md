@@ -2,6 +2,9 @@
 **pointfree interpreter in lazarus**
  
  
+![screenshot](https://raw.githubusercontent.com/metazip/pointfrip/main/tahomapointfrip.png)
+  
+  
 combinator-style like [FP](https://dl.acm.org/doi/pdf/10.1145/359576.359579) from John Backus
 
     ip ≡ (+ \) ° (* aa) ° trans ° ee
