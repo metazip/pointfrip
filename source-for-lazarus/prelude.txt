@@ -1,5 +1,4 @@
-﻿welcome ° 
-'("prelude.txt" loaded)
+﻿welcome ° '("prelude.txt" loaded)
 
 coreimport == "library\standard.txt";
               "library\object.txt";

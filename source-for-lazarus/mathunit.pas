@@ -62,6 +62,7 @@ var idxadd: cardinal = xnil;
     idxartanh: cardinal = xnil;
     idxdeg: cardinal = xnil;
     idxrad: cardinal = xnil;
+    idxhex: cardinal = xnil;
     //
     idneg: cardinal = xnil;
 
@@ -981,6 +982,22 @@ procedure frgb;//?
 begin//
 end;
 
+procedure fhex;//ifprefix?
+begin einf:=infix[etop];
+      if      (einf=xreal)    then
+         try etop:=newstring(inttohex(round(cell[etop].fnum),0))
+         except on ematherror do etop:=newerror(idxhex,efnmatherror)
+                else raise
+         end
+      else if (einf=xinteger) then etop:=newstring(inttohex(cell[etop].inum,0))
+      else if (einf=xobject)  then fn(idxhex)
+      else if (einf=xerror)   then //(exit)
+      //else if ((infix[einf]=xident) and (cell[einf].value<>xreserve)) then
+      //   ifn(idx)
+      else etop:=newerror(idxhex,efnnonum);//? idxname
+      einf:=xnil
+end;
+
 // ------- math initialization -------
 
 procedure initmathidents;
@@ -1033,6 +1050,7 @@ begin //
       idxartanh:=newindex('artanh');
       idxdeg:=newindex('deg');
       idxrad:=newindex('rad');
+      idxhex:=newindex('hex');
       //
 end;
 
@@ -1092,6 +1110,7 @@ begin //
       newidentproc('artanh',@fartanh);
       newidentproc('deg',@fdeg);
       newidentproc('rad',@frad);
+      newidentproc('hex',@fhex);
       //
 end;
 

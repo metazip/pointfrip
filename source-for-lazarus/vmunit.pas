@@ -1034,7 +1034,7 @@ begin {if (infix[etop]=xarray) then begin//ep^ verwenden (?)
       if (einf>=xlimit)     then begin
          if (n>0) then begin dec(n);
                              etop:=cell[etop].rest;
-                             goto re//continue
+                             goto re //continue
                        end
                   else etop:=cell[etop].first
       end

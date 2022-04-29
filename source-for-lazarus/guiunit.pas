@@ -39,6 +39,7 @@ type
     iomemo: TMemo;
     getmemo: TMemo;
     helpbutton: TSpeedButton;
+    wikibutton: TSpeedButton;
     splitpanel: TPanel;
     quititem: TMenuItem;
     N3item: TMenuItem;
@@ -114,7 +115,7 @@ type
     procedure undoitemClick(Sender: TObject);
     procedure websiteitemClick(Sender: TObject);
     procedure FormIdle(Sender: TObject; var Done: Boolean);
-    //procedure wikibuttonClick(Sender: TObject);
+    procedure wikibuttonClick(Sender: TObject);
   private
 
   public
@@ -140,7 +141,7 @@ const pixelinpopupmenu = 12;//14;//in servunit;//0=linux?
       docufiledef: es = 'documentation.pdf';//bitte .pdf
       helpfiledef: es = 'reference.pdf';//bitte .pdf
       website_url: es = 'https://github.com/metazip/pointfrip';//?
-      //webwiki_url: es = 'http://162.248.51.100/~pointfre/fp';
+      webwiki_url: es = 'http://162.248.51.100/~pointfre/fp';
       testfiledef: es = 'test.txt';
       redefine: es = 'redefine';
       filenotfound: es = 'File not found.';
@@ -370,13 +371,11 @@ begin try servereact; Done:=serveidledone;
       end// fios mit idle//
 end;
 
-{
 procedure TguiForm.wikibuttonClick(Sender: TObject);
 begin try serverun(webwiki_url)
       except on e: exception do errordialog(e.message)
       end//
 end;
-}
 
 {
 procedure TuiForm.FormIdle(Sender: TObject; var Done: Boolean);
