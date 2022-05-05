@@ -32,4 +32,4 @@ If you like pointfrip, leave a feedback on [pointfrip wiki](http://162.248.51.10
 
   or
 
-[Donate!](https://pf-system.github.io/Page3.html)
+[Donate](https://pf-system.github.io/Page3.html)
