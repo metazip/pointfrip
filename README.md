@@ -32,5 +32,4 @@ If you like pointfrip, leave a feedback on [pointfrip wiki](http://162.248.51.10
 
   or
 
-#[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/pointfrip)
 [Donate!](https://pf-system.github.io/Page3.html)
