@@ -1,5 +1,5 @@
 # pointfrip
-**pointfree interpreter in lazarus**
+**pointfree interpreter with classes in lazarus**
  
  
 ![screenshot](https://raw.githubusercontent.com/metazip/pointfrip/main/tahomapointfrip.png)
