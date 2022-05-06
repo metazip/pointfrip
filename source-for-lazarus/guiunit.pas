@@ -39,7 +39,6 @@ type
     iomemo: TMemo;
     getmemo: TMemo;
     helpbutton: TSpeedButton;
-    wikibutton: TSpeedButton;
     splitpanel: TPanel;
     quititem: TMenuItem;
     N3item: TMenuItem;
@@ -115,7 +114,7 @@ type
     procedure undoitemClick(Sender: TObject);
     procedure websiteitemClick(Sender: TObject);
     procedure FormIdle(Sender: TObject; var Done: Boolean);
-    procedure wikibuttonClick(Sender: TObject);
+    //procedure wikibuttonClick(Sender: TObject);
   private
 
   public
@@ -135,19 +134,19 @@ uses serveunit, errorunit, initunit, typeunit;
 const pixelinpopupmenu = 12;//14;//in servunit;//0=linux?
       documents: es = 'documents\';
       inifiledef : es = 'pointfrip.ini';//name?
-      corefiledef: es = 'prelude.txt';
+      corefiledef: es = 'prelude.txt';                 // namen flexibler machen
       memofiledef: es = 'Document.txt';
       infofiledef: es = 'quickinfo.pdf';//bitte .pdf
       docufiledef: es = 'documentation.pdf';//bitte .pdf
       helpfiledef: es = 'reference.pdf';//bitte .pdf
-      website_url: es = 'https://github.com/metazip/pointfrip';//?
-      webwiki_url: es = 'http://162.248.51.100/~pointfre/fp';
+      website_url: es = 'https://pf-system.github.io';//?
+      //webwiki_url: es = 'http://162.248.51.100/~pointfre/fp';
       testfiledef: es = 'test.txt';
       redefine: es = 'redefine';
       filenotfound: es = 'File not found.';
       noparamfilename: es ='No parameter file.';//param?
       noinifilename: es = 'No inifile name.';
-      guisection = 'FPForm';//?;
+      guisection = 'PFForm';//?;
       x0 = 'x0';
       y0 = 'y0';
       dx = 'dx';
@@ -371,11 +370,13 @@ begin try servereact; Done:=serveidledone;
       end// fios mit idle//
 end;
 
+{
 procedure TguiForm.wikibuttonClick(Sender: TObject);
 begin try serverun(webwiki_url)
       except on e: exception do errordialog(e.message)
       end//
 end;
+}
 
 {
 procedure TuiForm.FormIdle(Sender: TObject; var Done: Boolean);

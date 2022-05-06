@@ -560,6 +560,11 @@ procedure fit;
 begin apiget(idxit,etop,xit)// if_undef?
 end;
 
+procedure fpointersize;//provi(?)
+begin if (infix[etop]=xerror) then exit;
+      etop:=newinteger(sizeof(pcardmem)*8)
+end;
+
 // ------- initialization of the runtime primitives -------
 
 var pcounter: int64;
@@ -646,6 +651,7 @@ begin for i:=0 downto minproc do proc[i]:=@fundef;// to -1 (?)
       newidentproc('gc',@fgc);
       newidentproc('termoarg',@ftermoarg);
       newidentproc('it',@fit);//system-result
+      newidentproc('pointersize',@fpointersize);
       //
 end;
 

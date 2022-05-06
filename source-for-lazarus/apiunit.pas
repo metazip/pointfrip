@@ -51,7 +51,7 @@ const //
       ecomnopostbracket: es    = 'precom: closing bracket missing.';
       ecomnostringend: es      = 'precom: string has no ending (").';
       //table
-      ecomtableunexpend: es  = 'precom: unexpected end in table.';
+      ecomtableunexpend: es    = 'precom: unexpected end in table.';
       ecomparentend: es        = 'precom: no opening "(" for ending ")".';
       ecomarrayend: es         = 'precom: no opening "{" for ending "}".';
       ecomddotnotoinfix: es    = 'precom: ddot (..) not allowed at infix position.';
@@ -74,7 +74,7 @@ const //
       ecomvarunexpend: es      = 'unexpected end in ivar (#).';//???precom?
       ecomivarunexpddot: es    = 'ddot (..) used in ivar (#).';//???;precom?
       //
-      ecomdefnoident: es       = 'precom: ddefinition without previous ident.';
+      ecomdefnoident: es       = 'precom: definition without previous ident.';
       //
       //postcom...
       ecomdoubledef: es        = 'postcom: double definition sign.';//???
@@ -83,9 +83,9 @@ const //
       epostcomforddotnoend: es = 'postcom: ddot (..) not used in the end.';//???
       //
       // ------- errors interpreter -------
-      eiproutofarray: es   = 'access is outside the array';
+      eiproutofarray: es      = 'access is outside the array';
       eiprnotinrange: es      = 'access is out of table';//???table - sequence
-      eiprnotable: es       = 'access requires table';//???table - sequence
+      eiprnotable: es         = 'access requires table';//???table - sequence
       eiprunquoted: es        = 'type is not quoted';//?
       eiprfuncundef: es       = 'function is undefined';
       eipridentunbound: es    = 'ident is not bound';
@@ -93,12 +93,12 @@ const //
       // ------- errors primunit -------
       efuncundef: es         = 'function is not defined.';
       enoprocmemerror: es    = 'not enough memory for proc.';
-      eselnotfound: es      = 'selector in (super-)class not found: ';//??? ,class?
+      eselnotfound: es       = 'selector in (super-)class not found: ';//??? ,class?
       //neu anpassen!
       einfnoprop: es         = 'infix is no prop-syntax.';//???;
-      efnnocons: es = 'list of cons expected in function.';//???
-      eopnocons: es = 'list of cons expected in operator.';//???
-      efnnosafeinfix: es = 'infix is not safe.';//???
+      efnnocons: es          = 'list of cons expected in function.';//???
+      eopnocons: es          = 'list of cons expected in operator.';//???
+      efnnosafeinfix: es     = 'infix is not safe.';//???
       //ändern?
       efnconsexpect: es      = 'cons-list expected.';//oder einfnoprop nehmen?
       efnnocombine: es       = 'for function combine expected.';//?
@@ -106,14 +106,14 @@ const //
       //
       // ------- errors combiunit -------
       //
-      eopaltexpect: es = 'alternal for operand[1] expected.';
+      eopaltexpect: es       = 'alternal for operand[1] expected.';
       //noch nötig?:
       eopconsexpect2: es     = 'cons-list for operand[1] expected.';
       //
       // ------- errors boolunit -------
       eltnocompare: es       = 'type compare not be able.';//???
       eltnostring: es        = 'idents are defect.';//???;
-      efnnobound: es = 'for function ident or prefix expected.';//? prefix?
+      efnnobound: es         = 'for function ident or prefix expected.';//? prefix?
       //
       //nachfolgendes löschen?
       etermnoprop: es        = 'term has no prop-syntax.';//???
@@ -141,33 +141,33 @@ const //
       efnmatherror: es       = 'math error in function.';
       //
       //
-      efnrounderror: es = 'round error in function.';//???
-      eop2rounderror: es = 'round error in operand[1].';
-      eop2notinrange: es = 'operand[1] not in range.';// _20 .. 20
+      efnrounderror: es      = 'round error in function.';//???
+      eop2rounderror: es     = 'round error in operand[1].';
+      eop2notinrange: es     = 'operand[1] not in range.';// _20 .. 20
       //
       // ------- errors stringunit -------
-      efnnostring1: es   = 'string as argument[0] expected.';
-      efnnonum2: es      = 'number as argument[1] expected.';
-      efnnonum3: es      = 'number as argument[2] expected.';
-      efnstringnoval: es = 'string has no reference.';//???
+      efnnostring1: es       = 'string as argument[0] expected.';
+      efnnonum2: es          = 'number as argument[1] expected.';
+      efnnonum3: es          = 'number as argument[2] expected.';
+      efnstringnoval: es     = 'string has no reference.';//???
       //
       eopnostring1: es       = 'for operand[0] string expected.';
       eopnostring2: es       = 'for operand[1] string expected.';
       //
-      echarnotinrange: es = 'number between 0 and 65535 expected.';//???
+      echarnotinrange: es    = 'number between 0 and 65535 expected.';//???
       //
-      efnstringnull: es = 'for function nonempty string expected.';
+      efnstringnull: es      = 'for function nonempty string expected.';
       //
-      efnnostring: es    = 'for function string expected.';
+      efnnostring: es        = 'for function string expected.';
       //
       // ------- errors actunit -------
-      eopmutnoreserve: es = 'ident or prefix is not _reserve.';//??? name???
-      eopnomutable: es = 'ident or prefix as _self expected.';
+      eopmutnoreserve: es    = 'ident or prefix is not _reserve.';//??? name???
+      eopnomutable: es       = 'ident or prefix as _self expected.';
       //
       //
       // ------- react -------
       //
-      ereactnobind: es = '_bind not found.';//???
+      ereactnobind: es       = '_bind not found.';//???
       //
       //
       // ------- api-constants & types -------
