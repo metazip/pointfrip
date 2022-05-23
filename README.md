@@ -44,3 +44,5 @@ If you like pointfrip, leave a feedback on [pointfrip wiki](http://162.248.51.10
 **Turing Award Lecture**
 
 ![backus-fp-adventages](https://github.com/metazip/pointfrip/blob/main/backus-fp/backusfpadvantages.png)
+![fpsystem-1](https://github.com/metazip/pointfrip/blob/main/backus-fp/fpsystem1.png)
+![fpsystem-2](https://github.com/metazip/pointfrip/blob/main/backus-fp/fpsystem2.png)
