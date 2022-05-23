@@ -24,8 +24,9 @@ possibility to work with tables like in [trivia](https://esolangs.org/wiki/FP_tr
     --> "BACKUS"
 
 [Reference.pdf](https://github.com/metazip/pointfrip/blob/main/examples/documents/reference.pdf) \
-[Quickinfo.pdf](https://github.com/metazip/pointfrip/blob/main/examples/documents/quickinfo.pdf) (german)\
+[Quickinfo.pdf](https://github.com/metazip/pointfrip/blob/main/examples/documents/quickinfo.pdf) (german)
 
+  
 
 **Structured Programming -- a Kind of Low-Code**
 
@@ -37,12 +38,13 @@ possibility to work with tables like in [trivia](https://esolangs.org/wiki/FP_tr
 
 ![backus-fp-adventages](https://github.com/metazip/pointfrip/blob/main/backus-fp/backusfpadvantages.png)\
 ![fpsystem-1](https://github.com/metazip/pointfrip/blob/main/backus-fp/fpsystem1.png)\
-![fpsystem-2](https://github.com/metazip/pointfrip/blob/main/backus-fp/fpsystem2.png)\
+![fpsystem-2](https://github.com/metazip/pointfrip/blob/main/backus-fp/fpsystem2.png)
 
+  
 
 If you like pointfrip, leave a feedback on [pointfrip wiki](http://162.248.51.100/~pointfre/wiki/doku.php)
 
-or
+  or
 
 [Donate](https://pf-system.github.io/Page3.html)
 
