@@ -1,5 +1,5 @@
 # pointfrip
-**pointfree interpreter with classes in lazarus**
+**Pointfree Interpreter with Classes in Lazarus**
  
  
 ![screenshot](https://raw.githubusercontent.com/metazip/pointfrip/main/tahomapointfrip.png)
@@ -29,19 +29,17 @@ possibility to work with tables like in [trivia](https://esolangs.org/wiki/FP_tr
   
   
 If you like pointfrip, leave a feedback on [pointfrip wiki](http://162.248.51.100/~pointfre/wiki/doku.php)
-
   or
+[Donate](https://pf-system.github.io/Page3.html)\
 
-[Donate](https://pf-system.github.io/Page3.html)
 
-
-**structured programming -- a kind of low-code**
+**Structured Programming -- a Kind of Low-Code**
 
 ![backus-fp1](https://github.com/metazip/pointfrip/blob/main/backus-fp/backusfp1.png)\
 ![backus-fp2](https://github.com/metazip/pointfrip/blob/main/backus-fp/backusfp2.png)
 
 
-**Turing Award Lecture**
+**John Backus Turing Award Lecture**
 
 ![backus-fp-adventages](https://github.com/metazip/pointfrip/blob/main/backus-fp/backusfpadvantages.png)\
 ![fpsystem-1](https://github.com/metazip/pointfrip/blob/main/backus-fp/fpsystem1.png)\
