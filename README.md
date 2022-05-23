@@ -1,4 +1,4 @@
-# pointfrip
+## pointfrip
 **Pointfree Interpreter with Classes in Lazarus**
  
  
@@ -27,7 +27,7 @@ possibility to work with tables like in [trivia](https://esolangs.org/wiki/FP_tr
 [Quickinfo.pdf](https://github.com/metazip/pointfrip/blob/main/examples/documents/quickinfo.pdf) (german)
 
 
-## Structured Programming -- a Kind of Low-Code
+### Structured Programming -- a Kind of Low-Code
 
 ![backus-fp1](https://github.com/metazip/pointfrip/blob/main/backus-fp/backusfp1.png)\
 ![backus-fp2](https://github.com/metazip/pointfrip/blob/main/backus-fp/backusfp2.png)
@@ -40,9 +40,9 @@ possibility to work with tables like in [trivia](https://esolangs.org/wiki/FP_tr
 ![fpsystem-2](https://github.com/metazip/pointfrip/blob/main/backus-fp/fpsystem2.png)
 
 
-## Comments
+### Comments
 
 If you like pointfrip, leave a comment on [pointfrip wiki](http://162.248.51.100/~pointfre/wiki/doku.php)
-or
+or maybe
 [Donate](https://pf-system.github.io/Page3.html)
 
