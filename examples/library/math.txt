@@ -7,4 +7,4 @@ integral == [0]°(([2]<[3])->*([0]+[4]*[1]app[2]),[1],([2]+[4]),[3],[4],)°('0,[
 dd == ((([0] app [1]+[2]) - [0] app [1])/[2])°(top°term),arg,((pop°term)app),
 
 
-// (CC0)
+// GNU Lesser General Public License v2.1

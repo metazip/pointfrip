@@ -14,4 +14,4 @@
 ι ≡ .. iota
 
 
-// (CC0)
+// GNU Lesser General Public License v2.1
