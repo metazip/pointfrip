@@ -1,4 +1,4 @@
-﻿unit stringunit;//ok
+﻿unit stringunit;
 
 {$mode objfpc}{$H+}
 
@@ -332,7 +332,7 @@ end;
 //string
 //
 
-// ------- initialization -------
+// ------------------------------ initialization -------------------------------
 
 procedure initstringidents;
 begin //
@@ -382,4 +382,7 @@ begin //
 end;
 
 end.
+
+
+// GNU Lesser General Public License v2.1
 

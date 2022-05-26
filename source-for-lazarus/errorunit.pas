@@ -46,3 +46,6 @@ end;
 
 end.
 
+
+// GNU Lesser General Public License v2.1
+

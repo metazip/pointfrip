@@ -12,4 +12,4 @@ _error == .. { [interpreter] == .. "einterpreter"
                [run]      == .. erun}
 
 
-// (CC0)
+// GNU Lesser General Public License v2.1

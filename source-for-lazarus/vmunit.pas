@@ -12,7 +12,7 @@ type //
      boolset = array [0..255] of boolean;
      fpexception = class(exception);//???genauer gucken;
 
-var ecall: longint = 0;//typ?
+var ecall: longint = 0; // typ?
     equit: boolean = true;
     fpformatsettings: tformatsettings;
 
@@ -47,10 +47,10 @@ const normalset: ansistring = '_.0123456789' +                    //ansistring?
                   'åæðëœøšÿžµÞ';
       specialset: ansistring = '()[]{}»«,;°'+qot1+qot2+sharp+prefix+compose;// idy special? , ; special?; ?type...//;
 
-var eproc: array [0..xlimit] of fproc;
+var eproc: array [0..elimit] of fproc;
     normal,special: boolset;
 
-// ----- table-to-string-output -----
+// -------------------------- table-to-string-output ---------------------------
 
 const propformat = ffGeneral;
       maxdigits = 16;
@@ -137,7 +137,7 @@ begin if (i=xnil) then tovalue:='( )'
            end
 end;
 
-// ----- scanner -----
+// ---------------------------------- scanner ----------------------------------
 
 {function item(var s: ustring;var i: int64): ustring; //longint?
 // i entspricht selstart
@@ -206,7 +206,7 @@ begin inc(i);
       dec(i)
 end;
 
-// ----- precompiler -----
+// -------------------------------- precompiler --------------------------------
 
 procedure nreverse(var n: cardinal);
 var p,reseq: cardinal;
@@ -280,7 +280,7 @@ var it: ustring;
     end;
 
     // comindt nochmal ganz überarbeiten!!!
-	  procedure comindt;// syntax nochmal durchgehen...
+    procedure comindt;// syntax nochmal durchgehen...
     var inum: int64;
         errcode: longint;// cardinal???
         numstr: ustring;
@@ -888,7 +888,7 @@ begin try ix:=0;
       end
 end;
 
-//----- postcompiler -----
+// ------------------------------- postcompiler --------------------------------
 
 function reverselisttostring(i: cardinal): ustring;//name???
 var s,sp: ustring; //sp: string[1];
@@ -1000,7 +1000,7 @@ begin repeat equit:=true
 end;
 }
 
-// ----- AST-interpreter -----
+// ------------------------------ AST-interpreter ------------------------------
 //von Phi kopiert + infix
 //
 // für eine schachtelbare Sprache (strukturierte Programmierung)
@@ -1018,10 +1018,9 @@ var ep: pcardmem;
     eid: cardinal;
     eindex: int64;   //eint(?);
 
-// ------- basic integer selector -------
+// -------------------------- basic integer selector ---------------------------
 
-//ifprefix?
-procedure select(n: int64);//bitte ohne parameter (?) - nein!
+procedure select(n: int64);//ifprefix?
 label re;
 begin {if (infix[etop]=xarray) then begin//ep^ verwenden (?)
          if (eindex<length(cell[etop].aref^)) then
@@ -1029,7 +1028,6 @@ begin {if (infix[etop]=xarray) then begin//ep^ verwenden (?)
          else etop:=newexc(xeinterp,eintpidxoutofrange);
          exit
       end;}
-      //re:   !!!
   re: einf:=infix[etop];
       if (einf>=xlimit)     then begin
          if (n>0) then begin dec(n);
@@ -1047,7 +1045,7 @@ begin {if (infix[etop]=xarray) then begin//ep^ verwenden (?)
          etop:=newerror(idxipr,eiprnotinrange+' - ['+inttostr(eindex)+']')
       //else if (einf=xlink)  then etop:=cell[etop].value
       //else if (einf=xlazy)  then delazy
-      else if (einf=xerror) then //(exit)   //???
+      else if (einf=xerror) then //(exit)
       else etop:=newerror(idxipr,eiprnotable+' - '+tovalue(etop))
            //? ,atome(?) (<=xmaxatom)
       //if (infix[etop]<=xmaxatom) then break
@@ -1073,21 +1071,23 @@ procedure eidentunbound;
 begin etop:=newerror(idxipr,eipridentunbound+': '+tovalue(eid)+' ')
 end;
 
-// ----- typen-orientierter Automat (higher-order)
+// ----------------- typen-orientierter Automat (higher-order) -----------------
 procedure eval;
+label re;
 begin ecall:=0;
       repeat equit:=true;
-         einf:=infix[efun];
-         if (einf <= xlimit) then eproc[einf]
-         else begin if (einf=xsingle) then efun:=cell[efun].first
-                    else begin etop:=prop(efun,xcombine,etop); efun:=einf end;
-                    equit:=false
-              end
+         re: einf:=infix[efun];
+             if (einf <= elimit) then eproc[einf] // jumptable
+             else begin etop:=prop(efun,xcombine,etop);
+                        efun:=einf;
+                        goto re;
+                        equit:=false // goto re?
+                  end
       until equit
 end;// term und arg sind jetzt vertauscht
 
 procedure exnull;
-begin etop:=efun  //xnil
+begin etop:=efun  //xnil    // ifxerror?
 end;
 
 procedure exinteger;
@@ -1107,7 +1107,7 @@ begin;end;
 procedure exident;
 begin eid:=efun;
       efun:=cell[efun].value;
-      if (infix[efun]=xinteger) then begin
+      if (infix[efun]=xinteger) then begin // for prim tempo
          eindex:=cell[efun].inum;
          if      (eindex>=0)       then select(eindex)
          else if (eindex>=minproc) then ecall:=eindex//exit:equit:=true-->proc[eindex]
@@ -1137,11 +1137,19 @@ begin etop:=xnil//?
 end;
 //etop:=newerror(idxintp,'provi: xnil in infixposition...');end;//etop:=einf(?)//
 
-// ------- (e)interpreter initialization -------
+procedure excons;
+begin;end;
+
+procedure exsingle;
+begin efun:=cell[efun].first;
+      equit:=false
+end;
+
+// ----------------------- (e)interpreter initialization -----------------------
 
 procedure initeproc;
 var i: longint;
-begin for i:=0 to xlimit do eproc[i]:=@eunquoted;
+begin for i:=0 to elimit do eproc[i]:=@eunquoted;
       eproc[xnull]   :=@exnull;
       eproc[xinteger]:=@exinteger;
       eproc[xreal]   :=@enonquote;//?
@@ -1152,7 +1160,9 @@ begin for i:=0 to xlimit do eproc[i]:=@eunquoted;
     //xchar
       eproc[xarray]  :=@enonquote;//?
       eproc[xerror]  :=@exerror;
-      eproc[xnil]    :=@exnil;      //xlimit
+      eproc[xnil]    :=@exnil;
+      eproc[xcons]   :=@enonquote;// for tempo
+      eproc[xsingle] :=@exsingle; // for tempo    //elimit
     //x_type?...e_type
 end;
 
@@ -1381,7 +1391,7 @@ begin epush(etop);
       etop:=efun//so richtig?
 end;
 
-// ------- vm initialization -------
+// ----------------------------- vm initialization -----------------------------
 
 procedure initcharset(var tab: boolset; s: unicodestring);//--> charinset
 var i: cardinal;
@@ -1411,4 +1421,6 @@ end;
 
 end.
 
+
+// GNU Lesser General Public License v2.1
 

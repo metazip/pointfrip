@@ -1,4 +1,4 @@
-﻿unit combiunit;//ok
+﻿unit combiunit;
 
 {$mode objfpc}{$H+}
 
@@ -28,7 +28,7 @@ var //
 // ------- legacy -------
 //const einfnoprop: es         = 'infix is no prop-syntax.';//???;doppelt
 
-// ------- infix-combinators -------
+// ----------------------------- infix-combinators -----------------------------
 //
 // higher-order Funktionen (Bezug auf eval)
 //
@@ -589,7 +589,7 @@ procedure floopif;//?
 begin//
 end;
 
-// ------- combinator initialization -------
+// ------------------------- combinator initialization -------------------------
 
 procedure initcombiidents;
 begin //
@@ -619,4 +619,7 @@ begin //
 end;
 
 end.
+
+
+// GNU Lesser General Public License v2.1
 

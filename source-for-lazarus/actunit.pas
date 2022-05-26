@@ -1,4 +1,4 @@
-﻿unit actunit;//ok
+﻿unit actunit;
 
 {$mode objfpc}{$H+}
 
@@ -328,7 +328,7 @@ end;
 //quit(?)
 //time, date, etc.
 
-// ------- act initialization -------
+// ---------------------------- act initialization -----------------------------
 
 procedure initactprims;
 var i: longint;
@@ -366,4 +366,7 @@ begin for i:=0 to maxproc do proc[i]:=@mundef;
 end;
 
 end.
+
+
+// GNU Lesser General Public License v2.1
 

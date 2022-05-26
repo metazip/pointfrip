@@ -251,7 +251,7 @@ begin if (inifilename='') then exit;
       end//
 end;
 
-// ------- FP scriptor -------
+// -------------------------------- FP scriptor --------------------------------
 
 procedure initgui;
 var mc,ms: int64; txt: ustring;
@@ -355,7 +355,7 @@ begin if (inifilename='') then begin errordialog(noinifilename); exit end;
       end//
 end;
 
-// ----------------------- Fundamental Loop -----------------------------------
+// ----------------------------- Fundamental Loop ------------------------------
 
 procedure TguiForm.FormIdle(Sender: TObject; var Done: Boolean);
 //FormIdle: servreaction ,Fundamental Loop ,(Event-Loop)
@@ -393,12 +393,11 @@ begin try servreaction; Done:=servidledone;
 end;
 }
 
-// ----------------------- Service Functions ----------------------------------
+// ----------------------------- Service Functions -----------------------------
 
 procedure TguiForm.iomemoChange(Sender: TObject);
 begin
-
-      //
+   //
 end;
 
 procedure TguiForm.iomemoDblClick(Sender: TObject);
@@ -406,8 +405,7 @@ begin iomemo.lines.add('')
 end;
 
 procedure TguiForm.iomemoKeyPress(Sender: TObject; var Key: char);
-begin
-  if (key=#13) then begin doit;
+begin if (key=#13) then begin doit;
                               key:=#27;
                               exit
                         end
@@ -666,4 +664,7 @@ begin initmaxcell
 end;
 
 end.
+
+
+// GNU Lesser General Public License v2.1
 

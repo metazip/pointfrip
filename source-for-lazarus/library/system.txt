@@ -88,4 +88,4 @@ io == .. { // [error] ==
 //alle auf _bind testen...
 
 
-// (CC0)
+// GNU Lesser General Public License v2.1

@@ -4183,7 +4183,7 @@ object initForm: TinitForm
     00C0030000E0070000F81F0000
   }
   Position = poScreenCenter
-  LCLVersion = '2.0.12.0'
+  LCLVersion = '2.2.0.4'
   object questlabel: TLabel
     Left = 32
     Height = 18
@@ -4196,7 +4196,6 @@ object initForm: TinitForm
     Font.Name = 'Tahoma'
     Font.Pitch = fpVariable
     Font.Style = [fsBold]
-    ParentColor = False
     ParentFont = False
   end
   object infobevel: TBevel
@@ -4295,7 +4294,6 @@ object initForm: TinitForm
       Font.Color = clWindowText
       Font.Height = -13
       Font.Name = 'Tahoma'
-      ParentColor = False
       ParentFont = False
     end
     object infolabel2: TLabel
@@ -4307,7 +4305,6 @@ object initForm: TinitForm
       Font.Color = clWindowText
       Font.Height = -13
       Font.Name = 'Tahoma'
-      ParentColor = False
       ParentFont = False
     end
   end

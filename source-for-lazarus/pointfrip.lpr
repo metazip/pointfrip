@@ -7,8 +7,8 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, guiunit, errorunit, initunit, serveunit, apiunit, vmunit, actunit, primunit, combiunit, boolunit,
-  mathunit, stringunit, sequnit, typeunit
+  Forms, guiunit, errorunit, initunit, serveunit, apiunit, vmunit, actunit,
+  primunit, combiunit, boolunit, mathunit, stringunit, sequnit, typeunit
   { you can add units after this };
 
 {$R *.res}
@@ -22,4 +22,7 @@ begin
   Application.CreateForm(TinitForm, initForm);
   Application.Run;
 end.
+
+
+// GNU Lesser General Public License v2.1
 

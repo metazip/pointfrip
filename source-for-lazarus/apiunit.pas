@@ -1,4 +1,4 @@
-﻿unit apiunit;//ok
+﻿unit apiunit;
 
 {$mode objfpc}{$H+}
 
@@ -16,13 +16,13 @@ const crDefault  = TCursor(0);
       crAppStart = TCursor(- 19);
 
 const //
-      // -------errors apiunit -------
+      // --------------------------- errors apiunit ----------------------------
       enomemoryerror: es    = 'not enough memory for prop-cells...';//???
       enostringmemerror: es = 'not enough memory for strings...';
       enoarraymemerror: es  = 'not enough memory for arrays...';
       //
       //
-      // ------- errors serveunit -------
+      // -------------------------- errors serveunit ---------------------------
       eserveprintexc: es            = 'print procedure not defined.';
       eservedrawtrailexc: es        = 'graphic procedure not defined.';
       eservedrawxynoreal: es        = 'for x,y two reals expected.';
@@ -40,7 +40,7 @@ const //
       eimportnoexist: es           = 'import-file does not exist:';
       efilenotfound: es            = 'File not found.';//
       //
-      // ------- errors precom -------
+      // ---------------------------- errors precom ----------------------------
       ecomnosafestack: es      = 'precom: no stack value for safeinfix.';//???
       ecomnosafestring: es     = 'precom: no safe _string in infix.';//???
       ecomnosafearray: es      = 'precom: no safe _array in infix.';//???
@@ -82,7 +82,7 @@ const //
       ecomconsttaken: es       = 'postcom: Constant is already defined';
       epostcomforddotnoend: es = 'postcom: ddot (..) not used in the end.';//???
       //
-      // ------- errors interpreter -------
+      // ------------------------- errors interpreter --------------------------
       eiproutofarray: es      = 'access is outside the array';
       eiprnotinrange: es      = 'access is out of table';//???table - sequence
       eiprnotable: es         = 'access requires table';//???table - sequence
@@ -90,7 +90,7 @@ const //
       eiprfuncundef: es       = 'function is undefined';
       eipridentunbound: es    = 'ident is not bound';
       //
-      // ------- errors primunit -------
+      // --------------------------- errors primunit ---------------------------
       efuncundef: es         = 'function is not defined.';
       enoprocmemerror: es    = 'not enough memory for proc.';
       eselnotfound: es       = 'selector in (super-)class not found: ';//??? ,class?
@@ -104,13 +104,13 @@ const //
       efnnocombine: es       = 'for function combine expected.';//?
       efnunabletype: es      = 'unable type.';//???
       //
-      // ------- errors combiunit -------
+      // -------------------------- errors combiunit ---------------------------
       //
       eopaltexpect: es       = 'alternal for operand[1] expected.';
       //noch nötig?:
       eopconsexpect2: es     = 'cons-list for operand[1] expected.';
       //
-      // ------- errors boolunit -------
+      // --------------------------- errors boolunit ---------------------------
       eltnocompare: es       = 'type compare not be able.';//???
       eltnostring: es        = 'idents are defect.';//???;
       efnnobound: es         = 'for function ident or prefix expected.';//? prefix?
@@ -125,7 +125,7 @@ const //
       eopnobool1: es         = 'bool for operand[0] expected.';
       eopnobool2: es         = 'bool for operand[1] expected.';
       //
-      // ------- errors mathunit -------
+      // --------------------------- errors mathunit ---------------------------
       eopmatherror: es       = 'arithmetic error.';//???;
       eopnonum1: es          = 'number as operand[0] expected.';
       eopnonum2: es          = 'number as operand[1] expected.';
@@ -145,7 +145,7 @@ const //
       eop2rounderror: es     = 'round error in operand[1].';
       eop2notinrange: es     = 'operand[1] not in range.';// _20 .. 20
       //
-      // ------- errors stringunit -------
+      // -------------------------- errors stringunit --------------------------
       efnnostring1: es       = 'string as argument[0] expected.';
       efnnonum2: es          = 'number as argument[1] expected.';
       efnnonum3: es          = 'number as argument[2] expected.';
@@ -160,17 +160,17 @@ const //
       //
       efnnostring: es        = 'for function string expected.';
       //
-      // ------- errors actunit -------
+      // --------------------------- errors actunit ----------------------------
       eopmutnoreserve: es    = 'ident or prefix is not _reserve.';//??? name???
       eopnomutable: es       = 'ident or prefix as _self expected.';
       //
       //
-      // ------- react -------
+      // -------------------------------- react --------------------------------
       //
       ereactnobind: es       = '_bind not found.';//???
       //
       //
-      // ------- api-constants & types -------
+      // ------------------------ api-constants & types ------------------------
       xnull    = 0;
       xinteger = 1;    // name wie in oberon
       xreal    = 2;
@@ -187,17 +187,18 @@ const //
       xnil     = 9;    //null
       xlimit   = xnil; //xnil = xlimit//
       xcons    = 10;
-      xsuper   = 11;
+      xsingle  = 11;
+      elimit   = xsingle;
+      xsuper   = 12;
       //xexc    = ;
-      xcombine = 12;   //name?
-      xalter   = 13;   // alternal
-      xobject  = 14;   // >xlimit oder <xlimit ???
-      xquote   = 15;
-      xivar    = 16;   //name?
-      xcompose = 17;   // ermöglicht variablenfreie Programmierung (sequetiell)
-      xact     = 18;   //sensitiv
-      xneg     = 19;
-      xsingle  = 20;
+      xcombine = 13;   //name?
+      xalter   = 14;   // alternal
+      xobject  = 15;   // >xlimit oder <xlimit ???
+      xquote   = 16;
+      xivar    = 17;   //name?
+      xcompose = 18;   // ermöglicht variablenfreie Programmierung (sequetiell)
+      xact     = 19;   //sensitiv
+      xneg     = 20;
       xmark    = 21;
       xreserve = 22;
       xundef   = 23;
@@ -326,13 +327,13 @@ procedure provisorium(s: ustring);
 
 implementation
 
-uses vmunit;//for eval ,vmunit?
+uses vmunit;//for eval ,vmunit? ,wegen apiputA
 
 var freetop: cardinal = xnil;
     tinf:    cardinal = xnil;
     tlength: cardinal = 0;
 
-// ------- memory management -------
+// ----------------------------- memory management -----------------------------
 
 //xtypes...
 //traverse: erst markieren - dann durchlaufen (?);
@@ -581,7 +582,7 @@ begin //freeid:=idx;
       newerror:=freetop
 end;
 
-// ---------- cell initialization -------
+// ---------------------------- cell initialization ----------------------------
 
 procedure initfreelist;
 var i: cardinal;
@@ -624,17 +625,17 @@ begin identlist:=xnil;
       setxident(xarray,  '_array');   //vector?
       setxident(xerror,  '_error');
       setxident(xcons,   ';');
+      setxident(xsingle, '_s');
       setxident(xsuper,  '_super');
       //xexc    = ;
       setxident(xcombine,'_combine');
-      setxident(xalter,  '|');        // alternal
+      setxident(xalter,  '|');        // alternal // oder wieder ';' verwenden
       setxident(xobject, '::');
       setxident(xquote,  '_q');
       setxident(xivar,   '_v');       //name?
       setxident(xcompose,compose);    //='°'
       setxident(xact,    '_act');
       setxident(xneg,    '_');        // platzhalter?
-      setxident(xsingle, '_s');
       setxident(xmark,   '''mark');
       setxident(xreserve,'_reserve');
       setxident(xundef,  '_undef');
@@ -667,7 +668,7 @@ begin identlist:=xnil;
       //
 end;
 
-// ------- api misc -------
+// --------------------------------- api misc ----------------------------------
 
 // legacy provisorium
 procedure provisorium(s: ustring);
@@ -699,7 +700,7 @@ const // ----- errors apiunit ----- //auf apiget ändern!!!!!!!!!!!!!!!!!!
 //aus apiunit: //ifprefix?...
 
 //
-// ------- table pattern matching function (apiget) ,imatch? -------
+// ------------- table pattern matching function (apiget) ,imatch? -------------
 //
 
 //iget: noch nicht ganz fertig!
@@ -852,17 +853,9 @@ begin etop:=aggr;
       //z:=xnil
 end;
 
-procedure apigetpre;
-begin//
-end;
-
-procedure apiputpre;
-begin//
-end;
-
 //iput
 
-// ------- api initialization -------
+// ---------------------------- api initialization -----------------------------
 
 procedure initapiprims;
 begin //
@@ -963,4 +956,7 @@ begin freeallcells;
 end;
 
 end.
+
+
+// GNU Lesser General Public License v2.1
 

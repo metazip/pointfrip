@@ -1,4 +1,4 @@
-﻿unit primunit;//ok
+﻿unit primunit;
 
 {$mode objfpc}{$H+}
 
@@ -58,7 +58,7 @@ begin epush(prop(efun,xcons,prop(etop,xcons,xnil)));
 end;
 }
 
-// ------- oop service functions -------
+// --------------------------- oop service functions ---------------------------
 
 // ------------------
 // ----- legacy -----
@@ -122,7 +122,7 @@ begin epush(etop);
 end;
 }
 
-// ------- eval-eval: infix operator support -------
+// --------------------- eval-eval: infix operator support ---------------------
 
 // bitte noch testen!!!!!!!!!!!!!!!!!!!!!!!!!
 //ungeprüft übernommen von femtoproject // noch mal neu machen!
@@ -236,7 +236,7 @@ begin repeat einf:=infix[etop];
       until false
 end;}
 
-// ------- strict-by-default primitives -------
+// ----------------------- strict-by-default primitives ------------------------
 
 procedure fundef;
 begin if (infix[etop]=xerror) then //(exit)
@@ -565,7 +565,7 @@ begin if (infix[etop]=xerror) then exit;
       etop:=newinteger(sizeof(pcardmem)*8)
 end;
 
-// ------- initialization of the runtime primitives -------
+// ----------------- initialization of the runtime primitives ------------------
 
 var pcounter: int64;
 
@@ -649,11 +649,14 @@ begin for i:=0 downto minproc do proc[i]:=@fundef;// to -1 (?)
       newidentproc('maxcell',@fmaxcell);
       newidentproc('raise',@fraise);// name?
       newidentproc('gc',@fgc);
-      newidentproc('termoarg',@ftermoarg);
+      newidentproc('termoarg',@ftermoarg);         // nicht mehr nötig!
       newidentproc('it',@fit);//system-result
       newidentproc('pointersize',@fpointersize);
       //
 end;
 
 end.
+
+
+// GNU Lesser General Public License v2.1
 

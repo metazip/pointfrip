@@ -1,4 +1,4 @@
-﻿unit typeunit;//ok
+﻿unit typeunit;
 
 {$mode objfpc}{$H+}
 
@@ -19,4 +19,7 @@ implementation
 // funicode einstellen !!!
 
 end.
+
+
+// GNU Lesser General Public License v2.1
 

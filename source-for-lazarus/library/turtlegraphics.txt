@@ -50,4 +50,4 @@ plot0 == ((prop°(quote°((reverse°(pendown°[0] moveto penup°'turtle new),tai
 //plotn
 
 
-// (CC0)
+// GNU Lesser General Public License v2.1

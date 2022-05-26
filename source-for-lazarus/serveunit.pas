@@ -1,4 +1,4 @@
-﻿unit serveunit;//ok
+﻿unit serveunit;
 
 {$mode objfpc}{$H+}
 
@@ -24,8 +24,8 @@ var redef: boolean = false;
     //
     serveidledone: boolean = true;
     //uimemo;
-    uipaintbox: tpaintbox=nil;
-    uipanel: tpanel=nil;
+    uipaintbox: tpaintbox = nil;
+    uipanel: tpanel = nil;
     uiform: tform;
     servequit: boolean = false;
     serveinput: boolean = false;//richtige Lösung?;
@@ -54,9 +54,6 @@ uses apiunit, vmunit, actunit;
 
 var inqueue: tstringlist = nil;
     intxtfile: tstringlist = nil;
-
-// ------- -------
-//;
 
 // ------------------
 // ----- legacy -----
@@ -157,7 +154,7 @@ begin if ((uipaintbox<>nil) and (uipanel<>nil) and (uiform<>nil)) then begin
       else raise exception.create('device is not installed (favorite)...')// provi
 end;
 
-// ------- service functions -------
+// ----------------------------- service functions -----------------------------
 
 function extractslashpath(s: ustring): ustring;
 var i: int64;//longint;//cardinal (?)
@@ -202,7 +199,6 @@ end;
 
 procedure tellserve(txt: ustring);
 begin inqueue.add(txt);
-//servprint(txt);//for testing
 end;
 
 procedure serveprint(txt: ustring);//txt ist pointer
@@ -234,7 +230,7 @@ begin p:=identlist;
       if (uimemo<>nil) then begin uimemo.selstart:=len;
                                   uimemo.sellength:=length(s)+length(#13#10)
                             end
-      //serveprint(prompt);
+      //
 end;
 
 procedure serverun(fname: ustring);//name bitte in try except verwenden!
@@ -302,7 +298,12 @@ begin mstack:=xnil;
       //
 end;
 
-procedure servereact;  // Fundamental-Loop (react onidle)
+// ---------------------- Fundamental-Loop (react onidle) ----------------------
+//
+// Monade auf algebraische Effekte umbauen (FP + OOP)
+//
+
+procedure servereact;
 begin //servidledone...
       try if serveinput then //exit
           else if (infix[etop]=xact) then begin
@@ -386,12 +387,6 @@ end;
 // ------------------
 // ----- legacy -----
 // ------------------
-//
-// ------- fundamental loop (react onidle) -------
-//
-// Monade auf algebraische Effekte umbauen (FP + OOP)
-//
-
 procedure servereactpre;   // Fundamental-Loop (react onidle)
 //var txt: ustring;// oder ebene höher?
 begin //servidledone...
@@ -470,7 +465,7 @@ begin //servidledone...
       end//gibt es noch den import(txt)fehler?
 end;
 
-// ------- service initialization -------
+// -------------------------- service initialization ---------------------------
 
 procedure initserve(mc,ms: int64;memo: tmemo;paintbox: tpaintbox;
                                  panel: tpanel;form: tform);
@@ -508,4 +503,7 @@ begin //redef:=?
 end;
 
 end.
+
+
+// GNU Lesser General Public License v2.1
 

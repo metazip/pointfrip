@@ -1,4 +1,4 @@
-﻿unit sequnit;//ok
+﻿unit sequnit;
 
 {$mode objfpc}{$H+}
 
@@ -95,7 +95,7 @@ begin repeat einf:=infix[etop];
       until false//
 end;
 
-// ------- initialization -------
+// ------------------------------ initialization -------------------------------
 
 procedure initseqidents;
 begin idxlength:=newindex('length');
@@ -111,4 +111,7 @@ begin //
 end;
 
 end.
+
+
+// GNU Lesser General Public License v2.1
 

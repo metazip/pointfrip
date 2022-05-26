@@ -1,4 +1,4 @@
-﻿unit mathunit;//ok
+﻿unit mathunit;
 
 {$mode objfpc}{$H+}
 
@@ -66,7 +66,7 @@ var idxadd: cardinal = xnil;
     //
     idneg: cardinal = xnil;
 
-// ------- arithmetic operators -------
+// --------------------------- arithmetic operators ----------------------------
 
 //muster:
 procedure fadd;//ifprefix?
@@ -248,10 +248,6 @@ begin ee(idximod);
       end//
 end;
 
-//idiv
-//imod
-//pow
-
 //muster:
 {
 procedure f;//ifprefix?
@@ -267,7 +263,7 @@ begin einf:=infix[etop];
 end;
 }
 
-// ------- arithmetical functions -------
+// -------------------------- arithmetical functions ---------------------------
 
 procedure fpred;//ifprefix?
 begin einf:=infix[etop];
@@ -361,10 +357,6 @@ begin einf:=infix[etop];
       einf:=xnil
 end;
 
-//trunc
-//int
-//frac?
-
 procedure fint;//ifprefix?
 begin einf:=infix[etop];
       if      (einf=xreal)    then
@@ -437,7 +429,7 @@ begin ee(idxroundto);  if (infix[etop]=xerror) then exit;
       einf:=xnil
 end;
 
-// ------- [real] -------
+// ---------------------------------- [real] -----------------------------------
 
 procedure fexp;//ifprefix?
 begin einf:=infix[etop];
@@ -487,7 +479,7 @@ begin einf:=infix[etop];
       einf:=xnil
 end;
 
-procedure fld;//log2 //ifprefix?
+procedure fld;//log2 //lb //ifprefix?
 begin einf:=infix[etop];
       if      (einf=xreal)    then
          try etop:=newreal(log2(cell[etop].fnum))
@@ -502,8 +494,6 @@ begin einf:=infix[etop];
       else etop:=newerror(idxld,efnnoreal);//? idxname
       einf:=xnil
 end;
-
-//log2?
 
 procedure fsq;//ifprefix?
 var f: double;  i: int64;
@@ -548,7 +538,7 @@ begin einf:=infix[etop];
       einf:=xnil
 end;
 
-// ------- trigonometric functions -------
+// -------------------------- trigonometric functions --------------------------
 
 procedure fpi;
 begin if (infix[etop]=xerror) then exit;// provi
@@ -998,7 +988,7 @@ begin einf:=infix[etop];
       einf:=xnil
 end;
 
-// ------- math initialization -------
+// ---------------------------- math initialization ----------------------------
 
 procedure initmathidents;
 begin //
@@ -1115,4 +1105,7 @@ begin //
 end;
 
 end.
+
+
+// GNU Lesser General Public License v2.1
 

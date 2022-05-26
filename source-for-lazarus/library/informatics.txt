@@ -13,4 +13,4 @@ Y == (top°term) app term,arg,   // ohne comma? am ende allgemein
 // (((arg<1000)->(term app arg*2)|arg) Y)°'1
 
 
-// (CC0)
+// GNU Lesser General Public License v2.1

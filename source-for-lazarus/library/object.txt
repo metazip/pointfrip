@@ -77,4 +77,4 @@ vector == .. { list // ?
 tage == '(week :: "Sonntag"; "Montag"; "Dienstag"; "Mittwoch"; "Donnerstag"; "Freitag"; "Samstag";)
 days == '(week :: "Sunday"; "Monday"; "Tuesday"; "Wednesday"; "Thursday"; "Friday"; "Saturday";)
 
-// (CC0)
+// GNU Lesser General Public License v2.1

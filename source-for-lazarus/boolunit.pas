@@ -1,4 +1,4 @@
-﻿unit boolunit;//ok
+﻿unit boolunit;
 
 {$mode objfpc}{$H+}
 
@@ -26,7 +26,7 @@ var idxeq: cardinal = xnil;
     idx_or: cardinal = xnil;
     idxxor: cardinal = xnil;
 
-// ------- compare operators -------
+// ----------------------------- compare operators -----------------------------
 
 // ------------------
 // ----- legacy -----
@@ -123,7 +123,7 @@ end;
 //lt
 //is...
 
-// ------- predicate functions -------
+// ---------------------------- predicate functions ----------------------------
 
 procedure fisatom;//  provi!
 begin einf:=infix[etop];
@@ -354,7 +354,7 @@ end;
 
 //ftry;
 
-// ------- boolean functions/operators -------
+// ------------------------ boolean functions/operators ------------------------
 
 procedure fnot;
 begin if      (etop=xtrue)  then etop:=xfalse
@@ -475,7 +475,7 @@ begin ee(idxxor);
       end//else exit
 end;
 
-// ------- bool initialization -------
+// ---------------------------- bool initialization ----------------------------
 
 procedure initboolidents;
 begin //
@@ -536,4 +536,7 @@ begin //
 end;
 
 end.
+
+
+// GNU Lesser General Public License v2.1
 
