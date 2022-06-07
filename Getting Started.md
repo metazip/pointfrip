@@ -25,10 +25,16 @@ If you want a list of increasing numbers, use the **iota** function with an oper
 
     iota ° 10
     
-    --> (1 ; 2 ; 3 ; 4 ; 5 ; 6 ; 7 ; 8 ; 9 ; 10 ;)
+    -->  (1 ; 2 ; 3 ; 4 ; 5 ; 6 ; 7 ; 8 ; 9 ; 10 ;)
 
 Then you can use the apply-to-all combinator **aa** to square the individual values of the list with **id * id**.
 
     ((id * id) aa) ° iota ° 10
+    
+    -->  (1 ; 4 ; 9 ; 16 ; 25 ; 36 ; 49 ; 64 ; 81 ; 100 ;)
  
+ Now let's define a function called sum and execute it.
  
+     sum == (+ \)
+     
+     -->  ( )
