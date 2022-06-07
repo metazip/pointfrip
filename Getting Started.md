@@ -17,4 +17,4 @@ Then go to the [installer directory](https://github.com/metazip/pointfrip/tree/m
 **or** choose the portable version for download, which is extracted with an unzipper and can then be used easily.
 
 In the directory of Pointfrip is the file **pointfrip.exe**, which can be started by double-clicking and then a window with an event-controlled \
-read-eval-print-loop will appear. Function expressions can be entered here and started with <Return>.
+read-eval-print-loop will appear. Function expressions can be entered here and started with -Return-.
