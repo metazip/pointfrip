@@ -13,4 +13,5 @@ For **Linux Mint 20.3** open the terminal-window and type:
     sudo apt-get install wine
 Unfortunately, I have no experience with other Linux versions.
 
-Then go to the [installer directory](https://github.com/metazip/pointfrip/tree/main/installer) and choose the installer version for an installation of Pointfrip or the portable version, which is extracted with an unzipper and can then be used easily.
+Then go to the [installer directory](https://github.com/metazip/pointfrip/tree/main/installer) and choose the installer version for an installation of Pointfrip and download it \
+**or** choose the portable version for download, which is extracted with an unzipper and can then be used easily.
