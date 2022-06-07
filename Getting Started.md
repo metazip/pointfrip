@@ -45,6 +45,6 @@ Finally, we include the sum function in the pipeline and get the sum of the squa
     
     -->  385
 
-Now we have learned about **definition**, **pipe** and **map-reduce**, which are important concepts in functional programming.
+Now we have learned about **definition**, **compose** and **map-reduce**, which are important concepts in functional programming.
 
 What else can we explain? Use github's capabilities to make suggestions.
