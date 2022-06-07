@@ -18,7 +18,8 @@ Then go to the [installer directory](https://github.com/metazip/pointfrip/tree/m
 
 In the directory of Pointfrip is the file pointfrip.exe, which can be started by double-clicking and then a window with an event-controlled \
 read-eval-print-loop will appear. Function expressions can be entered here and started with return or the triangle button in the toolbar. \
-If you only want to start a part of a line, you should select the area.
+If you only want to start a part of a line, you should select the area.With a double-click in the text field, the cursor jumps to a new line \
+at the end of the text area.
 
 ## Some examples
 If you want a list of increasing numbers, use the **iota** function with an operator **°** and a real number. Like this:
