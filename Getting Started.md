@@ -43,3 +43,6 @@ Finally, we include the sum function in the pipeline and get the sum of the squa
 
     sum ° ((id * id) aa) ° iota ° 10
     
+    -->  385
+
+
