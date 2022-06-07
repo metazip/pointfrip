@@ -16,5 +16,6 @@ Unfortunately, I have no experience with other Linux versions.
 Then go to the [installer directory](https://github.com/metazip/pointfrip/tree/main/installer) and choose the installer version for an installation of Pointfrip and download it \
 **or** choose the portable version for download, which is extracted with an unzipper and can then be used easily.
 
-In the directory of Pointfrip is the file **pointfrip.exe**, which can be started by double-clicking and then a window with an event-controlled \
-read-eval-print-loop will appear. Function expressions can be entered here and started with -Return-.
+In the directory of Pointfrip is the file pointfrip.exe, which can be started by double-clicking and then a window with an event-controlled \
+read-eval-print-loop will appear. Function expressions can be entered here and started with return or the triangle button in the toolbar. 
+If you only want to start a part, you should select the area.
