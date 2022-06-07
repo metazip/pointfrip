@@ -17,7 +17,7 @@ Then go to the [installer directory](https://github.com/metazip/pointfrip/tree/m
 **or** choose the portable version for download, which is extracted with an unzipper and can then be used easily.
 
 In the directory of Pointfrip is the file pointfrip.exe, which can be started by double-clicking and then a window with an event-controlled \
-Read-Eval-Print-Loop will appear. Function expressions can be entered here and started with return or the triangle button in the toolbar. \
+Read-Eval-Print-Loop will appear. Function expressions can be entered here and started with Return or the triangle button in the toolbar. \
 If you only want to start a part of a line, you should select the area. With a double-click in the text field, the cursor jumps to a new line \
 at the end of the text area.
 
