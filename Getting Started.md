@@ -21,7 +21,7 @@ read-eval-print-loop will appear. Function expressions can be entered here and s
 If you only want to start a part, you should select the area.
 
 ## Some examples
-If you want a list of increasing numbers, use the **iota** function with an operator ** ° **and a real number. Like this: \
+If you want a list of increasing numbers, use the **iota** function with an operator **°** and a real number. Like this: \
     iota ° 10
     
     --> ()
