@@ -26,6 +26,7 @@ possibility to work with tables like in [trivia](https://esolangs.org/wiki/FP_tr
 [Reference.pdf](https://github.com/metazip/pointfrip/blob/main/examples/documents/reference.pdf) \
 [Quickinfo.pdf](https://github.com/metazip/pointfrip/blob/main/examples/documents/quickinfo.pdf) (german)
 
+[Getting Startet ...](https://github.com/metazip/pointfrip/blob/main/Getting%20Started.md)
 
 ### Structured Programming -- a Kind of Low-Code
 
