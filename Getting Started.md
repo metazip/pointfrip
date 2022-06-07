@@ -38,3 +38,8 @@ Then you can use the apply-to-all combinator **aa** to square the individual val
      sum == (+ \)
      
      -->  ( )
+
+Finally, we include the sum function in the pipeline and get the sum of the squares from 1 to 10.
+
+    sum ° ((id * id) aa) ° iota ° 10
+    
