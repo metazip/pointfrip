@@ -24,7 +24,7 @@ possibility to work with tables like in [trivia](https://esolangs.org/wiki/FP_tr
     --> "BACKUS"
 
 [Reference.pdf](https://github.com/metazip/pointfrip/blob/main/examples/documents/reference.pdf) \
-[Quickinfo.pdf](https://github.com/metazip/pointfrip/blob/main/examples/documents/quickinfo.pdf) (english)
+[Quickinfo.pdf](https://github.com/metazip/pointfrip/blob/main/examples/documents/quickinfo.pdf) (English)
 
 ### [Getting Startet ...](https://github.com/metazip/pointfrip/blob/main/Getting%20Started.md)
 
