@@ -110,6 +110,9 @@ map0 == ((isatom°[0]°[0])->()|([1] app ((head°[0]),tail)°[0]),(((tail°[0]),
 insl == ( (isatom°[0])->'_undef|(isatom°tail°[0])->(head°[0])|
           (([1] app ([0],[1],)°[0]),tail°tail°[0]) insl [1] )°ee
 
+// fold ° 'expr,initakku,list,
+fold == (isatom°[2]) -> [1] ; fold ° [0],([0] app [1] ee head°[2]),(tail°[2]),
+
 // insert-right:   (expr \)°list
 \    == arg insr top°term // für rechts-vor-links
 // insert-right:   list insr 'expr
