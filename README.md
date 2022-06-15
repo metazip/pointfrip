@@ -28,8 +28,6 @@ possibility to work with tables like in [trivia](https://esolangs.org/wiki/FP_tr
 
 ### [Getting Startet ...](https://github.com/metazip/pointfrip/blob/main/Getting%20Started.md)
 
-### [Structured Programming -- a Kind of Low-Code ...](https://github.com/metazip/pointfrip/blob/main/Structured%20Programming.md)
-
 ### Comments
 
 If you like pointfrip, leave a comment on [pointfrip wiki](http://162.248.51.100/~pointfre/wiki/doku.php)
