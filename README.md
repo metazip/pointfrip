@@ -23,7 +23,7 @@ possibility to work with tables like in [trivia](https://esolangs.org/wiki/FP_tr
     (#beta & #alpha & #gamma & #delta & "US") ° (delta:="K") ° '("A" alpha "B" beta "C" gamma)
     --> "BACKUS"
 
-side-effects used in [installer](https://github.com/metazip/pointfrip/tree/main/installer)
+side-effects used in [installer.exe](https://github.com/metazip/pointfrip/tree/main/installer)
 
     ((#draco loadtext)°(draco:=corepath&"drache.pf") eff 'io)>>(it showinfo)>>(#draco run)>>()
 
