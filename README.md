@@ -23,6 +23,9 @@ possibility to work with tables like in [trivia](https://esolangs.org/wiki/FP_tr
     (#beta & #alpha & #gamma & #delta & "US") ° (delta:="K") ° '("A" alpha "B" beta "C" gamma)
     --> "BACKUS"
 
+side-effects
+    (((corepath&"drache.txt") loadtext) eff 'io)>>(it showinfo)>>()
+
 [Reference.pdf](https://github.com/metazip/pointfrip/blob/main/examples/documents/reference.pdf) \
 [Quickinfo.pdf](https://github.com/metazip/pointfrip/blob/main/examples/documents/quickinfo.pdf) (English)
 
