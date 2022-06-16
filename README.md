@@ -24,7 +24,9 @@ possibility to work with tables like in [trivia](https://esolangs.org/wiki/FP_tr
     --> "BACKUS"
 
 side-effects
+
     (((corepath&"drache.txt") loadtext) eff 'io)>>(it showinfo)>>()
+    --> ()
 
 [Reference.pdf](https://github.com/metazip/pointfrip/blob/main/examples/documents/reference.pdf) \
 [Quickinfo.pdf](https://github.com/metazip/pointfrip/blob/main/examples/documents/quickinfo.pdf) (English)
