@@ -25,7 +25,7 @@ possibility to work with tables like in [trivia](https://esolangs.org/wiki/FP_tr
 
 side-effects used in [installer.exe](https://github.com/metazip/pointfrip/tree/main/installer)
 
-    ((#draco loadtext)°(draco:=corepath&"drache.pf") eff 'io)>>(it showinfo)>>(#draco run)>>()
+    ((#draco loadtext)°(draco:=corepath & "drache.pf") eff 'io)>>(it showinfo)>>(#draco run)>>()
 
 [Reference.pdf](https://github.com/metazip/pointfrip/blob/main/examples/documents/reference.pdf) \
 [Quickinfo.pdf](https://github.com/metazip/pointfrip/blob/main/examples/documents/quickinfo.pdf) (English)
