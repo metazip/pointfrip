@@ -34,8 +34,7 @@ side-effects used in [installer.exe](https://github.com/metazip/pointfrip/tree/m
 
 ### Comments
 
-If you like pointfrip, leave a comment on [pointfrip wiki](http://162.248.51.100/~pointfre/wiki/doku.php)
-or [discussions](https://github.com/metazip/pointfrip/discussions)
+If you like pointfrip, leave a comment on [discussions](https://github.com/metazip/pointfrip/discussions)
 or maybe
 [donate](https://pf-system.github.io/Page3.html)
 
