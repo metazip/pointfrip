@@ -36,6 +36,7 @@ side-effects used in [installer.exe](https://github.com/metazip/pointfrip/tree/m
 
 If you like pointfrip, leave a comment on [discussions](https://github.com/metazip/pointfrip/discussions)
 or maybe
-[donate](https://pf-system.github.io/Page3.html)\
+[donate](https://pf-system.github.io/Page3.html)
 
+\
 **Virengeprüft mit 40 Virenscannern von heise.de**: [FP-trivia](https://www.heise.de/download/product/fp-trivia)
