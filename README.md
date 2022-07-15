@@ -38,3 +38,4 @@ If you like pointfrip, leave a comment on [discussions](https://github.com/metaz
 or maybe
 [donate](https://pf-system.github.io/Page3.html)
 
+**Virengeprüft mit 40 Virenscannern von heise.de**: [FP-trivia](https://www.heise.de/download/product/fp-trivia)
