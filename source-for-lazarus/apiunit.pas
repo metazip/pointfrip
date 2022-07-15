@@ -38,7 +38,7 @@ const //
       eservedrawunexpect: es        = 'unexpected value in the trail.';
       //
       eimportnoexist: es           = 'import-file does not exist:';
-      efilenotfound: es            = 'File not found.';//
+      efilenotfound: es            = 'File not found';//
       //
       // ---------------------------- errors precom ----------------------------
       ecomnosafestack: es      = 'precom: no stack value for safeinfix.';//???

@@ -74,25 +74,19 @@ begin apiget(idxredefine,mdict,xself);
       else apiput(mdict,xit,newerror(idxredefine,eopnomutable))
 end;
 
-// ------------------
-// ----- legacy -----
-// ------------------
-procedure mshowgraph;
-//procedure ioshowgraph;
+procedure mshowgraph; // legacy überarbeitet ,height=1? ,errorconstanten
 var delta: longint;
-begin apiget(idxshowgraph,mdict,xit);//umstellen auf monaden
-      //servprint(tovalue(etop)+' //iget ''top');//for test
-      trail:=etop;//???
+begin apiget(idxshowgraph,mdict,xit);//umgestellt auf monaden
+      trail:=etop; // ? tests?
       if ((uipaintbox<>nil) and (uipanel<>nil) and (uiform<>nil)) then begin
          if uipanel.visible then delta:=uipanel.height
                             else delta:=0;
          if (uipaintbox.height<=1) then
             uipaintbox.height:=uiform.clientheight-delta-splitterheight;
          uipaintbox.repaint;
-         etop:=xnil//provi!!!
+         apiput(mdict,xit,xnil)
       end
-      else etop:=newerror(xundef,'device is not installed...');//provi!!!
-      etop:=mdict//
+      else apiput(mdict,xit,newerror(idxshowgraph,'Device is not installed...'))
 end;
 
 procedure mshowinfo;
@@ -106,7 +100,7 @@ end;
 
 procedure mprint;
 begin apiget(idxprint,mdict,xit);
-      serveprint(totable(etop));
+      serveprint(AnsiDequotedStr(tovalue(etop),qot2)); // pre: (totable(etop));
       etop:=mdict;
       //xbind?
 end;
@@ -156,20 +150,22 @@ begin apiget(idxloadtext,mdict,xit);
              txtlist.clear;
              apiput(mdict,xit,newstring(txt))
           end
-          else begin apiput(mdict,xit,newerror(idxloadtext,'file not found.'));
-                     //fehler genauer behandeln
-               end//
-      finally txtlist.free
+          else apiput(mdict,xit,newerror(idxloadtext,efilenotfound+' - '+fname)); // genauer?
+          txtlist.free
+      except on e: exception do begin
+                txtlist.free;
+                apiput(mdict,xit,newerror(idxloadtext,e.message)) // +fname ?
+             end
       end
 end;
 
-procedure msavetext;// provi ,para und self vertauscht! ,it?
+procedure msavetext;// provi ,para und self vertauscht! ,it? ,errorconstanten
 var txtlist: tstringlist;
     txt,fname: ustring;
 begin apiget(idxsavetext,mdict,xpara);
       if (infix[etop]<>xstring) then begin
-         apiput(mdict,xit,newstring('error bei savetext...kein string'));
-         //fehler genauer behandeln
+         apiput(mdict,xit,newerror(idxsavetext,'For savetext [1] string expected.'));
+         //fehler genauer behandeln oder flexibler
          exit
       end;
       txt:=cell[etop].pstr^;//if nil?
@@ -181,12 +177,14 @@ begin apiget(idxsavetext,mdict,xpara);
           txtlist.WriteBOM:=true;
           txtlist.savetofile(fname,TEncoding.UTF8);// gerne UTF8BOM
           txtlist.clear;
-          txtlist.free;
-          apiput(mdict,xit,xtrue);//??? bessere lösung ...
-      except txtlist.free;
-             apiput(mdict,xit,xfalse);//??? bessere lösung ...
+          apiput(mdict,xit,newstring(fname));// xnil oder bessere lösung?
+          txtlist.free
+      except on e: exception do begin
+                txtlist.free;
+                apiput(mdict,xit,newerror(idxsavetext,e.message)) // genauere bessere lösung?
+             end
       end;
-      //hier weiter machen
+      //hier weiter machen?
 end;
 
 procedure mrun;
@@ -313,20 +311,12 @@ begin if (infix[etop]=xact) then begin
       //wo _bind bearbeiten?
 end;
 
-//backtrack --> xnil _act ...
-//error
-//return
-//define
-//redefine
-//showgraph
-//showinfo
-//print
-//input
-//loadtext [error]
-//savetext [error]
-//run(?)
-//quit(?)
-//time, date, etc.
+//[0] ? backtrack --> xnil _act ...
+//[1] error
+//[2] return
+//[3] define
+//[4] redefine
+// etc.
 
 // ---------------------------- act initialization -----------------------------
 

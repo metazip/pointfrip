@@ -600,7 +600,7 @@ end;
 
 procedure initprimitives;
 var i: longint;
-begin for i:=0 downto minproc do proc[i]:=@fundef;// to -1 (?)
+begin for i:=minproc to -1 do proc[i]:=@fundef;// to -1 (?)
       pcounter:=0;
       //
       initprimidents;
