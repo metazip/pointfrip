@@ -30,7 +30,7 @@ defining classes and using objects
                    [comma] == (top°[0]) obj [1],pop°[0]
                    [reverse] == reverse dip
                  }
-    
+
     reverse ° (constr :: A;B;C;)
     --> (constr :: C ; B ; A ;)
 
