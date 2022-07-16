@@ -23,6 +23,7 @@ possibility to work with tables like in [trivia](https://esolangs.org/wiki/FP_tr
     --> "BACKUS"
 
 defining classes and objects
+
     constr == .. { object
     [head] == head°pop
     [tail] == tail dip
