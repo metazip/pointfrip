@@ -13,7 +13,8 @@ For **Linux Mint 20.3** open the terminal-window and type:
     sudo apt-get install wine
 Unfortunately, I have no experience with other Linux versions.
 
-Then go to the [installer directory](https://github.com/metazip/pointfrip/tree/main/installer) and choose the installer version for an installation of Pointfrip and download it \
+Then go to the [installer directory](https://github.com/metazip/pointfrip/tree/main/installer) 
+(oder to [heise Download](https://www.heise.de/download/product/fp-trivia)) and choose the installer version for an installation of Pointfrip and download it \
 **or** choose the portable version for download, which is extracted with an unzipper and can then be used easily.
 
 In the directory of Pointfrip is the file pointfrip.exe, which can be started by double-clicking and then a window with an event-controlled \
