@@ -41,4 +41,4 @@ or maybe
 
 ##
 ![heise Download](https://www.heise.de/software/icons/download_logo1.png)\
-Virengeprüft mit 40 Virenscannern von heise.de: [FP-trivia](https://www.heise.de/download/product/fp-trivia)
+Virus checked with 40 virus scanners from heise.de: [FP-trivia](https://www.heise.de/download/product/fp-trivia)
