@@ -22,6 +22,17 @@ possibility to work with tables like in [trivia](https://esolangs.org/wiki/FP_tr
     (#beta & #alpha & #gamma & #delta & "US") ° (delta:="K") ° '("A" alpha "B" beta "C" gamma)
     --> "BACKUS"
 
+defining classes and objects
+    constr == .. { object
+    [head] == head°pop
+    [tail] == tail dip
+    [comma] == (top°[0]) obj [1],pop°[0]
+    [reverse] == reverse dip
+    }
+    
+    reverse°(constr :: A;B;C;)
+    --> (constr :: C ; B ; A ;)
+
 side-effects used in [installer.exe](https://github.com/metazip/pointfrip/tree/main/installer)
 
     ((#draco loadtext)°(draco:=corepath & "drache.pf") eff 'io)>>(it showinfo)>>(#draco run)>>()
