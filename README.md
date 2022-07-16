@@ -31,6 +31,7 @@ defining classes and using objects
                    [reverse] == reverse dip
                  }
 
+
     reverse ° (constr :: A;B;C;)
     --> (constr :: C ; B ; A ;)
 
