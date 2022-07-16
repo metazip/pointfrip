@@ -22,7 +22,7 @@ possibility to work with tables like in [trivia](https://esolangs.org/wiki/FP_tr
     (#beta & #alpha & #gamma & #delta & "US") ° (delta:="K") ° '("A" alpha "B" beta "C" gamma)
     --> "BACKUS"
 
-defining classes and objects
+defining classes and using objects
 
     constr == .. { object
     [head] == head°pop
