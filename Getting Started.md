@@ -1,5 +1,5 @@
 ## Getting Started
-If you use Microsoft Windows, the exe-files start without an additional program. \
+If you use **Microsoft Windows**, the exe-files start without an additional program. \
 But if you are using Linux and **don't** have wine, then install wine: \
 Open the terminal-window and type for **Debian 11:**
 
