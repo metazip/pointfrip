@@ -39,7 +39,7 @@ side-effects used in [installer.exe](https://github.com/metazip/pointfrip/tree/m
     ((#draco loadtext)°(draco:=corepath & "drache.pf") eff 'io)>>(it showinfo)>>(#draco run)>>()
 
 [Reference.pdf](https://github.com/metazip/pointfrip/blob/main/examples/documents/reference.pdf) \
-[Quickinfo.pdf](https://github.com/metazip/pointfrip/blob/main/examples/documents/quickinfo.pdf) (English)
+[Quickinfo.pdf](https://github.com/metazip/pointfrip/blob/main/examples/documents/quickinfo.pdf)
 
 ### [Getting Startet ...](https://github.com/metazip/pointfrip/blob/main/Getting%20Started.md)
 
