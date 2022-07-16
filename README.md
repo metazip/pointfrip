@@ -25,13 +25,13 @@ possibility to work with tables like in [trivia](https://esolangs.org/wiki/FP_tr
 defining classes and using objects
 
     constr == .. { object
-                   [head] == head°pop
+                   [head] == head ° pop
                    [tail] == tail dip
                    [comma] == (top°[0]) obj [1],pop°[0]
                    [reverse] == reverse dip
                  }
     
-    reverse°(constr :: A;B;C;)
+    reverse ° (constr :: A;B;C;)
     --> (constr :: C ; B ; A ;)
 
 side-effects used in [installer.exe](https://github.com/metazip/pointfrip/tree/main/installer)
