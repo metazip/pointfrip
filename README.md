@@ -54,3 +54,7 @@ or maybe
 ##
 ![heise Download](https://www.heise.de/software/icons/download_logo1.png)\
 Virus checked with 40 virus scanners from heise.de: [FP-trivia](https://www.heise.de/download/product/fp-trivia)
+
+
+##
+**"Only those who attempt the absurd can achieve the impossible."**
