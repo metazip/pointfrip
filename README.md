@@ -53,5 +53,6 @@ If you like pointfrip you can [download](https://www.heise.de/download/product/f
 
 
 ##
-### Disclaimer
+### [Disclaimer](https://www.reddit.com/r/programming/comments/8zgq3j/i_interviewed_john_backus_shortly_before_his/)
 ![GradyFail](https://raw.githubusercontent.com/metazip/pointfrip/main/backus-fp/GradyFail.png)
+
