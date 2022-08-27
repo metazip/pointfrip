@@ -44,11 +44,8 @@ side-effects used in [installer.exe](https://github.com/metazip/pointfrip/tree/m
 
 ### [Getting Startet ...](https://github.com/metazip/pointfrip/blob/main/Getting%20Started.md)
 
-### Comments
-
-If you like pointfrip, leave a comment on [discussions](https://github.com/metazip/pointfrip/discussions)
-or maybe
-[donate](https://pf-system.github.io/Page3.html)
+\
+If you like pointfrip you can download and use it and maybe [donate](https://pf-system.github.io/Page3.html).
 
 
 ##
