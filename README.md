@@ -46,6 +46,7 @@ side-effects used in [installer.exe](https://github.com/metazip/pointfrip/tree/m
 
 
 ##
+
 ![heise Download](https://www.heise.de/software/icons/download_logo1.png)\
 Virus checked with 40 virus scanners from heise.de\
 If you like pointfrip you can [download](https://www.heise.de/download/product/fp-trivia) and use it and maybe [donate](https://pf-system.github.io/Page3.html).
