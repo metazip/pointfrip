@@ -57,7 +57,5 @@ Virus checked with 40 virus scanners from heise.de: [FP-trivia](https://www.heis
 
 
 ##
-Only those who attempt the absurd can achieve the impossible.
-
 
 ![GradyFail](https://raw.githubusercontent.com/metazip/pointfrip/main/backus-fp/GradyFail.png)
