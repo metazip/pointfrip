@@ -327,7 +327,7 @@ procedure provisorium(s: ustring);
 
 implementation
 
-uses vmunit;//for eval ,vmunit? ,wegen apiputA
+{uses vmunit;}//for eval ,vmunit? ,wegen apiputA
 
 var freetop: cardinal = xnil;
     tinf:    cardinal = xnil;
@@ -613,58 +613,55 @@ end;
 
 procedure initxidents;
 begin identlist:=xnil;
-      setxident(xnull,   '_null');
-      setxident(xinteger,'_integer');
-      setxident(xreal,   '_real');
+      setxident(xnull,      '_null');
+      setxident(xinteger,   '_integer');
+      setxident(xreal,      '_real');
       //xcomplex = x;
-      setxident(xstring, '_string');
-      setxident(xident,  '_ident');
-      setxident(xprefix, '_prefix');
-      setxident(xindex,  '_index');
+      setxident(xstring,    '_string');
+      setxident(xident,     '_ident');
+      setxident(xprefix,    '_prefix');
+      setxident(xindex,     '_index');
       //xchar ?;
-      setxident(xarray,  '_array');   //vector?
-      setxident(xerror,  '_error');
-      setxident(xcons,   ';');
-      setxident(xsingle, '_s');
-      setxident(xsuper,  '_super');
+      setxident(xarray,     '_array');   //vector?
+      setxident(xerror,     '_error');
+      setxident(xcons,      ';');
+      setxident(xsingle,    '_s');
+      setxident(xsuper,     '_super');
       //xexc    = ;
-      setxident(xcombine,'_combine');
-      setxident(xalter,  '|');        // alternal // oder wieder ';' verwenden
-      setxident(xobject, '::');
-      setxident(xquote,  '_q');
-      setxident(xivar,   '_v');       //name?
-      setxident(xcompose,compose);    //='°'
-      setxident(xact,    '_act');
-      setxident(xneg,    '_');        // platzhalter?
-      setxident(xmark,   '''mark');
-      setxident(xreserve,'_reserve');
-      setxident(xundef,  '_undef');
-      setxident(xdef,    def);        //idy oder def
-      setxident(xddot,   '''ddot');
-      setxident(xtrue,   'true');
-      setxident(xfalse,  'false');
+      setxident(xcombine,   '_combine');
+      setxident(xalter,     '|');        //alternal // oder wieder ';' verwenden
+      setxident(xobject,    '::');
+      setxident(xquote,     '_q');
+      setxident(xivar,      '_v');       //name?
+      setxident(xcompose,   compose);    //='°'
+      setxident(xact,       '_act');
+      setxident(xneg,       '_');        // platzhalter?
+      setxident(xmark,      '''mark');
+      setxident(xreserve,   '_reserve');
+      setxident(xundef,     '_undef');
+      setxident(xdef,       def);        //idy oder def
+      setxident(xddot,      '''ddot');
+      setxident(xtrue,      'true');
+      setxident(xfalse,     'false');
       //
-      setxident(xit,     '_it');       //item?  oder  _it ?
-      setxident(xself,   '_self');
-      setxident(xpara,   '_para');     //param?
-      setxident(xvar,    'var');      //_var?
-      setxident(xbind,   '_bind');    // _bind
-      setxident(xeff,    '_eff');     // _eff...
+      setxident(xit,        '_it');       //item?  oder  _it ?
+      setxident(xself,      '_self');
+      setxident(xpara,      '_para');     //param?
+      setxident(xvar,       'var');      //_var?
+      setxident(xbind,      '_bind');    // _bind
+      setxident(xeff,       '_eff');     // _eff...
       //
-      setxident(xpen,    'pen');
-      setxident(xcolor,  'color');
-      setxident(xsize,   'size');
-      setxident(xbrush,  'brush');
-      setxident(xcircle, 'circle');
-      setxident(xrect,   'rect');
+      setxident(xpen,       'pen');
+      setxident(xcolor,     'color');
+      setxident(xsize,      'size');
+      setxident(xbrush,     'brush');
+      setxident(xcircle,    'circle');
+      setxident(xrect,      'rect');
       //
       setxident(xcorepath,  'corepath');
       setxident(xuserpath,  'userpath');
       setxident(xcoreimport,'coreimport');
       setxident(xuserimport,'userimport');//userimport?
-      //
-      //setxident(xtestiput,   'testiput');     // for test !!!
-      //setxident(xeinterp,'einterpreter');//?
       //
 end;
 
@@ -807,9 +804,7 @@ begin etop:=aggr;//???
       until false//
 end;
 
-// ----------------------
-// ------- legacy -------
-// ----------------------
+// legacy example for non-primitve-definitions
 procedure apiputA({ide}aggr,key,val: cardinal);// result: etop //... provi !!! for test
 begin etop:=aggr;
       einf:=key;
@@ -817,8 +812,8 @@ begin etop:=aggr;
       etop:=prop(aggr,xcons,prop(prop(key,xcons,prop(val,xcons,xnil)),xcons,xnil));
       //servprint(tovalue(etop));//for test
   //  efun:=xtestiput;// für den call
-      repeat eval;  if (ecall<>0) then proc[ecall]
-      until equit;//loop?
+      {repeat eval;  if (ecall<>0) then proc[ecall] // geschw. kommentar aufheben,
+      until equit;}//loop?                          //  wenn es noch benutzt wird!
 end;
 
 //verändert die register! //nur pointer-vergleich!

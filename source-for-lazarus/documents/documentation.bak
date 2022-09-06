@@ -1,23 +1,23 @@
-{\rtf1\ansi\deff0{\fonttbl{\f0\froman\fcharset0 Basic Roman;}{\f1\froman\fcharset0 Basic Sans;}{\f2\froman\fcharset0 Liberation Serif;}{\f3\froman\fcharset0 Liberation Sans;}{\f4\froman\fcharset0 Carlito;}{\f5\froman\fcharset0
-Carlito;}{\f6\froman\fcharset0 Carlito;}}{\colortbl;\red0\green0\blue0;\red0\green0\blue255;\red0\green255\blue255;\red0\green255\blue0;\red255\green0\blue255;\red255\green0\blue0;\red255\green255\blue0;
-\red255\green255\blue255;\red0\green0\blue127;\red0\green127\blue127;\red0\green127\blue0;\red127\green0\blue127;\red127\green0\blue0;\red127\green127\blue0;\red127\green127\blue127;\red192\green192\blue192;
-\red230\green230\blue230;\red204\green204\blue204;\red179\green179\blue179;\red153\green153\blue153;\red127\green127\blue127;\red102\green102\blue102;\red77\green77\blue77;\red51\green51\blue51;
-\red247\green150\blue70;\red255\green134\blue13;}{\stylesheet {\s1\ltrpar\ql\li0\ri0\fi0\outlinelevel9\sb0\sa0\sbauto0\saauto0\nowidctlpar\sl0\hyphpar0\rtlch\af2\afs24\alang1031\ltrch\dbch\af2\afs24\alang1081\hich\af2\afs24
-\alang1031\loch\f2\fs24\cf0\nosupersub\charscalex100\expndtw0\b0\scaps0\ulnone\ulc0\striked0\i0\kerning1\strike0\v0\caps0\lang1031\chcbpat0\highlight0\snext1 Normal;}{\s2\ltrpar\ql\li0\ri0\fi0\outlinelevel9\sb240\sa120\sbauto0
-\saauto0\nowidctlpar\sl0\keepn\hyphpar0\rtlch\af2\afs24\alang1031\ltrch\dbch\af2\afs28\alang1031\hich\af3\afs28\alang1031\loch\f3\fs28\cf0\nosupersub\charscalex100\expndtw0\b0\scaps0\ulnone\ulc0\striked0\i0\kerning1\strike0
-\v0\caps0\lang1031\chcbpat0\highlight0\sbasedon1\snext3 Überschrift;}{\s3\ltrpar\ql\li0\ri0\fi0\outlinelevel9\sb0\sa140\sbauto0\saauto0\nowidctlpar\sl276\slmult1\hyphpar0\rtlch\af2\afs24\alang1031\ltrch\dbch\af2\afs24\alang1031
-\hich\af2\afs24\alang1031\loch\f2\fs24\cf0\nosupersub\charscalex100\expndtw0\b0\scaps0\ulnone\ulc0\striked0\i0\kerning1\strike0\v0\caps0\lang1031\chcbpat0\highlight0\sbasedon1\snext3 Body Text;}{\s4\ltrpar\ql\li0\ri0\fi0\outlinelevel9
-\sb0\sa140\sbauto0\saauto0\nowidctlpar\sl276\slmult1\hyphpar0\rtlch\af2\afs24\alang1031\ltrch\dbch\af2\afs24\alang1031\hich\af2\afs24\alang1031\loch\f2\fs24\cf0\nosupersub\charscalex100\expndtw0\b0\scaps0\ulnone\ulc0\striked0
-\i0\kerning1\strike0\v0\caps0\lang1031\chcbpat0\highlight0\sbasedon3\snext4 List;}{\s5\ltrpar\ql\li0\ri0\fi0\outlinelevel9\sb120\sa120\sbauto0\saauto0\nowidctlpar\sl0\hyphpar0\rtlch\af2\afs24\alang1031\ltrch\dbch\af2\afs24\alang1031
-\ai\hich\af2\afs24\alang1031\ai\loch\f2\fs24\cf0\nosupersub\charscalex100\expndtw0\b0\scaps0\ulnone\ulc0\striked0\i1\kerning1\strike0\v0\caps0\lang1031\chcbpat0\highlight0\sbasedon1\snext5 Caption;}{\s6\ltrpar\ql\li0\ri0\fi0
-\outlinelevel9\sb0\sa0\sbauto0\saauto0\nowidctlpar\sl0\hyphpar0\rtlch\af2\afs24\alang1031\ltrch\dbch\af2\afs24\alang1031\hich\af2\afs24\alang1031\loch\f2\fs24\cf0\nosupersub\charscalex100\expndtw0\b0\scaps0\ulnone\ulc0\striked0
-\i0\kerning1\strike0\v0\caps0\lang1031\chcbpat0\highlight0\sbasedon1\snext6 Verzeichnis;}{\*\cs7\rtlch\af2\afs24\alang1031\ltrch\dbch\af2\afs24\alang1081\hich\af2\afs24\alang1031\loch\f2\fs24\cf0\nosupersub\charscalex100\expndtw0
-\b0\scaps0\ulnone\ulc0\striked0\i0\kerning1\strike0\v0\caps0\lang1031\chcbpat0 Normal;}}{\*\revtbl {Unknown;}}{\info {\title }{\subject }{\author }{\keywords }{\doccomm }{\operator }{\creatim\yr2022\mo6\dy10\hr19\min14\sec31
-}{\revtim\yr2022\mo8\dy29\hr21\min27\sec15 }{\printim\yr2022\mo8\dy29\hr21\min28\sec4 }}\deflang1031\widowctrl\formshade\hyphauto\paperw12240\paperh15840\margl1800\margr1800\margt1440\margb1440\sectd\sbknone\guttersxn0\vertalt
-\pgndec\ltrpar\pard\ltrpar\s1\ql\li0\ri0\fi0\outlinelevel9\sb0\sa200\sbauto0\saauto0\nowidctlpar\sl276\slmult1\hyphpar0\rtlch\af4\afs24\alang1031\ltrch\dbch\af4\afs24\alang1081\ab\hich\af4\afs24\alang1031\ab\loch\f4\fs24\cf25
-\nosupersub\charscalex100\expndtw0\b1\scaps0\ulnone\ulc0\striked0\i0\kerning1\strike0\v0\caps0\lang1031\chcbpat0\highlight0\rtlch\af4\afs28\alang1031\ltrch\dbch\af4\afs28\alang1081\ab\hich\af4\afs28\alang1031\ab\loch\fs28
-Pointfrip Documentation\rtlch\af4\afs24\alang1031\ltrch\dbch\af4\afs24\alang1081\hich\af4\afs24\alang1031\loch\fs24\cf0\b0\line 2022-08-29\rtlch\af4\afs24\alang1031\ltrch\dbch\af4\afs24\alang1081\ab\hich\af4\afs24\alang1031\ab
-\loch\cf25\b1\par
+{\rtf1\ansi\deff0{\fonttbl{\f0\froman\fcharset0 Basic Roman;}{\f1\froman\fcharset0 Basic Sans;}{\f2\froman\fcharset0 Liberation Serif;}{\f3\froman\fcharset0 Liberation Sans;}{\f4\froman\fcharset0 Liberation Serif;}{\f5\froman
+\fcharset0 Liberation Serif;}{\f6\froman\fcharset0 Liberation Serif;}}{\colortbl;\red0\green0\blue0;\red0\green0\blue255;\red0\green255\blue255;\red0\green255\blue0;\red255\green0\blue255;\red255\green0\blue0;
+\red255\green255\blue0;\red255\green255\blue255;\red0\green0\blue127;\red0\green127\blue127;\red0\green127\blue0;\red127\green0\blue127;\red127\green0\blue0;\red127\green127\blue0;\red127\green127\blue127;
+\red192\green192\blue192;\red230\green230\blue230;\red204\green204\blue204;\red179\green179\blue179;\red153\green153\blue153;\red127\green127\blue127;\red102\green102\blue102;\red77\green77\blue77;
+\red51\green51\blue51;\red247\green150\blue70;\red255\green134\blue13;}{\stylesheet {\s1\ltrpar\ql\li0\ri0\fi0\outlinelevel9\sb0\sa0\sbauto0\saauto0\nowidctlpar\sl0\hyphpar0\rtlch\af2\afs24\alang1031\ltrch\dbch\af2\afs24\alang1081
+\hich\af2\afs24\alang1031\loch\f2\fs24\cf0\nosupersub\charscalex100\expndtw0\b0\scaps0\ulnone\ulc0\striked0\i0\kerning1\strike0\v0\caps0\lang1031\chcbpat0\highlight0\snext1 Normal;}{\s2\ltrpar\ql\li0\ri0\fi0\outlinelevel9\sb240
+\sa120\sbauto0\saauto0\nowidctlpar\sl0\keepn\hyphpar0\rtlch\af2\afs24\alang1031\ltrch\dbch\af2\afs28\alang1031\hich\af3\afs28\alang1031\loch\f3\fs28\cf0\nosupersub\charscalex100\expndtw0\b0\scaps0\ulnone\ulc0\striked0\i0\kerning1
+\strike0\v0\caps0\lang1031\chcbpat0\highlight0\sbasedon1\snext3 Überschrift;}{\s3\ltrpar\ql\li0\ri0\fi0\outlinelevel9\sb0\sa140\sbauto0\saauto0\nowidctlpar\sl276\slmult1\hyphpar0\rtlch\af2\afs24\alang1031\ltrch\dbch\af2\afs24
+\alang1031\hich\af2\afs24\alang1031\loch\f2\fs24\cf0\nosupersub\charscalex100\expndtw0\b0\scaps0\ulnone\ulc0\striked0\i0\kerning1\strike0\v0\caps0\lang1031\chcbpat0\highlight0\sbasedon1\snext3 Body Text;}{\s4\ltrpar\ql\li0
+\ri0\fi0\outlinelevel9\sb0\sa140\sbauto0\saauto0\nowidctlpar\sl276\slmult1\hyphpar0\rtlch\af2\afs24\alang1031\ltrch\dbch\af2\afs24\alang1031\hich\af2\afs24\alang1031\loch\f2\fs24\cf0\nosupersub\charscalex100\expndtw0\b0\scaps0
+\ulnone\ulc0\striked0\i0\kerning1\strike0\v0\caps0\lang1031\chcbpat0\highlight0\sbasedon3\snext4 List;}{\s5\ltrpar\ql\li0\ri0\fi0\outlinelevel9\sb120\sa120\sbauto0\saauto0\nowidctlpar\sl0\hyphpar0\rtlch\af2\afs24\alang1031\ltrch
+\dbch\af2\afs24\alang1031\ai\hich\af2\afs24\alang1031\ai\loch\f2\fs24\cf0\nosupersub\charscalex100\expndtw0\b0\scaps0\ulnone\ulc0\striked0\i1\kerning1\strike0\v0\caps0\lang1031\chcbpat0\highlight0\sbasedon1\snext5 Caption;
+}{\s6\ltrpar\ql\li0\ri0\fi0\outlinelevel9\sb0\sa0\sbauto0\saauto0\nowidctlpar\sl0\hyphpar0\rtlch\af2\afs24\alang1031\ltrch\dbch\af2\afs24\alang1031\hich\af2\afs24\alang1031\loch\f2\fs24\cf0\nosupersub\charscalex100\expndtw0
+\b0\scaps0\ulnone\ulc0\striked0\i0\kerning1\strike0\v0\caps0\lang1031\chcbpat0\highlight0\sbasedon1\snext6 Verzeichnis;}{\*\cs7\rtlch\af2\afs24\alang1031\ltrch\dbch\af2\afs24\alang1081\hich\af2\afs24\alang1031\loch\f2\fs24\cf0
+\nosupersub\charscalex100\expndtw0\b0\scaps0\ulnone\ulc0\striked0\i0\kerning1\strike0\v0\caps0\lang1031\chcbpat0 Normal;}}{\*\revtbl {Unknown;}}{\info {\title }{\subject }{\author }{\keywords }{\doccomm }{\operator }{\creatim
+\yr2022\mo6\dy10\hr19\min14\sec31 }{\revtim\yr2022\mo6\dy10\hr20\min42\sec3 }{\printim\yr2022\mo6\dy10\hr20\min43\sec8 }}\deflang1031\widowctrl\formshade\hyphauto\paperw12240\paperh15840\margl1800\margr1800\margt1440\margb1440
+\sectd\sbknone\guttersxn0\vertalt\pgndec\ltrpar\pard\ltrpar\s1\ql\li0\ri0\fi0\outlinelevel9\sb0\sa200\sbauto0\saauto0\nowidctlpar\sl276\slmult1\hyphpar0\rtlch\af4\afs24\alang1031\ltrch\dbch\af4\afs24\alang1081\ab\hich\af4\afs24
+\alang1031\ab\loch\f4\fs24\cf25\nosupersub\charscalex100\expndtw0\b1\scaps0\ulnone\ulc0\striked0\i0\kerning1\strike0\v0\caps0\lang1031\chcbpat0\highlight0\rtlch\af4\afs28\alang1031\ltrch\dbch\af4\afs28\alang1081\ab\hich\af4
+\afs28\alang1031\ab\loch\fs28 Pointfrip Documentation\rtlch\af4\afs24\alang1031\ltrch\dbch\af4\afs24\alang1081\hich\af4\afs24\alang1031\loch\fs24\cf0\b0\line 2022-06-10\rtlch\af4\afs24\alang1031\ltrch\dbch\af4\afs24\alang1081
+\ab\hich\af4\afs24\alang1031\ab\loch\cf25\b1\par
 \rtlch\af4\afs24\alang1031\ltrch\dbch\af4\afs24\alang1081\hich\af4\afs24\alang1031\loch\cf0\b0\par
 \rtlch\af4\afs24\alang1031\ltrch\dbch\af4\afs24\alang1081\ab\hich\af4\afs24\alang1031\ab\loch\b1\tab\rtlch\af4\afs28\alang1031\ltrch\dbch\af4\afs28\alang1081\hich\af4\afs28\alang1031\loch\fs28\b0 "\rtlch\af4\afs28\alang1031\ltrch
 \dbch\af4\afs28\alang1031\hich\af4\afs28\alang1031\loch\lang1031 PF guides the programmer in a way \line\tab so that the constructed functions are always pure.\rtlch\af4\afs28\alang1031\ltrch\dbch\af4\afs28\alang1081\hich
@@ -75,8 +75,7 @@ There is also the possibility of meta-programming for the FP language in order t
 \f0\fs20\par
 \rtlch\af4\afs24\alang1031\ltrch\dbch\af4\afs24\alang1031\hich\af4\afs24\alang1031\loch\f4\fs24 cosmetic work on the source code\rtlch\af0\afs20\alang1031\ltrch\dbch\af0\afs20\alang1031\hich\af0\afs20\alang1031\loch\f0\fs20
 \par
-\rtlch\af4\afs24\alang1031\ltrch\dbch\af4\afs24\alang1031\hich\af4\afs24\alang1031\loch\f4\fs24 Documents translated into English,\par
-outerprod implemented in matrix.txt\par
+\rtlch\af4\afs24\alang1031\ltrch\dbch\af4\afs24\alang1031\hich\af4\afs24\alang1031\loch\f4\fs24 Documents translated into English\par
 \rtlch\af0\afs20\alang1031\ltrch\dbch\af0\afs20\alang1031\hich\af0\afs20\alang1031\loch\f0\fs20\par
 \li0\fi0\par
 \sa200\sl276\slmult1\hyphpar0\rtlch\af4\afs24\alang1031\ltrch\dbch\af4\afs24\alang1081\hich\af4\afs24\alang1031\loch\f4\fs24\lang1031\par

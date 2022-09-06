@@ -86,17 +86,15 @@ iota0 == [1]°((ispos°succ°[0])->*(pred°[0]),([0],[1]),)°pred,(), // J
 reverse == [reverse] fn [1]°((isprop°[0])->*(tail°[0]),(prop°(head°[0]),(infix°[0]),[1],),)°id,(), // isprop? ,prop für objekte
 // reverse == [1]°((isprop°[0])->*(tail°[0]),((head°[0]),[1]),)°id,cap, // test for distr/l
 
-sizeof == isatom->'0|(+ \)°('1 aa) // provi
+// sizeof == isatom->'0|(+ \)°('1 aa) // provi a la Backus
 avg    == (+ \) / length // mean?
 
 // apply-to-all-loop:   (expr aa)°list
 aa  == arg map top°term
 //  map == ((isatom°[0])->( ) | ([1] app head°[0]),(tail°[0]) map [1])°ee // cap?
 // map-HOF:   list map 'expr
-map == ((not°isprop°[0])->(cap°[0]) | ([1] app head°[0]),(tail°[0]) map [1])°ee // test for isprop
-
-// in map unbenennen + auskommentieren
-forall == reverse°[2]°((isprop°[0])->*(tail°[0]),[1],(([1] app head°[0]),[2]),)°([0],[1],(),)°ee // cap? ,dip
+// map == ((not°isprop°[0])->(cap°[0]) | ([1] app head°[0]),(tail°[0]) map [1])°ee // test for isprop ,pre-recursive
+map == reverse°[2]°((isprop°[0])->*(tail°[0]),[1],(([1] app head°[0]),[2]),)°([0],[1],(cap°[0]),)°ee // cap? ,dip
 
 // apply-to-all-loop for param0:   (expr aa0)°list0,param1,param2, ... ,
 aa0 == arg map0 top ° term
@@ -111,23 +109,23 @@ insl == ( (isatom°[0])->'_undef|(isatom°tail°[0])->(head°[0])|
           (([1] app ([0],[1],)°[0]),tail°tail°[0]) insl [1] )°ee
 
 // fold ° 'expr,initakku,list,
-fold == (isatom°[2]) -> [1] ; fold ° [0],([0] app [1] ee head°[2]),(tail°[2]),
+fold == (isatom°[2]) -> [1] ; fold ° [0],([0] app [1] ee head°[2]),(tail°[2]),		// foldl
 
 // insert-right:   (expr \)°list
 \    == arg insr top°term // für rechts-vor-links
 // insert-right:   list insr 'expr
-insr == ( (not°isprop°[0])->'_undef |
-          (not°isprop°tail°[0])->(head°[0]) |
-	  [1] app (head°[0]) ee (tail°[0]) insr [1] )°ee
-
-// in insr umbenennen + auskommentieren
-foldr == foldrec°([1] ee reverse°[0])°ee
-foldrec == (isatom°[1])->'_undef|(isatom°tail°[1])->(head°[1])|foldrec°[0]ee([0]app([1],[0],)°[1]),tail°tail°[1]
+// insr == ( (not°isprop°[0])->'_undef |
+//          (not°isprop°tail°[0])->(head°[0]) |
+//			  [1] app (head°[0]) ee (tail°[0]) insr [1] )°ee
+insr == insrec°([1] ee reverse°unbox°[0])°ee
+insrec == (isatom°[1])->'_undef|(isatom°tail°[1])->(head°[1])|insrec°[0]ee([0]app([1],[0],)°[1]),tail°tail°[1]
 
 // filter-HOF:   list filter 'test
 filter == ( (isatom°[0])->() |  // cap?
             ([1] app head°[0])->((head°[0]),(tail°[0]) filter [1]) |
             (tail°[0]) filter [1] )°ee
+
+// scan
 
 // distribute-left:   param distl list   or   distl ° param,list,
 distl == reverse°[2]°((isprop°[0])->*(tail°[0]),[1],(([1],(head°[0]),),[2]),)°([1],[0],(cap°[1]),)°ee // isprop? ,comma und isnull und reverse testen
@@ -155,7 +153,7 @@ sel == ((round°[0]) app [1])°ee // pick
 last == (round°pred°length) app id // und bei leer?
 r == ((isneg°[1])->'_undef|(round°[1]) app unbox°[0])°arg ee (pred°length°arg)-float°top°term  // ...pick ,_undef?
 tailr == id take pred°length // init in haskell
-//rotate
+// rotate
 rotl == isatom->()|tail++prop°head,infix,(),
 rotr == (drop ++ take)°id ee pred°length
 // rotr == (([0] drop [1])++[0] take [1])°id ee pred°length // isatom?
@@ -211,7 +209,7 @@ ifprop == (prop°(('isprop comp top),'->,pop,)°term) app arg
 
 ?? == ((not°isnull°[1])->[1]|((pop°term) app arg)°[0])°id ee (top°term) app arg
 
-//to ,upto ,downto ...
+// to ,upto ,downto ...
 to == (([0]<=[1])->upto|downto)°ee
 
 upto   == reverse°[0]°(([1]<=[2])->*([1],[0]),(succ°[1]),[2],)°(),ee

@@ -4,6 +4,10 @@ IP==(+ \)°(* aa)°trans°ee				// Inner Product
 
 MM == [mul] op (((IP aa) aa)°(distl aa)°distr°[0],(trans°[1]),)°ee	// Matrix Multiply nach John Backus
 
+// outerprod ° op,listA,listB,
+outerprod == (((([2] app [1] ee [0]) aa0)°[3],id) aa0)°[1],id
+// MM = outerprod ° 'IP,listA,(trans°listB),
+
 droppos==((isnull°[0])->()|(iszero°[1])->((tail°[0]) droppos pred°[1])|(head°[0]),(tail°[0]) droppos pred°[1])°ee // row, i,
 
 droprow==(droppos aa)°distr
