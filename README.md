@@ -57,5 +57,6 @@ If you like pointfrip you can [download](https://www.heise.de/download/product/f
 ### [Can you write any function in point-free notation?](https://www.reddit.com/r/haskell/comments/o4zyz5/can_you_write_any_function_in_pointfree_notation/)
 ![friedbrice](https://raw.githubusercontent.com/metazip/pointfrip/main/backus-fp/friedbrice1.png)
 
-[Closed applicative languages](http://dirkgerrits.com/publications/john-backus.pdf#section.8)
+
+Because this is an Red and λ-Red language: [Closed applicative languages](http://dirkgerrits.com/publications/john-backus.pdf#section.8)
 
