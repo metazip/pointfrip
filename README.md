@@ -58,5 +58,5 @@ If you like pointfrip you can [download](https://www.heise.de/download/product/f
 ![friedbrice](https://raw.githubusercontent.com/metazip/pointfrip/main/backus-fp/friedbrice1.png)
 
 
-Because this is an Red and λ-Red language: [Closed applicative languages](http://dirkgerrits.com/publications/john-backus.pdf#section.8)
+Because this is a Red and λ-Red language: [Closed applicative languages](http://dirkgerrits.com/publications/john-backus.pdf#section.8)
 
