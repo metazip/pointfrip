@@ -1,4 +1,4 @@
-﻿ ((((((200*sinc°8*2pi*id)°_1+id/500) aa)°iota0°1000) plot0 _210) eff 'io)>>()
+﻿ ((((((200*sinc°8*2pi*id)°_1+id/500) aa)°0,iota°1000) plot0 _210) eff 'io)>>()
  
  coreimport == "library\turtlegraphics.txt";
  sinc == iszero -> 1 ; sin/id
