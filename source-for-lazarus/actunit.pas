@@ -7,6 +7,8 @@ interface
 uses Classes,//tstringlist
      SysUtils,//exception;
      Dialogs,//messagedlg;inputBox;
+     fpHTTPclient,   // mhttpget
+     opensslsockets, // mhttpget
      typeunit;//ustring;
 
 var idxreact:  cardinal = 0;
@@ -31,6 +33,7 @@ var idxdefine: cardinal = xnil;
     idxtime: cardinal = xnil;
     idxdate: cardinal = xnil;
     idxbeep: cardinal = xnil;
+    idxhttpget: cardinal = xnil;
 
 // ------- legacy -------
 procedure mundef;
@@ -218,6 +221,23 @@ begin beep;
       etop:=mdict
 end;
 
+procedure mhttpget;
+var url,txt: ustring;
+begin apiget(idxhttpget,mdict,xit);
+      if (infix[etop]<>xstring) then begin
+         apiput(mdict,xit,newerror(idxhttpget,'For httpget string expected.'));
+         //fehler genauer ...
+         exit
+      end;
+      url:=cell[etop].pstr^;// if nil?
+      try txt:=Tfphttpclient.simpleget(url);
+          apiput(mdict,xit,newstring(txt))
+      except on e: exception do begin
+                apiput(mdict,xit,newerror(idxhttpget,e.message)) // ... ?
+             end
+      end;
+end;
+
 var aindex: int64 = 0;
 
 // ------------------
@@ -339,6 +359,8 @@ begin for i:=0 to maxproc do proc[i]:=@mundef;
       idxdate:=newindex('date');
       idxbeep:=newindex('beep');
       //
+      idxhttpget:=newindex('httpget');
+      //
       proc[3] :=@mdefine;
       proc[4] :=@mredefine;
       proc[5] :=@mshowgraph;
@@ -352,6 +374,7 @@ begin for i:=0 to maxproc do proc[i]:=@mundef;
       proc[13]:=@mtime;
       proc[14]:=@mdate;
       proc[15]:=@mbeep;
+      proc[16]:=@mhttpget;
       //
 end;
 
