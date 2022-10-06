@@ -50,6 +50,8 @@ time == '[time] act id // function ,relative
 date == '[date] act id // function ,relative
 beep == '[beep] act id // function ,relative
 
+httpget == '[httpget] act arg put '_it ee (top°term) app arg // ...?
+
 // act   == (prop°[0],'_act,[1],)°ee //
 //
 // mit act auf relative namen(index) und für dict(variablen) auf die monaden-technik umstellen
@@ -83,6 +85,7 @@ io == .. { // [error] ==
            [time]      == ('([13] _act () _super () _bind) put '_super ee id)>>it // function nor op
            [date]      == ('([14] _act () _super () _bind) put '_super ee id)>>it // function nor op
            [beep]      == ('([15] _act () _super () _bind) put '_super ee id)>>it // function nor op???
+           [httpget] == ('([16] _act () _super () _bind) put '_super ee id)>>it // ...?
          }
 
 //alle auf _bind testen...

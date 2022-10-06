@@ -105,11 +105,9 @@ map0 == ((isatom°[0]°[0])->()|([1] app ((head°[0]),tail)°[0]),(((tail°[0]),
 
 // insertl, insertr, foldl, foldr
 // insert-left:   list insl 'expr
-insl == ( (isatom°[0])->'_undef|(isatom°tail°[0])->(head°[0])|
-          (([1] app ([0],[1],)°[0]),tail°tail°[0]) insl [1] )°ee
-
-// fold ° 'expr,initakku,list,
-fold == (isatom°[2]) -> [1] ; fold ° [0],([0] app [1] ee head°[2]),(tail°[2]),		// foldl
+insl == ((unbox°[0]) insloop [1])°ee
+insloop == ( (isatom°[0])->'_undef|(isatom°tail°[0])->(head°[0])|
+                    (([1] app ([0],[1],)°[0]),tail°tail°[0]) insloop [1] )°ee
 
 // insert-right:   (expr \)°list
 \    == arg insr top°term // für rechts-vor-links
@@ -119,6 +117,11 @@ fold == (isatom°[2]) -> [1] ; fold ° [0],([0] app [1] ee head°[2]),(tail°[2]
 //			  [1] app (head°[0]) ee (tail°[0]) insr [1] )°ee
 insr == insrec°([1] ee reverse°unbox°[0])°ee
 insrec == (isatom°[1])->'_undef|(isatom°tail°[1])->(head°[1])|insrec°[0]ee([0]app([1],[0],)°[1]),tail°tail°[1]
+
+// foldl ° 'expr,initakku,list,
+foldl == (not°isprop°[2]) -> [1] ; foldl ° [0],([0] app [1] ee head°[2]),(tail°[2]),		// foldl
+foldr == foldl ° ([0] comp '([1] ee [0])),[1],(reverse°[2]),					// Antwort auf reddit
+fold == .. foldl																							// Kompatibilität
 
 // filter-HOF:   list filter 'test
 filter == ( (isatom°[0])->() |  // cap?
