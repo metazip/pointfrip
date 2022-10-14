@@ -28,7 +28,7 @@ defining classes and using objects
                    [head] == head ° pop
                    [tail] == tail dip
                    [comma] == (top°[0]) obj [1],pop°[0]
-                   [reverse] == reverse dip
+                   [reverse] == reverse dip              // reverse == [reverse] fn ...
                  }
     --> ( )
     
