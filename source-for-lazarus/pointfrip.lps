@@ -80,7 +80,7 @@
         <IsPartOfProject Value="True"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="7"/>
-        <TopLine Value="214"/>
+        <TopLine Value="212"/>
         <CursorPos X="4" Y="163"/>
         <UsageCount Value="110"/>
         <Loaded Value="True"/>
@@ -160,7 +160,7 @@
       </Unit16>
     </Units>
     <Debugger>
-      <Backend Value="{A3B27F2A-14A7-489A-A799-69E670F05884}"/>
+      <Backend Value="{A1A00CC2-A314-4A13-8BC7-0F648A1DD613}"/>
     </Debugger>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
