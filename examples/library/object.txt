@@ -7,7 +7,7 @@ dip == prop°(top°arg),(tag°arg),((top°term) app pop°arg), // vergleichen!
 // dip0 == prop°(top°top°arg),(tag°top°arg),((top°term) app (pop aa)°arg),
 objdip == prop°(top°top°arg),(tag°top°arg),((top°term) app ((pop°[0]) ee pop°[1])°arg), // bidip?
 
-is == ((isobj°[0])->([1]=top°[0])|'false)°ee // super?
+is == ((isobj°[0])->([1]=top°[0])|'false)°ee // super names?
 
 // isobj: (((list :: xxx yyy zzz _s) ; bbb ;) ; ([sel1] sweeop term1 _s) ;)
 swop == ( (isobj°[0]°[0])->(((isundef->quote|id)°(top°[0]°[0]) iget top°[1]) app [0])
@@ -32,7 +32,7 @@ as == [as] op '[as] error '"object-type for operand[0] expected.",id, // space [
 
 // ------- standard classes -------
 
-; == () termoarg .. list // { [add]==box°(unbox°[0])++unbox°[1] } // ? for box // + test
+; == .. { list } // { [add]==box°(unbox°[0])++unbox°[1] } // ? for box // + test
 
 _integer == .. { [ispos] == ispos°unbox
                  [add]   == box°(unbox°[0])+(unbox°[1]) } // test
