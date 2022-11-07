@@ -26,7 +26,7 @@ turtle == .. { dict
    [new]        == initturtle as top°self
    [draw]       == (prop°(quote°reverse°#stack°[0]),'showgraph,(),) app [2]
    [moveto]     == ((self put 'stack ee prop°([0]°para),([1]°para),(self get 'stack),)
-	           put 'x ee [0]°para) put 'y ee [1]°para
+                   put 'x ee [0]°para) put 'y ee [1]°para
    [moverel]    == ((([0]°para)+self get 'x) ee (([1]°para)+self get 'y)) moveto self
    [move]       == ( ((([0] get 'x) + [1]*cos°[2]) ee (([0] get 'y) + [1]*sin°[2]))
                      °self,para,(self get 'angle), ) moveto self

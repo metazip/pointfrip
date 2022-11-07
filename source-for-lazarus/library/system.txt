@@ -9,17 +9,17 @@ define   == '[3] act (arg put '_self ee (top°term) app arg) put '_para ee (pop�
 redefine == '[4] act (arg put '_self ee (top°term) app arg) put '_para ee (pop°term) app arg // absolute
 
 // (data showgraph)°dict // self und it vertauscht!
-showgraph == '[showgraph] act arg put '_it ee (top°term) app arg // para?
+showgraph == '[showgraph] act arg put '_it ee (top°term) app arg  // para?
 //showgraph == '( [showgraph] _act () _it () _bind) put '_it ee id //relative
 // showgraph == '([5] _act () _bind) put 'it ee id // id als 2. im _act ? //absolute
 
 // (data showinfo)°dict // self und it vertauscht!
-showinfo == '[showinfo] act arg put '_it ee (top°term) app arg // para?
+showinfo == '[showinfo] act arg put '_it ee (top°term) app arg  // para?
 //showinfo == ('[showinfo] act arg) put 'it ee (top°term) app arg // para?
 // showinfo  == '(  [showinfo] _act () it () _bind) put 'it ee id // releative
 
 // (data print)°dict // self und it vertauscht!
-print == '[print] act arg put '_it ee (top°term) app arg // para?
+print == '[print] act arg put '_it ee (top°term) app arg  // para?
 //print == ('[print] act arg) put 'it ee (top°term) app arg // para?
 // print     == '(     [print] _act () it () _bind) put 'it ee id // releative
 
@@ -30,7 +30,7 @@ input == '[input] act (arg put '_self ee (top°term) app arg) put '_para ee (pop
 // input     == '(     [input] _act () it () _bind) put 'it ee id // releative
 
 // (fname loadtext)°dict // self und it vertauscht!
-loadtext  == '[loadtext] act arg put '_it ee (top°term) app arg // para?
+loadtext  == '[loadtext] act arg put '_it ee (top°term) app arg  // para?
 //loadtext  == ('[loadtext] act arg) put 'it ee (top°term) app arg // para?
 // loadtext  == '(  [loadtext] _act () it () _bind) put 'it ee id // relative
 
@@ -40,15 +40,15 @@ savetext  == '[savetext] act (arg put '_self ee (top°term) app arg) put '_para 
 // savetext  == (('([savetext] _act () it () _bind) put 'self ee self) put 'para ee para)°ee //
 
 // (fname run)°dict // self und it vertauscht!
-run == '[run] act arg put '_it ee (top°term) app arg // para?
+run == '[run] act arg put '_it ee (top°term) app arg  // para?
 //run == ('[run] act arg) put 'it ee (top°term) app arg // para?
 // run == '([run] _act () it () _bind) put 'it ee id // releative
 
-quit == '([12] _act () _it () _bind) // absolute/relatve? // ee
+quit == '([12] _act () _it () _bind)  // absolute/relatve? // ee
 
-time == '[time] act id // function ,relative
-date == '[date] act id // function ,relative
-beep == '[beep] act id // function ,relative
+time == '[time] act id  // function ,relative
+date == '[date] act id  // function ,relative
+beep == '[beep] act id  // function ,relative
 
 httpget == '[httpget] act arg put '_it ee (top°term) app arg // ...?
 
@@ -88,7 +88,7 @@ io == .. { // [error] ==
            [httpget] == ('([16] _act () _super () _bind) put '_super ee id)>>it // ...?
          }
 
-//alle auf _bind testen...
+// alle auf _bind testen...
 
 
 // GNU Lesser General Public License v2.1
