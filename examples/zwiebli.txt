@@ -1,12 +1,12 @@
-﻿loop°'59
+﻿loop°59
 
 coreimport == "library\turtlegraphics.txt";
 
-loop==(kringel var id)>>(loop°#var+'0.005)
+loop==(kringel var id)>>(loop°#var+0.005)
 
 kringel==(((reverse°(pendown°[0] moveto penup°'turtle new),tail) insr '([0] moveto [1]))
-°(('0,iota°'3000) distr id) map '((('300+('200-[0]*'200)*cos°2pi*'60*[0]),
-                        ('_300+('200-[0]*'200)*sin°2pi*[1]*[0]),)°([0]/'3000),[1],)) (draw eff 'io)
+°((0,iota°3000) distr id) map '(((300+(200-[0]*200)*cos°2pi*60*[0]),
+                        (_300+(200-[0]*200)*sin°2pi*[1]*[0]),)°([0]/3000),[1],)) (draw eff 'io)
 
 
 // (CC0)

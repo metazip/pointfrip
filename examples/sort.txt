@@ -1,8 +1,8 @@
 ﻿qsort ° text1
 
-qsort==isnull->id|
+qsort==isnull->id;
 	((qsort°[2])++[0],qsort°[3])
-	°((not°isnull°[1])->*[0],(tail°[1]),([0]>[0]°[1])->((([0]°[1]),[2]),[3],)|[2],(([0]°[1]),[3]),)
+	°((not°isnull°[1])->*[0],(tail°[1]),([0]>[0]°[1])->((([0]°[1]),[2]),[3],);[2],(([0]°[1]),[3]),)
 	°[0],tail,(),(),
 
 text1==Advantages;of;FP;systems;.;The;main;reason;FP;systems;are;considerably;simpler;than;either;

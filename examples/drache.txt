@@ -2,7 +2,7 @@
 
 coreimport == "library\turtlegraphics.txt";
 
-drache == ((#level=0)->(#len move #t)|
+drache == ((#level=0)->(#len move #t);
 		((#level,#len,) drache
 		(2pi/6) turn
 		(#level,#len,) drache
