@@ -1,0 +1,17 @@
+﻿'("symbols.txt" loaded)
+
+// ≡
+
+∘ ≡ .. o  // compose
+× ≡ .. *
+÷ ≡ .. /
+→* ≡ .. ->*
+→ ≡ .. ->
+← ≡ .. <-
+≠ ≡ .. <>
+¬ ≡ .. not
+α ≡ .. aa
+ι ≡ .. iota
+
+
+// GNU Lesser General Public License v2.1

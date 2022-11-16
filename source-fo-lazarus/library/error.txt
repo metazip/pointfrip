@@ -1,0 +1,15 @@
+﻿'("error.txt" loaded)
+
+// für pick, iget verwenden
+
+_error == .. { [interpreter] == .. "einterpreter"
+               [applic] == .. "eapplic"
+               [add] == .. "eadd"
+               [abs] == .. "eabs"
+               [div] == .. ediv
+               [define]   == .. edefine
+               [redefine] == .. eredefine
+               [run]      == .. erun}
+
+
+// GNU Lesser General Public License v2.1

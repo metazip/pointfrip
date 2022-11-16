@@ -1,0 +1,10 @@
+﻿'("loops.txt" loaded)
+
+// list0 (expr aal) param1
+aal == reverse°[0]°((isprop°[2])->*(([1] app (head°[2]) ee [3]),[0]),[1],(tail°[2]),[3],)°((cap°[1]),id)°(top°term),ee°arg
+
+// param0 (expr aar) list1
+aar == reverse°[0]°((isprop°[3])->*(([1] app [2] ee head°[3]),[0]),[1],[2],(tail°[3]),)°((cap°[2]),id)°(top°term),ee°arg
+
+
+// GNU Lesser General Public License v2.1

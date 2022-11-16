@@ -1,0 +1,8 @@
+﻿welcome ==
+   ((id print) eff 'io)>>
+   time>>
+   (date°(time:=it))>>
+   ( (id join " ") ° "today","is",((round°weekday°#date) app days),"the",
+     (datetostring°#date),"at",((timetostring°#time) left 5), )°(date:=it)
+
+// GNU Lesser General Public License v2.1

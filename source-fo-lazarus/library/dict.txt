@@ -1,0 +1,39 @@
+﻿'("dict.txt" loaded)
+
+get == [get] op iget  // for test
+put == [put] op iput  // for test
+
+_v == arg get top°term  // top ,iget?
+:= == arg put (top°term) ee (pop°term) app arg  // top,pop // substitute // ,auch für integer?
+
+keys == [keys] fn reverse°[1]°((isprop°[0])->*(tail°[0]),((infix°[0]),[1]),)°id,(),
+values == [values] fn reverse°[1]°((isprop°[0])->*(tail°[0]),((head°[0]),[1]),)°id,(),
+
+dict == .. { object
+             [get] == (pop°[0]) iget [1]
+             [put] == (top°[0]) obj (pop°[0]) put [1]  // noch nicht getestet
+             [remove] ==
+             [keys] == keys°pop
+             [values] == values°pop}
+
+// ------- legacy -------
+dictget == (isnull->'_undef;head)°[0]°(((isnull°[0])->'false;not°[1]=infix°[0])->*(tail°[0]),[1],)°ee  //((tail°[0]),[1],)°ee
+
+// in apiput-implementierung auf (... ... .. c) not°isprop°c achten!
+dictput == (([1]°[2])++prop°([1]°[1]),([0]°[1]),((isatom->();tail)°[0]°[2]),)  // id durch () ersetzt
+	°([0],[1],(([0],(reverse°[2]),)
+		°(((isatom°[0])->'false;not°[1]=infix°[0])->*(tail°[0]),[1],(prop°(head°[0]),(infix°[0]),[2],),)
+		°[0],([0]°[1]),(),),)°ee
+// ------- legacy -------
+//dictput == (([1]°[2])++prop°([1]°[1]),([0]°[1]),((isnull->();tail)°[0]°[2]),)
+//	°([0],[1],(([0],(reverse°[2]),)
+//		°(((isnull°[0])->'false;not°[1]=infix°[0])->*(tail°[0]),[1],(prop°(head°[0]),(infix°[0]),[2],),)
+//		°[0],([0]°[1]),(),),)°ee
+
+// ------- legacy -------
+// <- == (head°term) app prop°(),'~,(reverse°[2]
+//	°(((isnull°[0])->'false;not°isnull°[1])->*(tail°[0]),(tail°[1]),(prop°([0]°[1]),([0]°[0]),[2],),)
+//	°(tail°term),arg,(),),
+
+
+// GNU Lesser General Public License v2.1
