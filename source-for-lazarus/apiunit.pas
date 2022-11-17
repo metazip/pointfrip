@@ -46,9 +46,9 @@ const //
       ecomnosafearray: es      = 'precom: no safe _array in infix.';//???
       ecomnosafetype: es       = 'precom: no safe primtype in infix.';//???
       //
-      ecomnoint: es            = 'precom: no integer value in brackets.';
+      ecomnoindt: es           = 'precom: no integer or index value in brackets.';
       ecomnoprebracket: es     = 'precom: opening bracket missing.';
-      ecomnopostbracket: es    = 'precom: closing bracket missing.';
+      ecomnopostbracket: es    = 'precom: closing bracket expected.';
       ecomnostringend: es      = 'precom: string has no ending (").';
       //table
       ecomtableunexpend: es    = 'precom: unexpected end in table.';

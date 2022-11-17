@@ -279,27 +279,33 @@ var it: ustring;
                         else index:=idx
     end;
 
-    // comindt nochmal ganz überarbeiten!!!
-    procedure comindt;// syntax nochmal durchgehen...
+    // comindt nochmal ganz überarbeiten?
+    procedure comindt;// syntax nochmal durchgehen (?)
     var inum: int64;
         errcode: longint;// cardinal???
-        numstr: ustring;
+        numstr,it2: ustring;
     begin it:=item(txt,ix);
+          {
           if (it=']') then precomraise(ecomnoint);
           if (it='-') then begin
              it:=item(txt,ix);
              if (it=']') then precomraise(ecomnoint);
              it:='-'+it
           end;//auf '-' reagieren!
-          numstr:=stringreplace(it,'_','-',[rfReplaceAll]);//anders!
+          }
+          it2:=item(txt,ix);
+          if (it2<>']') then begin
+             if (it=']') then precomraise(ecomnoindt)
+                         else precomraise(ecomnopostbracket)
+          end;
+          //
+          numstr:=stringreplace(it,'_','-',[rfReplaceAll]);//anders!?
           val(numstr,inum,errcode);
           //err-ausnahmen
           //ablegen
           if (errcode=0) then cstack:=prop(newinteger(inum),xcons,cstack)
                          else cstack:=prop(index(it),xcons,cstack);//nachbessern mit fehlern
           //precomraise(ecomnoint);//direkt nach err-ausnahmen ?
-          it:=item(txt,ix);
-          if (it<>']') then precomraise(ecomnopostbracket)
     end;
 
     {procedure comstring;
