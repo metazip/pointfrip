@@ -1,5 +1,5 @@
 ## ![pointfrip](https://raw.githubusercontent.com/metazip/pointfrip/main/pflogo.png)
-**Pointfree Interpreter with Classes in Lazarus**
+**pointfree interpreter with instance variables and classes, in lazarus**
  
 ![screenshot](https://raw.githubusercontent.com/metazip/pointfrip/main/tahomapointfrip.png)
   
@@ -17,7 +17,7 @@ for example: generation of numbers with iota
     iota ° 10
     --> (1 ; 2 ; 3 ; 4 ; 5 ; 6 ; 7 ; 8 ; 9 ; 10 ;)
 
-possibility to work with tables like in [trivia](https://esolangs.org/wiki/FP_trivia)
+possibility to work with tables/instance-variables like in [trivia](https://esolangs.org/wiki/FP_trivia)
 
     (#beta & #alpha & #gamma & #delta & "US") ° (delta:="K") ° '("A" alpha "B" beta "C" gamma)
     --> "BACKUS"
@@ -55,7 +55,7 @@ If you like pointfrip you can [download](https://www.heise.de/download/product/f
 
 ##
 ### [Can you write any function in point-free notation?](https://www.reddit.com/r/haskell/comments/o4zyz5/can_you_write_any_function_in_pointfree_notation/)
-![friedbrice](https://raw.githubusercontent.com/metazip/pointfrip/main/backus-fp/friedbrice1.png)
+![friedbrice](https://raw.githubusercontent.com/metazip/pointfrip/main/backus-fp/friedbrice24.png)
 
 
 This is a Red and λ-Red language: [Closed applicative languages](http://dirkgerrits.com/publications/john-backus.pdf#section.8)
