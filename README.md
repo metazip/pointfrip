@@ -29,10 +29,10 @@ defining classes and using objects
                    [tail] == tail dip
                    [comma] == (top°[0]) obj [1],pop°[0]
                    [reverse] == reverse dip  // method
-                 }                           // reverse == [reverse] fn ...
+                 }
     --> ( )
     
-    reverse ° (constr :: A;B;C;)
+    reverse ° (constr :: A;B;C;)             // reverse == [reverse] fn ...
     --> (constr :: C ; B ; A ;)
 
 side-effects used in [installer.exe](https://github.com/metazip/pointfrip/tree/main/installer)
