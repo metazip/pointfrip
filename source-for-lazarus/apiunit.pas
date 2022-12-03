@@ -117,9 +117,9 @@ const //
       //
       //nachfolgendes löschen?
       etermnoprop: es        = 'term has no prop-syntax.';//???
-      eactualnoformal: es    = 'actual parameter has no formal-syntax.';//???
-      etypemismatch: es      = 'typemismatch: ...';//weiter ausbauen !!!
-      eformalinfnobool: es   = 'formal infix is no bool.';//???
+      eactualnoformal: es    = 'actual parameter has no formal-syntax: ';//???
+      etypemismatch: es      = 'typemismatch: ';//weiter ausbauen !!!
+      eformalinfnobool: es   = 'formal infix is no bool: ';//???
       //
       efnnobool: es          = 'for function bool expected.';
       eopnobool1: es         = 'bool for operand[0] expected.';

@@ -12,7 +12,8 @@ procedure initcombiprims;
 
 implementation
 
-uses apiunit, vmunit, primunit;
+uses apiunit, vmunit, primunit,
+     serveunit;//for test (serveprint)
 
 var //
     idxquote: cardinal = xnil;
@@ -251,14 +252,15 @@ begin repeat einf:=infix[etop];
          if (einf=xcombine)    then begin
             efun:=cell[etop].arg;
             if (infix[efun]=xerror) then begin etop:=efun; exit end;//genauer? ,assignraise?
+            epush(etop); //serveprint(tovalue(etop));//print for test
             epush(efun);//xx
             etop:=cell[etop].term;
             repeat einf:=infix[etop];
                    if      (einf>=xlimit) then break
                    //else if (einf=xlink)   then etop:=cell[etop].value
                    //else if (einf=xlazy)   then delazy
-                   else if (einf=xerror)  then begin dec(eptr); exit end//assignraise?
-                   else begin dec(eptr);
+                   else if (einf=xerror)  then begin dec(eptr,2); exit end//assignraise?
+                   else begin dec(eptr,2);
                               etop:=newerror(idxassign,etermnoprop);
                               exit//assignraise?
                         end
@@ -290,9 +292,9 @@ begin repeat einf:=infix[etop];
                      end
                      //else if (einf=xlink)  then etop:=cell[etop].value
                      //else if (einf=xlazy)  then delazy
-                     else if (einf=xerror) then begin dec(eptr,4); exit end//assignraise?
-                     else begin dec(eptr,4);
-                                etop:=newerror(idxassign,eactualnoformal);
+                     else if (einf=xerror) then begin dec(eptr,5); exit end//assignraise?
+                     else begin etop:=newerror(idxassign,eactualnoformal+tovalue(estack[eptr-4]));
+                                dec(eptr,5);
                                 assignraise//exit
                           end//
                   until false;
@@ -313,7 +315,7 @@ begin repeat einf:=infix[etop];
                         until equit;
                         if      (etop=xtrue) then break//etop:=estack[eptr-2]?
                         else if (etop=xfalse) then begin
-                           dec(eptr,4);
+                           dec(eptr,4); //jetzt 5
                            etop:=newexc(ideassign,etypemismatch);//genauer!
                            assignraise
                         end
@@ -321,7 +323,7 @@ begin repeat einf:=infix[etop];
                         else if (infix[etop]=xexc) then begin dec(eptr,4);
                                                               assignraise//exit//?
                                                         end
-                        else begin dec(eptr,4);
+                        else begin dec(eptr,4);//jetzt 5
                                    etop:=newexc(ideassign,eformalinfnobool);
                                    assignraise//exit //???
                              end
@@ -337,24 +339,24 @@ begin repeat einf:=infix[etop];
                         until equit;
                         if      (etop=xtrue)  then break//etop:=estack[eptr-2]?
                         else if (etop=xfalse) then begin
-                           dec(eptr,4);
-                           etop:=newerror(idxassign,etypemismatch);//genauer!
+                           etop:=newerror(idxassign,etypemismatch+tovalue(estack[eptr-4]));//genauer!
+                           dec(eptr,5);
                            assignraise
                         end
                         //en assignlambdatypemismatch
-                        else if (infix[etop]=xerror) then begin dec(eptr,4);
+                        else if (infix[etop]=xerror) then begin dec(eptr,5);
                                                                 assignraise//exit//?
                                                           end
-                        else begin dec(eptr,4);
-                                   etop:=newerror(idxassign,eformalinfnobool);
+                        else begin etop:=newerror(idxassign,eformalinfnobool+tovalue(estack[eptr-4]));
+                                   dec(eptr,5);
                                    assignraise//exit //???
                              end
                      end
                      //else if (einf=xlink)  then etop:=cell[etop].value
                      //else if (einf=xlazy)  then delazy
-                     else if (einf=xerror) then begin dec(eptr,4); exit end//assignraise?
-                     else begin dec(eptr,4);
-                                etop:=newerror(idxassign,eactualnoformal);
+                     else if (einf=xerror) then begin dec(eptr,5); exit end//assignraise?
+                     else begin etop:=newerror(idxassign,eactualnoformal+tovalue(estack[eptr-4]));
+                                dec(eptr,5);
                                 assignraise//exit
                           end//
                   until false;
@@ -364,7 +366,7 @@ begin repeat einf:=infix[etop];
                end
                //else if (einf=xlink)   then etop:=cell[etop].value
                //else if (einf=xlazy)   then delazy
-               else if (einf=xerror)  then begin dec(eptr,4); exit end//assignraise?
+               else if (einf=xerror)  then begin dec(eptr,5); exit end//assignraise?
                else begin estack[eptr]:=prop(estack[eptr-2],etop,estack[eptr]);
                           break
                     end//
@@ -387,7 +389,7 @@ begin repeat einf:=infix[etop];
             //servprint(tovalue(etop));
             //
             efun:=estack[eptr-3];
-            dec(eptr,4);
+            dec(eptr,5);
             equit:=false;
             exit
          end

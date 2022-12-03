@@ -1,7 +1,7 @@
 object guiForm: TguiForm
-  Left = 248
+  Left = 254
   Height = 680
-  Top = 130
+  Top = 112
   Width = 669
   Caption = 'pointfree interpreter with classes in lazarus'
   ClientHeight = 680
@@ -4185,7 +4185,7 @@ object guiForm: TguiForm
   OnResize = FormResize
   OnShow = FormShow
   OnWindowStateChange = FormWindowStateChange
-  LCLVersion = '2.2.0.4'
+  LCLVersion = '2.2.4.0'
   object backpanel: TPanel
     Left = 0
     Height = 680

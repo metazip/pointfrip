@@ -12,5 +12,8 @@ Y == (top°term) app term,arg,  // ohne comma? am ende allgemein
 // (((arg<1000)->(term app arg+3);arg) Y)°'0
 // (((arg<1000)->(term app arg*2);arg) Y)°'1
 
+Yn == (top°term) app term,arg
+// ((((#x=0)->1;#x*#f app (#x-1),#y,#z,)<-f;x;y;z;) Yn):(7;5;6;)
+
 
 // GNU Lesser General Public License v2.1

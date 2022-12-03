@@ -139,7 +139,7 @@ const pixelinpopupmenu = 12;//14;//in servunit;//0=linux?
       infofiledef: es = 'quickinfo.pdf';//bitte .pdf
       docufiledef: es = 'documentation.pdf';//bitte .pdf
       helpfiledef: es = 'reference.pdf';//bitte .pdf
-      website_url: es = 'https://pf-system.github.io';//?
+      website_url: es = 'https://pointfree-interpreter.github.io';//?
       //webwiki_url: es = 'http://162.248.51.100/~pointfre/fp';
       testfiledef: es = 'test.txt';
       redefine: es = 'redefine';
