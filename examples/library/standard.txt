@@ -236,5 +236,7 @@ hastag == (tag°arg)=top°term
 zero == [zero] fn isreal -> 0 | isint -> '[0] | isbool -> 'false | fail
 one  == [one]  fn isreal -> 1 | isint -> '[1] | isbool -> 'true  | fail
 
+where == (top°term) app prop°arg,'_it,(top°pop°term),
+
 
 // GNU Lesser General Public License v2.1
