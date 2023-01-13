@@ -1,0 +1,4 @@
+﻿(("Newsfeed für Tagesschau.de, Datum: JJMMTT" input) eff 'io)
+>>(("https://www.tagesschau.de/api2/newsfeed-101~_date-"&it&".json") httpget)
+>>(('ok print)°data:=it)
+>>'ok°((out°id dictget "title")aa)°head°parsejson°#data
