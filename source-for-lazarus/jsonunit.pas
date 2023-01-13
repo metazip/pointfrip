@@ -74,22 +74,26 @@ var it: ustring;
     procedure comtable;
     forward;
 
-    procedure comstring;// !!! for test
-    begin it:=item(txt,ix);
-          cstack:=prop(newstring(it),xcons,cstack);
-          it:=item(txt,ix);
-          if (it<>'"') then parserraise('in json string " erwartet.')
+    procedure comstring;//provi!
+    var i: int64;
+    begin i:=pos('"',txt,ix+1);
+          if (i=0) then parserraise('in json string found no "');
+          it:=copy(txt,ix+1,i-ix-1);
+          ix:=i;
           //
+          // it konvertieren !!!
+          //
+          cstack:=prop(newstring(it),xcons,cstack);
     end;
 
     procedure cbacklistcons;
     var ref,p: cardinal;
     begin ref:=xnil;
           while (cell[cstack].first<>xmark) do begin
-             p:=cstack;
-             cstack:=cell[cstack].rest;
-             cell[p].rest:=ref;
-             ref:=p
+                p:=cstack;
+                cstack:=cell[cstack].rest;
+                cell[p].rest:=ref;
+                ref:=p
           end;
           cell[cstack].first:=ref
     end;
@@ -121,13 +125,13 @@ var it: ustring;
     var ref,p,q: cardinal;
     begin ref:=xnil;
           while (cell[cstack].first<>xmark) do begin
-             q:=cstack;
-             cstack:=cell[cstack].rest;
-             p:=cstack;
-             cstack:=cell[cstack].rest;
-             cell[q].rest:=ref;
-             infix[q]:=cell[p].first;
-             ref:=q//
+                q:=cstack;
+                cstack:=cell[cstack].rest;
+                p:=cstack;
+                cstack:=cell[cstack].rest;
+                cell[q].rest:=ref;
+                infix[q]:=cell[p].first;
+                ref:=q//
           end;
           cell[cstack].first:=ref//
     end;
@@ -191,6 +195,7 @@ begin try ix:=0;
              it:=item(txt,ix)
              //
           end;
+          nreverse(cstack);
       except raise // test
       end
 end;
@@ -204,8 +209,10 @@ begin einf:=infix[etop];
       if      (einf=xstring) then begin
          try txt:=cell[etop].pstr^; // if nil?
              parsejson(txt);
-             etop:=cstack;
-             cstack:=xnil
+             if (infix[cstack]=xnull) then etop:=xundef
+             else begin etop:=cell[cstack].first;
+                        cstack:=xnil
+                  end
          except on e: fpexception do etop:=newerror(idxparsejson,e.message)
                 else raise
          end
