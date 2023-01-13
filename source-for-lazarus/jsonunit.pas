@@ -26,7 +26,7 @@ const ejsonlistunexpend: es  = 'in json list unexpected end.';
       ejsontablenostring: es = 'in json table string expected.';
       ejsontablenocolon: es  = 'in json table : expected.';
       ejsontablenotag: es    = 'in json table , or } expected.';
-      ejsonnonum: es         = 'in json number expected';
+      ejsonnonum: es         = 'in json number or value expected';
 
 function isspecial(x: unicodechar): boolean;
 begin if (ord(x)>255) then isspecial:=false
@@ -75,8 +75,39 @@ var it: ustring;
     forward;
 
     procedure comstring;//provi!
-    var i: int64;
-    begin i:=pos('"',txt,ix+1);
+    var i: int64; ch: ustring;
+    begin it:='';
+          inc(ix);
+          ch:=copy(txt,ix,1);
+          while (ch<>'"') do begin
+             if (ch='') then parserraise('in json string has no end.');
+             if (ch<>'\') then it:=it+ch
+             else begin
+                inc(ix);
+                ch:=copy(txt,ix,1);
+                if (ch='') then parserraise('in json string no escape char.');
+                case ch[1] of
+                   '"': it:=it+ch;
+                   '\': it:=it+ch;
+                   '/': it:=it+ch;
+                   'b': it:=it+#8;
+                   'f': it:=it+#12;
+                   'n': it:=it+#10;
+                   'r': it:=it+#13;
+                   't': it:=it+#9;
+                   'u': begin it:=it+unicodechar(strtoint('$'+copy(txt,ix+1,4)));
+                              inc(ix,4)
+                        end;
+                end//
+             end;
+             inc(ix);
+             ch:=copy(txt,ix,1);
+          end;
+          //
+          cstack:=prop(newstring(it),xcons,cstack);
+          //
+    end;
+    {begin i:=pos('"',txt,ix+1);
           if (i=0) then parserraise('in json string found no "');
           it:=copy(txt,ix+1,i-ix-1);
           ix:=i;
@@ -84,7 +115,7 @@ var it: ustring;
           // it konvertieren !!!
           //
           cstack:=prop(newstring(it),xcons,cstack);
-    end;
+    end;}
 
     procedure cbacklistcons;
     var ref,p: cardinal;
