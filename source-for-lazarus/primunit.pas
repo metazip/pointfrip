@@ -19,7 +19,7 @@ procedure ee(eid: cardinal);
 implementation
 
 uses apiunit, vmunit,
-serveunit,combiunit,boolunit,mathunit,stringunit,sequnit;//noch mal neu
+serveunit,combiunit,boolunit,mathunit,stringunit,jsonunit,sequnit;//noch mal neu
 
 var idxundef: cardinal = xnil;
     idxhead: cardinal = xnil;
@@ -632,6 +632,7 @@ begin for i:=minproc to -1 do proc[i]:=@fundef;// to -1 (?)
       initboolprims;
       initmathprims;
       initstringprims;//position?
+      initjsonprims;
       initseqprims;
       //
       //
