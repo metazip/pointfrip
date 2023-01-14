@@ -8,7 +8,8 @@ uses
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
   Forms, guiunit, errorunit, initunit, serveunit, apiunit, vmunit, actunit,
-  primunit, combiunit, boolunit, mathunit, stringunit, sequnit, typeunit
+  primunit, combiunit, boolunit, mathunit, stringunit, sequnit, typeunit,
+  jsonunit
   { you can add units after this };
 
 {$R *.res}

@@ -3,7 +3,7 @@ object guiForm: TguiForm
   Height = 680
   Top = 112
   Width = 669
-  Caption = 'pointfree interpreter with classes in lazarus'
+  Caption = 'pointfree interpreter with instance variables and classes, in lazarus'
   ClientHeight = 680
   ClientWidth = 669
   Color = clWhite

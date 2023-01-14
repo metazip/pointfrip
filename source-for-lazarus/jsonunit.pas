@@ -18,15 +18,29 @@ const specialset: ansistring = '[]{}:,"'; // \ ?
 var idxparsejson: cardinal = xnil;
     special: boolset;
 
-const ejsonlistunexpend: es  = 'in json list unexpected end.';
+const ejsonstringunexpend: es  = 'in json string unexpected end.';
+      ejsonstringnoescchar: es = 'in json string no escape char.';
+      ejsonlistunexpend: es    = 'in json list unexpected end.';
       //
-      ejsonlistnotag: es     = 'in json list , or ] expected.';
+      ejsonlistnotable: es     = 'in json list unexpected } .';
+      ejsonlistunexpcolon: es  = 'in json list unexpected : .';
+      ejsonlistunexpcomma: es  = 'in json list unexpected , .';
+      ejsonlistnotag: es       = 'in json list , or ] expected.';
       //
-      ejsontableunexpend: es = 'in json table unexpected end.';
-      ejsontablenostring: es = 'in json table string expected.';
-      ejsontablenocolon: es  = 'in json table : expected.';
-      ejsontablenotag: es    = 'in json table , or } expected.';
-      ejsonnonum: es         = 'in json number or value expected';
+      ejsontableunexpend: es   = 'in json table unexpected end.';
+      ejsontablenolist: es     = 'in json table unexpected ] .';
+      ejsontableunexpclose: es = 'in json table unexpected close.';
+      ejsontablenostring: es   = 'in json table string expected.';
+      ejsontablenocolon: es    = 'in json table : expected.';
+      ejsontabledupcolon: es   = 'in json table double : .';
+      ejsontableunexpcomma: es = 'in json table unexpected , .';
+      ejsontablenotag: es      = 'in json table , or } expected.';
+      ejsonnonumorval: es      = 'in json number or value expected';
+      //
+      ejsonparsenolist: es     = 'in json parse unexpected ] .';
+      ejsonparsenotable: es    = 'in json parse unexpected } .';
+      ejsonparseunexpcolon: es = 'in json parse unexpected : .';
+      ejsonparseunexpcomma: es = 'in json parse unexpected , .';
 
 function isspecial(x: unicodechar): boolean;
 begin if (ord(x)>255) then isspecial:=false
@@ -75,17 +89,17 @@ var it: ustring;
     forward;
 
     procedure comstring;//provi!
-    var i: int64; ch: ustring;
+    var ch: ustring;
     begin it:='';
           inc(ix);
           ch:=copy(txt,ix,1);
           while (ch<>'"') do begin
-             if (ch='') then parserraise('in json string has no end.');
+             if (ch='')   then parserraise(ejsonstringunexpend);
              if (ch<>'\') then it:=it+ch
              else begin
                 inc(ix);
                 ch:=copy(txt,ix,1);
-                if (ch='') then parserraise('in json string no escape char.');
+                if (ch='') then parserraise(ejsonstringnoescchar);
                 case ch[1] of
                    '"': it:=it+ch;
                    '\': it:=it+ch;
@@ -98,24 +112,13 @@ var it: ustring;
                    'u': begin it:=it+unicodechar(strtoint('$'+copy(txt,ix+1,4)));
                               inc(ix,4)
                         end;
-                end//
+                end
              end;
              inc(ix);
              ch:=copy(txt,ix,1);
           end;
-          //
           cstack:=prop(newstring(it),xcons,cstack);
-          //
     end;
-    {begin i:=pos('"',txt,ix+1);
-          if (i=0) then parserraise('in json string found no "');
-          it:=copy(txt,ix+1,i-ix-1);
-          ix:=i;
-          //
-          // it konvertieren !!!
-          //
-          cstack:=prop(newstring(it),xcons,cstack);
-    end;}
 
     procedure cbacklistcons;
     var ref,p: cardinal;
@@ -133,21 +136,21 @@ var it: ustring;
     begin cstack:=prop(xmark,xcons,cstack);
           it:=item(txt,ix);
           while (it<>']') do begin
-             if      (it='')  then parserraise(ejsonlistunexpend)
-             else if (it='[') then comlist
-             else if (it='{') then comtable
-             //else if (it='}') then parserraise()
-             else if (it='"') then comstring
-             //else if (it=':') then parserraise()
-             //else if (it=',') then parserraise()
-             else if (it='null')  then cstack:=prop(xnil,  xcons,cstack)
-             else if (it='false') then cstack:=prop(xfalse,xcons,cstack)
-             else if (it='true')  then cstack:=prop(xtrue, xcons,cstack)
-             else comnumber(it);
-             it:=item(txt,ix);
-             if      (it=',') then it:=item(txt,ix)
-             else if (it=']') then break
-             else parserraise(ejsonlistnotag)
+                if      (it='')  then parserraise(ejsonlistunexpend)
+                else if (it='[') then comlist
+                else if (it='{') then comtable
+                else if (it='}') then parserraise(ejsonlistnotable)
+                else if (it='"') then comstring
+                else if (it=':') then parserraise(ejsonlistunexpcolon)
+                else if (it=',') then parserraise(ejsonlistunexpcomma)
+                else if (it='null')  then cstack:=prop(xnil,  xcons,cstack)
+                else if (it='false') then cstack:=prop(xfalse,xcons,cstack)
+                else if (it='true')  then cstack:=prop(xtrue, xcons,cstack)
+                else comnumber(it);
+                it:=item(txt,ix);
+                if      (it=',') then it:=item(txt,ix)
+                else if (it=']') then break
+                else parserraise(ejsonlistnotag)
           end;
           cbacklistcons//
     end;
@@ -171,30 +174,30 @@ var it: ustring;
     begin cstack:=prop(xmark,xcons,cstack);
           it:=item(txt,ix);
           while (it<>'}') do begin
-             if      (it='')  then parserraise(ejsontableunexpend)
-             else if (it='"') then comstring
-             else parserraise(ejsontablenostring);
-             it:=item(txt,ix);
-             if (it<>':') then parserraise(ejsontablenocolon);
-             it:=item(txt,ix);
-             if      (it='')  then parserraise(ejsontableunexpend)
-             else if (it='[') then comlist
-             //else if (it=']') then parserraise()
-             else if (it='{') then comtable
-             //else if (it='}') then parserraise()
-             else if (it='"') then comstring
-             //else if (it=':') then parseraise()
-             //else if (it=',') then parseraise()
-             else if (it='null')  then cstack:=prop(xnil,  xcons,cstack)
-             else if (it='false') then cstack:=prop(xfalse,xcons,cstack)
-             else if (it='true')  then cstack:=prop(xtrue, xcons,cstack)
-             else comnumber(it);
-             it:=item(txt,ix);
-             if      (it=',') then it:=item(txt,ix)
-             else if (it='}') then break
-             else parserraise(ejsontablenotag)//
+                if      (it='')  then parserraise(ejsontableunexpend)
+                else if (it='"') then comstring
+                else parserraise(ejsontablenostring);
+                it:=item(txt,ix);
+                if (it<>':') then parserraise(ejsontablenocolon);
+                it:=item(txt,ix);
+                if      (it='')  then parserraise(ejsontableunexpend)
+                else if (it='[') then comlist
+                else if (it=']') then parserraise(ejsontablenolist)
+                else if (it='{') then comtable
+                else if (it='}') then parserraise(ejsontableunexpclose)
+                else if (it='"') then comstring
+                else if (it=':') then parserraise(ejsontabledupcolon)
+                else if (it=',') then parserraise(ejsontableunexpcomma)
+                else if (it='null')  then cstack:=prop(xnil,  xcons,cstack)
+                else if (it='false') then cstack:=prop(xfalse,xcons,cstack)
+                else if (it='true')  then cstack:=prop(xtrue, xcons,cstack)
+                else comnumber(it);
+                it:=item(txt,ix);
+                if      (it=',') then it:=item(txt,ix)
+                else if (it='}') then break
+                else parserraise(ejsontablenotag)
           end;
-          cbacktablecons//
+          cbacktablecons
     end;
 
     procedure comnumber(var it: ustring);
@@ -204,7 +207,7 @@ var it: ustring;
           else begin
              val(it,fnum,errcode);
              if (errcode=0) then cstack:=prop(newreal(fnum),xcons,cstack)
-             else parserraise(ejsonnonum+' - '+it)
+             else parserraise(ejsonnonumorval+' - '+it)
           end
     end;
 
@@ -212,19 +215,18 @@ begin try ix:=0;
           cstack:=xnil;
           it:=item(txt,ix);
           while (it<>'') do begin
-             if      (it='[') then comlist
-             //else if (it=']') then parserraise()
-             else if (it='{') then comtable
-             //else if (it='}') then parseraise()
-             else if (it='"') then comstring
-             //else if (it=':') then parseraise()
-             //else if (it=',') then parseraise()
-             else if (it='null')  then cstack:=prop(xnil,  xcons,cstack)
-             else if (it='false') then cstack:=prop(xfalse,xcons,cstack)
-             else if (it='true')  then cstack:=prop(xtrue, xcons,cstack)
-             else comnumber(it);
-             it:=item(txt,ix)
-             //
+                if      (it='[') then comlist
+                else if (it=']') then parserraise(ejsonparsenolist)
+                else if (it='{') then comtable
+                else if (it='}') then parserraise(ejsonparsenotable)
+                else if (it='"') then comstring
+                else if (it=':') then parserraise(ejsonparseunexpcolon)
+                else if (it=',') then parserraise(ejsonparseunexpcomma)
+                else if (it='null')  then cstack:=prop(xnil,  xcons,cstack)
+                else if (it='false') then cstack:=prop(xfalse,xcons,cstack)
+                else if (it='true')  then cstack:=prop(xtrue, xcons,cstack)
+                else comnumber(it);
+                it:=item(txt,ix)
           end;
           nreverse(cstack);
       except raise // test
@@ -265,11 +267,9 @@ begin //tab:=[];
 end;
 
 procedure initjsonprims;
-begin //
-      initcharset(special,specialset);
+begin initcharset(special,specialset);
       idxparsejson:=newindex('parsejson');
       newidentproc('parsejson',@fparsejson);
-      //
 end;
 
 end.

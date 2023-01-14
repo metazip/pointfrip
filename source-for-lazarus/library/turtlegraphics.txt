@@ -25,23 +25,23 @@ rectangle  == [rectangle] fn fail
 turtle == .. { dict
    [new]        == initturtle as top°self
    [draw]       == (prop°(quote°reverse°#stack°[0]),'showgraph,(),) app [2]
-   [moveto]     == ((self put 'stack ee prop°([0]°para),([1]°para),(self get 'stack),)
-                   put 'x ee [0]°para) put 'y ee [1]°para
-   [moverel]    == ((([0]°para)+self get 'x) ee (([1]°para)+self get 'y)) moveto self
-   [move]       == ( ((([0] get 'x) + [1]*cos°[2]) ee (([0] get 'y) + [1]*sin°[2]))
-                     °self,para,(self get 'angle), ) moveto self
-   [turnto]     == self put 'angle ee (para - 2pi*int°para/2pi)
-   [turn]       == (para + self get 'angle) turnto self
-   [penup]      == (id put 'stack ee prop°'false,'pen,#stack,) put 'pen ee 'false
-   [pendown]    == (id put 'stack ee prop°'true,'pen,#stack,) put 'pen ee 'true
-   [pencolor]   == (self put 'stack ee prop°(round°para),'color,(self get 'stack),) 
-                   put 'color ee para
-   [pensize]    == (self put 'stack ee prop°(round°para),'size,(self get 'stack),) 
-                   put 'size ee para
-   [brushcolor] == (self put 'stack ee prop°(round°para),'brush,(self get 'stack),) 
-                   put 'brush ee para
-   [circle]     == self put 'stack ee prop°para,'circle,(self get 'stack),
-   [rectangle]  == id put 'stack ee prop°(),'rect,#stack,
+   [moveto]     == ((self iput 'stack ee prop°([0]°para),([1]°para),(self iget 'stack),)
+                   iput 'x ee [0]°para) iput 'y ee [1]°para
+   [moverel]    == ((([0]°para)+self iget 'x) ee (([1]°para)+self iget 'y)) moveto self
+   [move]       == ( ((([0] iget 'x) + [1]*cos°[2]) ee (([0] iget 'y) + [1]*sin°[2]))
+                     °self,para,(self iget 'angle), ) moveto self
+   [turnto]     == self iput 'angle ee (para - 2pi*int°para/2pi)
+   [turn]       == (para + self iget 'angle) turnto self
+   [penup]      == (id iput 'stack ee prop°'false,'pen,#stack,) iput 'pen ee 'false
+   [pendown]    == (id iput 'stack ee prop°'true,'pen,#stack,) iput 'pen ee 'true
+   [pencolor]   == (self iput 'stack ee prop°(round°para),'color,(self iget 'stack),) 
+                   iput 'color ee para
+   [pensize]    == (self iput 'stack ee prop°(round°para),'size,(self iget 'stack),) 
+                   iput 'size ee para
+   [brushcolor] == (self iput 'stack ee prop°(round°para),'brush,(self iget 'stack),) 
+                   iput 'brush ee para
+   [circle]     == self iput 'stack ee prop°para,'circle,(self iget 'stack),
+   [rectangle]  == id iput 'stack ee prop°(),'rect,#stack,
 }
 
 // (((f aa)°iota°x) (plot0 eff io) 0-y) ° dict
