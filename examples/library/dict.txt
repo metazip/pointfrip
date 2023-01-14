@@ -1,20 +1,23 @@
 ﻿'("dict.txt" loaded)
 
-get == [get] op iget  // for test
-put == [put] op iput  // for test
+get == [get] op dictget  // for test
+put == [put] op dictput  // for test
 
-_v == arg get top°term  // top ,iget?
-:= == arg put (top°term) ee (pop°term) app arg  // top,pop // substitute // ,auch für integer?
+_v == arg iget top°term  // top ,iget?
+:= == arg iput (top°term) ee (pop°term) app arg  // top,pop // substitute // ,auch für integer?
 
 keys == [keys] fn reverse°[1]°((isprop°[0])->*(tail°[0]),((infix°[0]),[1]),)°id,(),
 values == [values] fn reverse°[1]°((isprop°[0])->*(tail°[0]),((head°[0]),[1]),)°id,(),
 
 dict == .. { object
-             [get] == (pop°[0]) iget [1]
-             [put] == (top°[0]) obj (pop°[0]) put [1]  // noch nicht getestet
+             [get] == (pop°[0]) dictget [1]                // for test
+             [put] == (top°[0]) obj (pop°[0]) dictput [1]  // noch nicht getestet ,for test
              [remove] ==
              [keys] == keys°pop
-             [values] == values°pop}
+             [values] == values°pop
+             [iget] == (pop°[0]) iget [1]
+             [iput] == (top°[0]) obj (pop°[0]) iput [1]  // noch nicht getestet
+             }
 
 // ------- legacy -------
 dictget == (isnull->'_undef;head)°[0]°(((isnull°[0])->'false;not°[1]=infix°[0])->*(tail°[0]),[1],)°ee  //((tail°[0]),[1],)°ee
