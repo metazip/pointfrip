@@ -50,6 +50,11 @@ You can also create your own combining forms like in Backus FFP
     
     ((id+1) twice) ° 5
     --> 7
+    
+    while == ((top°term) app arg)->(term app (pop°term) app arg);arg
+    
+    head°((isprop°tail) while tail) ° (a;b;c;d;e;)
+    --> e
 
 
 [Example](https://github.com/metazip/pointfrip/blob/main/backus-fp/progopedia-drache.png) \
