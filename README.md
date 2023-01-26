@@ -45,6 +45,12 @@ You can also create your own combining forms like in Backus FFP
     
     (a quoteit)
     --> a
+    
+    twice == (top°term) app (top°term) app arg
+    
+    ((id+1) twice):5
+    --> 7
+
 
 [Example](https://github.com/metazip/pointfrip/blob/main/backus-fp/progopedia-drache.png) \
 [Reference.pdf](https://github.com/metazip/pointfrip/blob/main/examples/documents/reference.pdf) \
