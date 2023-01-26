@@ -48,7 +48,7 @@ You can also create your own combining forms like in Backus FFP
     
     twice == (top°term) app (top°term) app arg
     
-    ((id+1) twice):5
+    ((id+1) twice) ° 5
     --> 7
 
 
