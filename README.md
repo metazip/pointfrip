@@ -39,7 +39,7 @@ side-effects used in [installer.exe](https://github.com/metazip/pointfrip/tree/m
 
     ((#draco loadtext)°(draco:=corepath & "drache.pf") eff 'io)>>(it showinfo)>>(#draco run)>>()
 
-You can also create your own combining forms like in Backus FFP
+meta-programming: you can also create your own combining forms like in Backus FFP
 
     quoteit == top°term
     
