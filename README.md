@@ -4,7 +4,7 @@
 ![screenshot](https://raw.githubusercontent.com/metazip/pointfrip/main/tahomapointfrip.png)
   
   
-**Function-level Language** like [FP](https://dl.acm.org/doi/pdf/10.1145/359576.359579) from John Backus
+**Function-level Programming** like [FP](https://dl.acm.org/doi/pdf/10.1145/359576.359579) from John Backus
 
     ip ≡ (+ \) ° (* aa) ° trans ° ee
     eq0  ≡ id=0
