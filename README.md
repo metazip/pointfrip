@@ -56,7 +56,7 @@ meta-programming: you can also create your own combining forms like in Backus FF
     head°((isprop°tail) while tail) ° (a;b;c;d;e;)
     --> e
 
-Limited **API** support: **httpget** and **parsejson** for reading APIs. 
+Limited **API** support: **httpget** and **parsejson** for reading APIs. (Version-20240623)
 
 [Example](https://github.com/metazip/pointfrip/blob/main/backus-fp/progopedia-drache.png) \
 [Reference.pdf](https://github.com/metazip/pointfrip/blob/main/examples/documents/reference.pdf) \
