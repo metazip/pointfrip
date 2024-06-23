@@ -1,4 +1,6 @@
-﻿(("Newsfeed für www.tagesschau.de, Datum: JJMMTT" input) eff 'io)
->>(it="")->'break;(("https://www.tagesschau.de/api2/newsfeed-101~_date-"&it&".json") httpget)
+﻿ (("regions:  1=Baden-Württemberg, 2=Bayern, 3=Berlin, 4=Brandenburg, 5=Bremen, 6=Hamburg, 7=Hessen, 8=Mecklenburg-Vorpommern, 9=Niedersachsen, 10=Nordrhein-Westfalen, 11=Rheinland-Pfalz, 12=Saarland, 13=Sachsen, 14=Sachsen-Anhalt, 15=Schleswig-Holstein, 16=Thüringen. Mehrere Komma-getrennte Angaben möglich (z.B. regions=1,2)." print) eff 'io)
+>>("ressort:  inland, ausland, wirtschaft, sport, video, investigativ, faktenfinder" print)
+>>("Newsfeed für www.tagesschau.de, regions=? et ressort=?" input "regions=1&ressort=ausland")
+>>(it="")->'break;(("https://www.tagesschau.de/api2u/news/?"&it) httpget)
 >>(('http... print)°data:=it)
 >>'ok°((out°id get "title")aa)°(id get "news")°parsejson°#data

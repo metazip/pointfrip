@@ -1,0 +1,10 @@
+﻿loop
+
+loop == (("Worüber möchtest du mit mir sprechen?" input) eff 'io)
+>>(it="")->(("Tschüss. Bis bald." showinfo)>>());(("https://de.wikipedia.org/wiki/"&(trim°it) replace " ","_",) httpget)
+>>((it try ("Dazu weiß ich nix." showinfo);
+           ((((noparens°nohtml°substring°id,(3+id indexof "<p>"),((id indexof "</p>")-(3+id indexof "<p>")),))°[0]) showinfo)) eff 'io)
+>>loop
+
+nohtml == (0 < id indexof "<")->*id delete (id indexof "<"),(1+(id indexof ">")-id indexof "<"),
+noparens == (0 < id indexof "(")->*id delete (id indexof "("),(1+(id indexof ")")-id indexof "("),
