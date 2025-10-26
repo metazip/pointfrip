@@ -1,0 +1,27 @@
+﻿
+('stack new 10,20,30,40,50,) rollr 3
+
+stack == .. { list
+   [new] == (islist°[1])->((top°[0]) obj [1]);fail
+   [isempty] == isnull°pop
+   [push] == (top°[0]) obj [1],pop°[0]
+   [pull] == isempty->('_undef ee id);head ee tail
+   [peek] == isempty->'_undef;head
+   [size] == length°pop
+   [dup]  == isempty->fail;top obj (head,id)°pop
+   [swap] == (isempty°tail)->fail;top obj ([1],[0],tail°tail)°pop
+   [rolll] ==([1]<=size°[0])->((top°[0]) obj (rotl°(pop°[0]) take [1])
+                              ++(pop°[0]) drop [1]);fail
+   [rollr] ==([1]<=size°[0])->((top°[0]) obj (rotr°(pop°[0]) take [1])
+                              ++(pop°[0]) drop [1]);fail
+}
+isempty == [isempty] fn fail
+push == [push] op fail
+pull == [pull] fn fail
+peek == [peek] fn fail
+size == [size] fn fail
+dup  == [dup]  fn fail
+swap == [swap] fn fail
+rolll == [rolll] op fail
+rollr == [rollr] op fail
+
