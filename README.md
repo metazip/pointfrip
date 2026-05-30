@@ -68,6 +68,8 @@ WHERE Clause with Instance Variables
     sumtrisqinc°10
     --> 363
 
+Duplicate definitions with identical code are not flagged as errors.
+
 Limited **API** support: **httpget** and **parsejson** for reading APIs. (Version-20240701)
 
 [Example](https://github.com/metazip/pointfrip/blob/main/backus-fp/progopedia-drache.png) \
