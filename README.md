@@ -56,6 +56,15 @@ meta-programming: you can also create your own combining forms like in Backus FF
     head°((isprop°tail) while tail) ° (a;b;c;d;e;)
     --> e
 
+where clause
+
+    sumtrisqinc == ( #sum app (([1] app [0]) aa0)
+                   ° (#co app #inc app it) ee #square )
+          where (  sum == + \
+                   co == id,id,id,
+                   square == id*id
+                   inc == id+1  )
+
 Limited **API** support: **httpget** and **parsejson** for reading APIs. (Version-20240701)
 
 [Example](https://github.com/metazip/pointfrip/blob/main/backus-fp/progopedia-drache.png) \
