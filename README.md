@@ -56,7 +56,7 @@ meta-programming: you can also create your own combining forms like in Backus FF
     head°((isprop°tail) while tail) ° (a;b;c;d;e;)
     --> e
 
-where clause
+WHERE Clause with Instance Variables
 
     sumtrisqinc == ( #sum app (([1] app [0]) aa0)
                    ° (#co app #inc app it) ee #square )
@@ -64,6 +64,9 @@ where clause
                    co == id,id,id,
                    square == id*id
                    inc == id+1  )
+    
+    sumtrisqinc°10
+    --> 363
 
 Limited **API** support: **httpget** and **parsejson** for reading APIs. (Version-20240701)
 
