@@ -1,4 +1,4 @@
-**[Paul McJones]**  [History of John Backus's functional programming project](https://softwarepreservation.computerhistory.org/FP/)
+**[McJones]**  [History of John Backus's functional programming project](https://softwarepreservation.computerhistory.org/FP/)
 ##
 
 
