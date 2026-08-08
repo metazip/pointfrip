@@ -1,6 +1,4 @@
-[History of John Backus's functional programming project](https://softwarepreservation.computerhistory.org/FP/) \
-##
-\
+## [History of John Backus's functional programming project](https://softwarepreservation.computerhistory.org/FP/) \
 
 
 ## ![pointfrip](https://raw.githubusercontent.com/metazip/pointfrip/main/pflogo.png)
