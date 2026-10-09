@@ -1,4 +1,7 @@
 **[McJones]**  [History of John Backus's functional programming project](https://softwarepreservation.computerhistory.org/FP/)
+
+**Excerpt from the text:** \
+[Backus1981a] took up the lambda style (e.g., LISP [McCarthy1960] and Landin's ISWIM [Landin1964]): "In general, we suggest that the FP style offers a framework in which one can perceive and reason about program structures, truths, and transformations at a higher level of generality than that presently available for reasoning about lambda style programs." He acknowledged that using lambda abstraction one can define all of the FP program forming operations and "an infinity of others," but argued that this power would lead to undisciplined use and concluded: "Therefore perhaps it is time to begin designing a new generation of functional languages, languages that emphasize function level structure and function level reasoning."
 ##
 
 
