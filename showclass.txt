@@ -1,0 +1,16 @@
+﻿
+showclass == ( (not°isarray) -> '_undef;
+               ("{"&crlf&[2])
+               ° ((ispos°[1]) ->* ( (isundef°[0]) -> tail;
+                                    ( (isundef°[0]) -> (tail°tail);
+                                      [2],[3],((nopara°string°prop°[0],'==,[1],)&crlf&[4]),													 
+                                    ) ° (indexdict getinf [2]),id
+                                  ) ° (([1] app [0]),id) ° [0],(pred°[1]),[2],
+                 )°id,(round°length),"}",) ° body
+
+
+nopara == substring°id,2,(length-2),
+crlf == (char°13) & (char°10)
+getinf == (isnull -> (_undef _q) ; infix _s) ° [0] ° (((isnull ° [0] _s) -> (false _q) ; not ° [1] = head ° [0] _s) ->* (tail ° [0] _s) , [1] ,) ° ee
+
+// indexdict getinf '[150]
